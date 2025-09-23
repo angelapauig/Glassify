@@ -1,23 +1,23 @@
 @font-face {
   font-family: 'DM Sans';
-  src: url('../fonts/DMSans-Regular.ttf') format('truetype');
+  src: url('../fonts/dm-sans/DMSans-Regular.ttf') format('truetype');
   font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'DM Sans';
-  src: url('../fonts/DMSans-Bold.ttf') format('truetype');
+  src: url('../fonts/dm-sans/DMSans-Bold.ttf') format('truetype');
   font-weight: 700;
   font-style: bold;
 }
 
 @font-face {
   font-family: 'DM Sans';
-  src: url('../fonts/DMSans-Italic.ttf') format('truetype');
+  src: url('../fonts/dm-sans/DMSans-Italic.ttf') format('truetype');
   font-weight: 400;
   font-style: italic;
-}
+}   
 
 /* Navbar container */
 .navbar {
@@ -78,4 +78,10 @@
 .icons img:hover {
    filter: invert(80%) sepia(80%) saturate(5000%) hue-rotate(1deg) brightness(100%) contrast(100%);
  
+}
+
+.menu a.active {
+  color: #f4b400; /* golden yellow */
+  font-weight: 700; /* optional stronger highlight */
+  border-bottom: 2px solid #f4b400; /* optional underline */
 }
