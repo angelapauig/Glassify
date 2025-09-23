@@ -1,0 +1,90 @@
+/* Footer Styles */
+.site-footer {
+  background-color: #064b63; /* dark teal background */
+  color: #fff;
+  padding: 40px 20px;
+  font-family: Arial, sans-serif;
+}
+
+.footer-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Footer Sections */
+.footer-section h3 {
+  margin-bottom: 15px;
+  font-size: 1rem;
+}
+
+.footer-section p,
+.footer-section li,
+.footer-section a {
+  font-size: 0.9rem;
+  color: #ddd;
+  line-height: 1.6;
+  text-decoration: none;
+}
+
+.footer-section a:hover {
+  color: #f9b600; /* highlight on hover */
+}
+
+/* Logo & About */
+.footer-logo {
+  max-width: 120px;
+  margin-bottom: 15px;
+}
+
+.about p {
+  margin-bottom: 20px;
+}
+
+/* Quick Links */
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-section ul li {
+  margin-bottom: 8px;
+}
+
+/* Social Icons */
+.social-icons {
+  display: flex;
+  gap: 15px;
+}
+
+.social-icons img {
+  width: 22px;
+  height: 22px;
+  filter: invert(1);
+  transition: transform 0.3s;
+}
+
+.social-icons img:hover {
+  transform: scale(1.2);
+}
+
+.footer-icon {
+  width: 25 px;
+  height: 25px;
+  margin-right: 8px;
+  vertical-align: middle;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .footer-container {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .social-icons {
+    justify-content: center;
+  }
+}
