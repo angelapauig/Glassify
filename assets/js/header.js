@@ -6,11 +6,13 @@ class MyHeader extends HTMLElement {
         this.innerHTML = data;
 
         // highlight active link
-        const currentPath = window.location.pathname.split("/").pop(); 
-        const links = this.querySelectorAll(".menu a");
+        const currentPath = window.location.pathname;
 
+        const links = this.querySelectorAll(".menu a");
         links.forEach(link => {
-          if (link.getAttribute("href").includes(currentPath)) {
+          const linkPath = new URL(link.href).pathname;
+
+          if (currentPath.endsWith(linkPath)) {
             link.classList.add("active");
           }
         });
