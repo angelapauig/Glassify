@@ -69,6 +69,11 @@ body {
   flex-wrap: wrap;
 }
 
+.faq-buttons a { /* Selects the <a> tags which are the direct children of the flex container */
+  flex: 1;
+  max-width: 350px;
+}
+
 .faq-btn {
   flex: 1;
   max-width: 350px;
