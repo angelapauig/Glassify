@@ -1,28 +1,57 @@
-
 <head>
   <link rel="stylesheet" href="/Glassify/assets/css/header_styles.css">
   <script src="https://kit.fontawesome.com/fc5ceca38c.js" crossorigin="anonymous"></script>
 </head>
 <body>
-  <header class="navbar">
+<header class="navbar">
   <div class="logo">
     <img src="/Glassify/assets/img/logo.png" alt="GlassWorth Logo">
   </div>
 
   <nav class="menu">
-    <a href="/Glassify/">Home</a>
-    <a href="/Glassify/html/about_us.html">About Us</a>
+    <!-- Home changes depending on login state -->
+    <a href="/Glassify/index.html" id="home-link">Home</a>
+
+    <!-- Guest only -->
+    <a href="/Glassify/html/about_us.html" class="guest-only">About Us</a>
+
+    <!-- Always -->
     <a href="/Glassify/html/product.html">Products</a>
     <a href="/Glassify/html/Faq.html">FAQ</a>
-    <a href="/Glassify/html/projects.html">Projects</a>
+    
+    <!-- Guest only -->
+    <a href="/Glassify/html/projects.html" class="guest-only">Projects</a>
   </nav>
 
   <div class="icons">
-    <a href="#"><img src="/Glassify/assets/img/shopping-cart.png" alt="Shopping_cart"></a>
-    <a href="#"><img src="/Glassify/assets/img/heart.png" alt="Wishlist"></a>
-    <a href="#"><img src="/Glassify/assets/img/user.png" alt="User"></a>
-    
+    <!-- User only -->
+    <a href="/Glassify/html/tracking" class="user-only hidden">
+      <img src="/Glassify/assets/img/tracking.png" alt="tracking" class="tracking-icon">
+    </a>
+
+    <!-- Always -->
+    <a href="/Glassify/html/addtocart">
+      <img src="/Glassify/assets/img/shopping-cart.png" alt="Shopping_cart">
+    </a>
+    <a href="/Glassify/html/wishlist">
+      <img src="/Glassify/assets/img/heart.png" alt="Wishlist">
+    </a>
+
+    <!-- Guest only -->
+    <a href="/Glassify/components/auth.html?mode=login" id="auth-link" class="guest-only">
+      <img src="/Glassify/assets/img/user.png" alt="Login">
+    </a>
+
+    <!-- User only Dropdown -->
+    <div class="header-dropdown user-only hidden">
+      <button class="header-dropbtn">
+        <img src="/Glassify/assets/img/user.png" alt="Profile">
+      </button>
+      <div class="header-dropdown-content">
+        <a href="/Glassify/html/profile.html">Profile</a>
+        <a href="#" id="logoutBtn">Logout</a>
+      </div>
+    </div>
   </div>
 </header>
-
 </body>

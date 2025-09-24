@@ -1,0 +1,58 @@
+<section class="login-section">
+  <div class="login-container">
+
+    <!-- Left Panel -->
+    <div class="login-left">
+      <div class="login-logo">
+        <img src="../assets/img/logo.png" alt="GlassWorth Logo">
+      </div>
+      <h2 class="login-brand">Glassify</h2>
+      <p class="login-description">
+        <span class="highlight">Design</span> Your Glass Project.
+        Get <span class="highlight">Instant</span> Quotes.
+        <span class="highlight">Order</span> Online.
+      </p>
+      <div class="login-user-icon">
+        <img src="../assets/img/mdi_account-outline.svg" alt="account-icon">
+      </div>
+    </div>
+
+    <!-- Right Panel -->
+    <div class="login-right">
+      <h3 class="login-title">Sign In</h3>
+
+      <!-- ✅ Only ONE form -->
+      <form id="loginForm" class="login-form">
+
+        <div class="login-input-group">
+          <label for="email">Email Address</label>
+          <div class="login-input-row">
+            <img src="../assets/img/ic_outline-email.svg" alt="Email Icon" class="login-input-icon">
+            <input type="email" id="email" placeholder="Enter your email" required>
+          </div>
+        </div>
+
+        <div class="login-input-group">
+          <label for="password">Password</label>
+          <div class="login-input-row">
+            <img src="../assets/img/solar_password-outline.svg" alt="Password Icon" class="login-input-icon">
+            <input type="password" id="password" placeholder="Enter your password" required>
+          </div>
+        </div>
+
+        <!-- ✅ Login button inside the same form -->
+        <button type="submit" class="login-btn">Login</button>
+
+        <div class="login-options">
+          <label><input type="checkbox"> Remember Me</label>
+          <a href="#">Forgot Password?</a>
+        </div>
+
+        <p class="login-register">
+          Don’t have an account?
+          <a href="/Glassify/components/auth.html?mode=register">Sign up</a>
+        </p>
+      </form>
+    </div>
+  </div>
+</section>

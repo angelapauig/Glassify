@@ -54,58 +54,65 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
 }
 body {
   font-family: 'DM Sans', sans-serif;
   line-height: 1.6;
-  color: #0a2c40;
+  color: #02455F;
   overflow-x: hidden;
   
 }
 
 /* Projects Intro */
 .projects-intro {
+
   text-align: center;
   padding: 3rem 1rem;
 }
 .projects-intro h1 {
-  font-size: 2.5rem;
+  margin: 5% 0 0 0;
+  font-size: 45pt;
   font-weight: bold;
 }
 .projects-intro .tagline {
-  font-size: 1.2rem;
-  margin-top: 0.5rem;
-  color: #444;
+  font-size: 18pt;
+  letter-spacing: 2px;
+  margin-top: 0.2rem;
+  font-weight: 600;
+  color: #02455F;
 }
 .projects-intro .description {
-  max-width: 600px;
+  font-size: 12pt;
+  font-family: 'Montserrat', sans-serif;
+  max-width: 450px;
+  letter-spacing: 1px;
   margin: 1rem auto;
-  color: #555;
+  color: #02455F;
 }
 
-/* Featured Projects */
-.featured-projects {
-  background: #083c5d;
-  color: white;
-  padding: 3rem 1rem;
-  text-align: center;
-  max-width: 1700px;
-  height: 1500p;
-  margin: 0 auto 3rem auto;
-  -webkit-mask-image: url('../img/jagged\ rectangle.svg');
-  mask-image: url('../img/jagged\ rectangle.svg');
-  -webkit-mask-repeat: no-repeat;
-  mask-repeat: no-repeat;
-  -webkit-mask-size: cover;
-  mask-size: cover;
+/* Featured Projects Section */
+.featured-projects { 
+background: #083c5d; 
+color: white; 
+padding: 5rem 1rem; 
+text-align: center; 
+max-width: 1400px; 
+height: 14  00px; 
+margin: 0 auto 1rem auto; 
+-webkit-mask-image: url('../img/jagged\ rectangle.svg'); 
+mask-image: url('../img/jagged\ rectangle.svg'); 
+-webkit-mask-repeat: no-repeat;
+mask-repeat: no-repeat;
+-webkit-mask-size: 100% auto;
+mask-size: 100% auto;
 
 }
 
 .featured-projects h2 {
   color: #f5b400;
   margin-bottom: 5rem;
-    font-size: 3rem;
+  font-weight: 600;
+    font-size: 45pt;  
 }
 
 .projects-wrapper {
@@ -122,7 +129,7 @@ body {
   margin: 0 2rem;
   width: 5px;
   background-color: #fff;
-  height: 1200px;
+  height: 1100px;
 }
 
 /* Left and Right Columns */
@@ -139,6 +146,7 @@ body {
   flex-direction: column;
   gap: 2rem;
   margin-top: 25px;
+  
 }
 
 .projects-right h3{
@@ -174,19 +182,24 @@ body {
     margin-bottom: 50px;
 }
 
+.projects-left .project-card{
+    margin-left: 20%;
+}
+
 
 /* Project Card */
 .project-card {
   background: #fff;
   color: #0a2c40;
-  padding: 1rem;
   border-radius: 8px;
   text-align: center;
-  width: 600px;
-  height: 350px;
+  width: 500px;
+  height: 290px;
+  box-shadow: -2px 3px 20px 13px rgb(255 255 255 / 16%);
 }
 .project-card img {
   width: 100%;
+  
   border-radius: 6px;
   margin-bottom: 1rem;
 }
@@ -199,74 +212,177 @@ body {
 }
 
 
-/* Before & After */
 .before-after {
+  margin: 5% auto 0 auto;
   display: flex;
   justify-content: center;
-  gap: 2rem;
+  gap: 20rem;
   padding: 3rem 1rem;
   text-align: center;
 }
+
 .before-after div {
   flex: 1;
   max-width: 400px;
 }
-.before-after img {
+
+/* wrapper for border + icon */
+.border-box {
+  position: relative; /* 🔑 makes .top-left-decor anchor here */
+  display: inline-block;
+}
+
+.img-panel {
   width: 100%;
-  border: 4px solid #f5b400;
-  border-radius: 6px;
+  border: 15px solid #FDC103;
+  box-shadow: 0px 0px 0px 5px #056083;
   margin-bottom: 0.5rem;
 }
+
 .before-after p {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 20pt;
   font-weight: bold;
 }
 
+.top-left-decor, .top-right-decor {
+  position: absolute;
+  top: -50px;   /* overlap outside */
+  left: -50px;  /* tuck into corner */
+  width: 80px;
+  height: 80px;
+  z-index: 10;
+}
+
+
+.bottom-left-decor, .bottom-right-decor {
+  position: absolute;
+  bottom: -30px;   /* overlap outside */
+  right: -80px;  /* tuck into corner */
+  width: 80px;
+  height: 80px;
+  z-index: 10;
+}
+
+/* Contact Section */
 /* Contact Section */
 .contact-section {
-  padding: 3rem 1rem;
+  padding: 3rem 2rem;
   background: #f9f9f9;
 }
-.contact-section h2 {
-  text-align: center;
-  font-size: 2rem;
-  margin-bottom: 1rem;
-}
-.contact-section p {
-  text-align: center;
-  margin-bottom: 2rem;
-}
+
 .contact-content {
   display: flex;
-  justify-content: center;
-  gap: 2rem;
+  justify-content: space-between;
+  gap: 20rem;
   flex-wrap: wrap;
+  max-width: 1100px;
+  margin: auto;
 }
+
+/* Left Info */
 .contact-info {
   flex: 1;
-  min-width: 250px;
+  min-width: 280px;
 }
+.contact-info h2 {
+  font-size: 3.5rem;
+  color: #083c5d;
+  margin-bottom: 1rem;
+}
+.contact-info p, a {
+  margin-top: 0.5rem;
+  margin-bottom: 1.5rem;
+  line-height: 1.5rem;
+  color: #083c5d;
+  text-decoration: none;
+}
+
+.info-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.8rem;
+  margin-bottom: 1rem;
+  color: #083c5d;
+  font-size: 1rem;
+}
+
+.icon img {
+  width: 45px;
+  height: 45px;
+  margin: 0 5px 0 0;
+}
+
+.info-item .icon {
+  font-size: 1.5rem;
+}
+
+/* Right Form */
 .contact-form {
   flex: 1;
-  min-width: 300px;
+  min-width: 320px;
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
   gap: 1rem;
 }
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  position: relative;
+}
+
+.form-group.half {
+  flex: 1;
+  min-width: 150px;
+  
+}
+
+.form-group.half:nth-child(odd) {
+  margin-right: 1.5rem;
+}
+
+.form-group label {
+  background: #083c5d;
+  color: white;
+  padding: 0.2rem 0.6rem;
+  font-size: 0.85rem;
+  border-radius: 3px;
+  margin-bottom: 0.3rem;
+  display: inline-block;
+  width: fit-content;
+}
+
 .contact-form input,
 .contact-form textarea {
   width: 100%;
-  padding: 0.8rem;
-  border: 1px solid #ccc;
-  border-radius: 6px;
+  padding: 0.7rem;
+  border: 1px solid #083c5d;
+  border-radius: 2px;
+  font-size: 1rem;
 }
+
+.contact-form textarea {
+  min-height: 100px;
+  resize: vertical;
+  border: 1px solid #083c5d;
+  border-radius: 6px;
+  background: #fff;
+}
+
 .contact-form button {
   background: #083c5d;
   color: white;
   border: none;
-  padding: 0.8rem;
-  border-radius: 6px;
+  padding: 0.9rem 1.2rem;
+  border-radius: 2px;
   cursor: pointer;
+  margin-top: 0.5rem;
+  font-size: 1rem;
 }
+
 .contact-form button:hover {
   background: #0a2c40;
 }
+

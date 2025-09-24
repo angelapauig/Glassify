@@ -75,6 +75,13 @@
   transition: 0.3s ease;
 }
 
+.icons img.tracking-icon
+{
+  margin-top: -5px;
+   max-width: 35px;
+    height: auto;
+}
+
 .icons img:hover {
    filter: invert(80%) sepia(80%) saturate(5000%) hue-rotate(1deg) brightness(100%) contrast(100%);
  
@@ -84,4 +91,75 @@
   color: #f4b400; /* golden yellow */
   font-weight: 700; /* optional stronger highlight */
   border-bottom: 2px solid #f4b400; /* optional underline */
+}
+
+
+
+/* Highlight active icon link */
+.icons a.active img {
+ filter: invert(80%) sepia(80%) saturate(5000%) hue-rotate(1deg) brightness(100%) contrast(100%);
+  /* makes icon tinted to your theme color */
+}
+
+/* Toggle visibility */
+.hidden {
+  display: none !important;
+}
+
+
+/* Dropdown container */
+.header-dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Profile button (icon only) */
+.header-dropbtn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.header-dropbtn img {
+  max-width: 28px;
+  height: auto;
+  filter: invert(100%);
+  transition: 0.3s ease;
+}
+
+.header-dropbtn img:hover {
+  filter: invert(80%) sepia(80%) saturate(5000%) hue-rotate(1deg);
+}
+
+/* Dropdown content */
+.header-dropdown-content {
+  display: none;
+  position: absolute;
+  right: 0;
+  background-color: #02455F;
+  min-width: 140px;
+  border-radius: 8px;
+  box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+  z-index: 1000;
+  flex-direction: column;
+}
+
+.header-dropdown-content a {
+  color: white;
+  padding: 10px 15px;
+  text-decoration: none;
+  display: block;
+  font-family: 'DM Sans', sans-serif;
+}
+
+.header-ropdown-content a:hover {
+  background-color: #f4b400;
+  color: black;
+  border-radius: 8px;
+}
+
+/* Show dropdown on hover */
+.header-dropdown:hover .header-dropdown-content {
+  display: block;
 }

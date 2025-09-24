@@ -5,14 +5,54 @@ class MyHeader extends HTMLElement {
       .then(data => {
         this.innerHTML = data;
 
-        // highlight active link
-        const currentPath = window.location.pathname;
+        // --- Login state toggle ---
+        const isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
 
-        const links = this.querySelectorAll(".menu a");
+        const guestItems = this.querySelectorAll(".guest-only");
+        const userItems = this.querySelectorAll(".user-only");
+        const homeLink = this.querySelector("#home-link");
+
+        if (isLoggedIn) {
+          guestItems.forEach(el => el.classList.add("hidden"));
+          userItems.forEach(el => el.classList.remove("hidden"));
+          if (homeLink) homeLink.setAttribute("href", "/Glassify/html/home.html");
+        } else {
+          guestItems.forEach(el => el.classList.remove("hidden"));
+          userItems.forEach(el => el.classList.add("hidden"));
+          if (homeLink) homeLink.setAttribute("href", "/Glassify/index.html");
+        }
+
+        // --- Logout button ---
+        const logoutBtn = this.querySelector("#logoutBtn");
+        if (logoutBtn) {
+          logoutBtn.addEventListener("click", (e) => {
+            e.preventDefault();
+            localStorage.setItem("isLoggedIn", "false");
+            location.reload();
+          });
+        }
+
+        // --- Active link highlighting ---
+        const currentUrl = new URL(window.location.href);
+        const currentPath = currentUrl.pathname;
+        const currentMode = currentUrl.searchParams.get("mode");
+        const links = this.querySelectorAll(".menu a, .icons a");
+
         links.forEach(link => {
-          const linkPath = new URL(link.href).pathname;
+          const linkUrl = new URL(link.href, window.location.origin);
+          const linkPath = linkUrl.pathname;
+          const linkMode = linkUrl.searchParams.get("mode");
 
-          if (currentPath.endsWith(linkPath)) {
+          // Highlight menu items
+          if (currentPath === linkPath && (!linkMode || currentMode === linkMode)) {
+            link.classList.add("active");
+          }
+
+          // Auth special case
+          if (
+            link.id === "auth-link" &&
+            (currentMode === "login" || currentMode === "register")
+          ) {
             link.classList.add("active");
           }
         });
@@ -22,3 +62,12 @@ class MyHeader extends HTMLElement {
 }
 
 customElements.define("my-header", MyHeader);
+
+  // Logout functionality
+  document.addEventListener("click", (e) => {
+    if (e.target.id === "logoutBtn") {
+      e.preventDefault();
+      localStorage.removeItem("isLoggedIn");
+      window.location.href = "/Glassify/index.html"; // back to guest home
+    }
+  });

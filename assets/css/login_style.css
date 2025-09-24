@@ -1,0 +1,222 @@
+@font-face {
+  font-family: 'DM Sans';
+  src: url('../fonts/dm-sans/DMSans-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'DM Sans';
+  src: url('../fonts/dm-sans/DMSans-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: bold;
+}
+
+@font-face {
+  font-family: 'DM Sans';
+  src: url('../fonts/dm-sans/DMSans-Italic.ttf') format('truetype');
+  font-weight: 400;
+  font-style: italic;
+}   
+
+
+@font-face {
+  font-family: 'Montserrat';
+  src: url('../fonts/Montserrat/TTF/Montserrat-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src: url('../fonts/Montserrat/TTF/Montserrat-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: bold;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src: url('../fonts/Montserrat/TTF/Montserrat-SemiBold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: semi-bold;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src: url('../fonts/Montserrat/TTF/Montserrat-Italic.ttf') format('truetype');
+  font-weight: 400;
+  font-style: italic;
+}   
+
+
+/* Login Section */
+body {
+  margin: 0;
+  font-family: 'DM Sans', sans-serif;
+  background-color: #f4f4f4;
+  overflow-x: hidden;
+}
+
+.login-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #02455F;
+  min-height: 100vh;
+  padding: 2rem;
+
+}
+
+.login-container {
+  display: flex;
+  max-width: 900px;
+  width: 100%;
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+}
+
+/* Left Side */
+.login-left {
+  flex: 1;
+  background-color: #032C3A;
+  color: #fff;
+  text-align: center;
+  padding: 3rem 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.login-logo img {
+  width: 120px;
+  margin-bottom: 1rem;
+}
+
+.login-brand {
+  font-size: 2rem;
+  margin: 0.5rem 0;
+}
+
+.login-description {
+  margin: 1rem 0;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.login-description .highlight {
+  color: #FFD200;
+  font-weight: bold;
+}
+
+.login-user-icon {
+  font-size: 3rem;
+  margin-top: 2rem;
+}
+
+/* Right Side */
+.login-right {
+  flex: 1;
+  padding: 3rem 2.5rem;
+  background: #fff;
+}
+
+.login-title {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  color: #032C3A;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.login-input-group {
+  margin-bottom: 1.2rem;
+}
+
+.login-input-group label {
+  display: block;
+  margin: 0 0 0.5rem 2.5rem;
+  font-weight: 600;
+  color: #032C3A;
+}
+
+/*/* Ensure input row and button share the same width */
+.login-input-row input,
+.login-btn {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Icon + input side by side */
+.login-input-row {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* space between icon and input */
+}
+
+.login-input-icon {
+  width: 28px;
+  height: 28px;
+  flex-shrink: 0;   /* keep icon size fixed */
+}
+
+.login-input-row input {
+  flex: 1;  /* input fills remaining space */
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background: #f1f1f1;
+  box-sizing: border-box;
+}
+
+.login-btn {
+  background: #FFD200;
+  border: none;
+  padding: 0.75rem;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 0.5rem;
+  transition: background 0.3s;
+}
+
+.login-btn:hover {
+  background: #e6b800;
+}
+
+.login-options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1rem 0;
+  font-size: 0.9rem;
+}
+
+.login-options a {
+  color: #032C3A;
+  text-decoration: none;
+}
+
+.login-options a:hover {
+  text-decoration: underline;
+}
+
+.login-register {
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+.login-register a {
+  color: #032C3A;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.login-register a:hover {
+  text-decoration: underline;
+}
