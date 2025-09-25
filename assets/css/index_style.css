@@ -18,6 +18,23 @@
   font-weight: 400;
   font-style: italic;
 }   
+
+my-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+my-footer{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
 html{
     scroll-behavior: smooth;
     overflow: visible;
@@ -59,13 +76,7 @@ body {
   text-align: center;
 }
 
-my-header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 1000;
-}
+
 
 .welcome-section p span {
   color: #f4b400; /* golden yellow */
