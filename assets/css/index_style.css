@@ -27,13 +27,7 @@ my-header {
   z-index: 1000;
 }
 
-my-footer{
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  z-index: 1000;
-}
+
 
 html{
     scroll-behavior: smooth;
