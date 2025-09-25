@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cart</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main>
+    <!-- Progress Nav -->
+    <section class="progress-nav">
+      <span class="active">Cart</span>
+      <span>Payment</span>
+      <span>Complete</span>
+    </section>
+
+    <!-- Cart Section -->
+    <section class="cart-section">
+      <h2>My Cart</h2>
+      <table class="cart-table">
+        <thead>
+          <tr>
+            <th>Product</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th>Subtotal</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody id="cart-body"></tbody>
+      </table>
+      <button id="clear-cart" class="clear-btn">Clear Shopping Cart</button>
+    </section>
+
+    <!-- Order Summary Section -->
+    <section class="order-summary">
+      <h3>Order Summary</h3>
+      <p>Items: <span id="summary-items">0</span></p>
+      <p>Subtotal: ₱<span id="summary-subtotal">0.00</span></p>
+      <p>Shipping Fee: ₱<span id="summary-shipping">0.00</span></p>
+      <p>Handling Fee: ₱<span id="summary-handling">0.00</span></p>
+      <p class="total">Total: ₱<span id="summary-total">0.00</span></p>
+      <a href="payment.html" class="checkout-btn">Check Out</a>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
