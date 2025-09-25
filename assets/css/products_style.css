@@ -62,7 +62,6 @@ body {
 }
 
 /* Search and Results Row */
-/* Search and Results Row */
 .search-results {
   display: flex;
   justify-content: space-between;
@@ -83,7 +82,7 @@ body {
 .search {
   width: 100%;
   height: 25px;
-  padding: 10px 40px 10px 15px; /* Add right padding for icon */
+  padding: 10px 40px 10px 15px;
   font-size: 14px;
   border: 1px solid #bbb;
   border-radius: 3px;
@@ -98,7 +97,7 @@ body {
   transform: translateY(-50%);
   width: 16px;
   height: 16px;
-  pointer-events: none; /* So clicking input still works */
+  pointer-events: none;
 }
 
 .search:focus {
@@ -126,7 +125,7 @@ body {
   width: 250px;
   padding: 20px 30px 20px 0;
   border-right: 1px solid #000;
-  font-family: 'Montserrat', sans-serif; /* Apply globally */
+  font-family: 'Montserrat', sans-serif;
 }
 
 
@@ -150,12 +149,12 @@ body {
   display: block;
   font-size: 16px;
   margin: 3px 0;
-  font-family: 'Montserrat', sans-serif; /* fix */
+  font-family: 'Montserrat', sans-serif;
   line-height: 2;
 }
 
 .filters input[type="checkbox"] {
-  accent-color: #45A927; /* changes the checkmark + box color */
+  accent-color: #45A927;
 }
 
 /* Products */
@@ -208,7 +207,7 @@ body {
 .product-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 35px 25px; /* row-gap then column-gap */
+  gap: 35px 25px;
   margin-top: 20px;
 }
 
@@ -268,7 +267,7 @@ body {
   margin-bottom: 20px;
   font-size: 60.5px;
   font-weight: 600;
-  font-family: 'DM Sans', sans-serif; /* fix */
+  font-family: 'DM Sans', sans-serif;
 }
 
 .testimonial-content {
@@ -292,7 +291,7 @@ body {
   text-align: justify;
   color: #333;
   max-width: 530px;
-  font-family: 'Montserrat', sans-serif; /* fix */
+  font-family: 'Montserrat', sans-serif;
 }
 
 .testimonials .stars {
