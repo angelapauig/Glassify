@@ -71,12 +71,13 @@ body {
 
 .faq-buttons a { /* Selects the <a> tags which are the direct children of the flex container */
   flex: 1;
-  max-width: 350px;
+  width: 100%;
+  max-width: 435px;
 }
 
 .faq-btn {
   flex: 1;
-  max-width: 350px;
+  max-width: 500px;
   padding: 30px;
   display: flex;
   flex-direction: column;
@@ -140,7 +141,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 250px;
+    width: 260px;
 }
 
 .info-card:hover {
@@ -163,12 +164,13 @@ body {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 200px;
+  gap: 290px;
+  margin-bottom: 100px;
 }
 
 .support-card {
   flex: 1;
-  max-width: 470px;
+  max-width: 500px;
   background-color: #00455A;
   color: white;
   padding: 30px;
