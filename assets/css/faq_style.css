@@ -19,14 +19,19 @@
   font-style: italic;
 }
 
-
+my-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+}
 html {
   scroll-behavior: smooth;
   overflow: visible;
 }
 
 body {
-
   padding: 0;
   font-family: 'DM Sans', sans-serif;
   color: #0C2C3D;
@@ -36,17 +41,17 @@ body {
 .hero {
   background: 
     linear-gradient(rgba(10, 42, 58, 0.6), rgba(10, 42, 58, 0.6)),
-    url('/Assets/img/faq_hero.jpg');
+    url('../img/office-build.jpg');
   background-size: cover;
   background-position: center;
   height: 80vh;
-  width: 100%;
+  width: auto;
   display: flex;
   padding-top: 30px; /* space for fixed header if needed */
   flex-direction: column;
   justify-content: center;
   color: white;
-  margin-bottom: 60px;
+  margin: 0 -8px 60px -8px;
 }
 
 .hero h1 {
@@ -68,6 +73,12 @@ body {
   gap: 200px;
   margin-bottom: 100px;
   flex-wrap: wrap;
+}
+
+.faq-buttons span{
+  font-size: 14pt;
+  font-family: 'DM sans', sans-serif;
+  font-weight: 500;
 }
 
 .faq-buttons a { /* Selects the <a> tags which are the direct children of the flex container */
@@ -100,6 +111,10 @@ body {
   color: white;
 }
 
+.faq-btn.yellow img{
+  filter: invert(100%);
+}
+
 .faq-btn.blue {
   background-color: #02455F;
 }
@@ -114,8 +129,8 @@ body {
   text-align: left;
   font-size: 48px;
   font-weight: 600;
-  margin-bottom: 80px;
   color: #02455F;
+  margin: 0px 0px 80px 10rem;
 }
 
 .info-grid {
@@ -155,10 +170,8 @@ body {
   text-align: right;
   font-size: 48px;
   font-weight: bold;
-  margin: 60px 0 30px;
+  margin: 100px 10rem 80px 0px ;
   color: #02455F;
-  margin-top: 100px;
-  margin-bottom: 80px;
 }
 
 .support-boxes {
