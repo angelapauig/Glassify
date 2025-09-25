@@ -24,7 +24,8 @@
   background-color: #02455F; /* dark teal background */
   color: #fff;
   padding: 40px 20px;
-  font-family: Arial, sans-serif;
+  font-family: 'DM Sans', sans-serif;
+  margin: -8px;
 }
 
 .footer-container {
