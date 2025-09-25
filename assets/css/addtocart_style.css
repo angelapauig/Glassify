@@ -1,0 +1,194 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #f9f9f9;
+  color: #333;
+  margin: 0;
+  overflow-x: hidden;
+}
+
+h2, h3 {
+  margin-bottom: 10px;
+}
+
+main {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+}
+
+.cart-section {
+  flex: 2;
+  border-radius: 8px;
+  height: 500px;
+  width: 1000px;
+}
+
+.cart-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 15px;
+}
+
+
+
+.cart-table th {
+  background: #0f2b46; /* dark blue like screenshot */
+  color: #fff;
+}
+
+.cart-table th, .cart-table td {
+  padding: 10px;
+  text-align: center;
+  border-bottom: 1px solid #ccc;
+}
+
+.cart-table td img {
+  width: 60px;
+  height: auto;
+  border-radius: 5px;
+}
+
+.quantity-btn {
+  padding: 5px 10px;
+  margin: 0 5px;
+  cursor: pointer;
+}
+
+.remove-btn {
+  background: transparent;
+  color: rgb(0, 0, 0);
+  padding: 5px 10px;
+  cursor: pointer;
+border: none;
+}
+
+.clear-btn {
+
+  background: transparent;
+  color: #0073aa;
+  border: none;
+  cursor: pointer;
+  text-decoration: underline;
+  margin-top: 10px;
+}
+
+.order-summary {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 0px 20px 20px 20px;
+  width: 25%;
+ align-items: center;
+}
+
+.order-summary-content{
+    width: 100%;
+    flex: 1;
+     background: #fff;
+     border: 1px solid #0f2b46;
+      padding: 20px;
+}
+
+
+
+.order-summary h3 {
+  background: #0f2b46;
+  color: #fff;
+  padding: 10px;
+  margin: -20px -20px 15px -20px;
+}
+
+.order-summary p {
+  margin: 8px 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+#summary-subtotal, 
+#summary-shipping,
+#summary-handling,
+#summary-total{
+    margin-left: -50%;
+} 
+.order-summary .total {
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+.checkout-btn {
+  width: 100%;
+  padding: 12px;
+  background: goldenrod;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.checkout-btn:hover {
+  background: #d4a017;
+}
+
+.generate-btn {
+    flex: 2;
+  width: 100%;
+  padding: 12px 100px;
+  background: #0f2b46;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+
+/* Progress Navigation */
+.progress-nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 30px 0;
+  font-size: 1.1em;
+  font-weight: bold;
+  color: #888;
+}
+
+.progress-nav .step {
+  position: relative;
+  padding: 0 20px;
+}
+
+.progress-nav .step.active {
+  color: goldenrod;
+}
+
+.progress-nav .divider {
+  flex: 1 0 0;
+  height: 2px;
+  background: #ddd;
+  margin: 0 5px;
+}
+
+
+/* Make title full width and separate from flex row */
+.cart-title {
+  width: 100%;
+  margin: 5% 10% 0 10%;
+}
+
+.cart-title h2 {
+  font-size: 1.8em;
+  color: #0f2b46;
+  margin-bottom: 20px;
+}
+
+/* Keep sections side by side */
+.cart-container {
+  display: flex;
+  gap: 30px;
+  align-items: flex-start;
+  margin: 2% 10% 10% 10%;
+  flex-direction: row;
+}
