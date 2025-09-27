@@ -1,0 +1,227 @@
+@font-face {
+  font-family: 'DM Sans';
+  src: url('../fonts/dm-sans/DMSans-Regular.ttf') format('truetype');
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'DM Sans';
+  src: url('../fonts/dm-sans/DMSans-Bold.ttf') format('truetype');
+  font-weight: 700;
+}
+
+* {
+  font-family: 'DM Sans', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #f9f9f9;
+  color: #333;
+}
+
+/* Progress Navigation */
+.progress-nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 40px auto;
+  font-size: 1.1em;
+  font-weight: bold;
+  color: #888;
+  width: 60%;
+}
+
+.progress-nav .step {
+  padding: 0 20px;
+}
+
+.progress-nav .step.active {
+  color: goldenrod;
+}
+
+.progress-nav .divider {
+  flex: 1;
+  height: 2px;
+  background: #ddd;
+}
+
+/* Confirmation */
+.confirmation {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.checkmark {
+  font-size: 3em;
+  color: green;
+  margin-bottom: 10px;
+}
+
+.confirmation h2 {
+  font-size: 1.8em;
+  font-weight: bold;
+}
+
+.confirmation p {
+  color: #555;
+}
+
+/* Order Info */
+.order-info {
+  margin: 30px auto;
+  width: 70%;
+}
+
+.info-box {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  border: 1px solid #ccc;
+  padding: 15px;
+  background: #fff;
+  border-radius: 5px;
+}
+
+/* Your Order Section */
+.your-order {
+  margin: 30px auto;
+  width: 70%;
+}
+
+.your-order h3 {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+}
+
+.order-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+/* Products Section */
+.products {
+  grid-column: 1 / 2;
+  border: 1px solid #0f2b46;
+  background: #f4f4f4;   /* light gray background like screenshot */
+  padding: 0;            /* remove inner padding, handled by content */
+}
+
+/* Header Bar */
+.products-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #0f2b46;
+  color: #fff;
+  padding: 12px 20px;
+}
+
+.products-header h4 {
+  margin: 0;
+  font-size: 1em;
+  font-weight: 700;
+}
+
+/* Product Table */
+.product-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #f4f4f4;
+}
+
+.product-table td {
+  padding: 15px;
+  vertical-align: middle;
+}
+
+.product-table img {
+  width: 90px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-right: 10px;
+}
+
+.product-table .price {
+  text-align: right;
+  font-weight: 600;
+}
+
+/* See More */
+.see-more {
+  display: block;
+  text-align: center;
+  padding: 10px;
+  font-size: 0.9em;
+  color: #000;
+  text-decoration: none;
+  margin-top: 25%;
+}
+
+
+/* Summary Box */
+.summary-box {
+  border: 1px solid #0f2b46;
+  background: #fff;
+  padding: 15px;
+}
+
+.summary-box h4 {
+  background: #0f2b46;
+  color: #fff;
+  padding: 10px;
+  margin: -15px -15px 15px -15px;
+}
+
+.summary-box p {
+  display: flex;
+  justify-content: space-between;
+  margin: 5px 0;
+}
+
+.summary-box .divider {
+  height: 2px;
+  background: #333;
+  margin: 10px 0;
+}
+
+.summary-box .total {
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+/* Address Boxes */
+.address-box {
+  border: 1px solid #0f2b46;
+  background: #fff;
+  padding: 15px;
+}
+
+.address-box h4 {
+  background: #0f2b46;
+  color: #fff;
+  padding: 10px;
+  margin: -15px -15px 15px -15px;
+}
+
+.address-box p {
+  margin: 5px 0;
+}
+
+/* Invoice Button */
+.invoice-btn {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.invoice-btn button {
+  padding: 12px 25px;
+  background: #0f2b46;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
