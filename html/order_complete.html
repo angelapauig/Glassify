@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glassify - Order Complete</title>
+    <link rel="stylesheet" href="/Glassify/assets/css/order_complete.css">
+    <script src="/Glassify/assets/js/header.js"></script>
+    <script src="/Glassify/assets/js/footer.js" defer></script>
+</head>
+
+<body>
+    <my-header></my-header>
+
+    <!-- Progress Navigation -->
+    <div class="progress-nav">
+        <div class="step">Cart</div>
+        <div class="divider"></div>
+        <div class="step">Payment</div>
+        <div class="divider"></div>
+        <div class="step active">Complete</div>
+    </div>
+
+    <main>
+        <!-- Confirmation -->
+        <div class="confirmation">
+            <div class="checkmark"><img src="../assets/img/checked-complete.png" alt="check-icon"></div>
+            <h2>Order is complete.</h2>
+            <p>Thank you!</p>
+        </div>
+
+        <!-- Order Info -->
+        <section class="order-info">
+            <div class="info-box">
+                <p><strong>Order ID:</strong> 20259821030131</p>
+                <p><strong>Payment Method:</strong> COD</p>
+                <p><strong>Transaction ID:</strong> 20259821030131</p>
+                <p><strong>Estimated Date:</strong> June 19, 2025</p>
+            </div>
+        </section>
+
+        <!-- Your Order -->
+        <section class="your-order">
+            <h3>Your Order</h3>
+            <div class="order-content">
+
+                <!-- Products -->
+                <div class="products">
+                    <div class="products-header">
+                        <h4>Products</h4>
+                        <h4>Subtotal</h4>
+                    </div>
+                    <table class="product-table">
+                        <tbody>
+                            <tr>
+                                <td><img src="/Glassify/assets/images/sample-product.jpg" alt="Product"></td>
+                                <td>798 Series Sliding Window</td>
+                                <td class="price">₱9,000.00</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <a href="#" class="see-more">See more ▼</a>
+                </div>
+
+
+                <!-- Order Summary -->
+                <div class="summary-box">
+                    <h4>Order Summary</h4>
+                    <p><span>Items</span> <span>9</span></p>
+                    <p><span>Subtotal</span> <span>₱32,700.00</span></p>
+                    <p><span>Shipping Fee</span> <span>₱543.00</span></p>
+                    <p><span>Handling Fee</span> <span>₱100.00</span></p>
+                    <div class="divider"></div>
+                    <p class="total"><span>Total</span> <span>₱33,343.00</span></p>
+                </div>
+
+                <!-- Shipping Address -->
+                <div class="address-box">
+                    <h4>Shipping Address</h4>
+                    <p><strong>Ezekiel P. Bangug</strong></p>
+                    <p>(+63) 1234567890</p>
+                    <p>199 Regalado Ave,<br>Novaliches, Quezon City,<br>Metro Manila, Philippines<br>1118</p>
+                </div>
+
+                <!-- Billing Address -->
+                <div class="address-box">
+                    <h4>Billing Address</h4>
+                    <p>Same as shipping address</p>
+                </div>
+            </div>
+
+            <!-- Invoice Button -->
+            <div class="invoice-btn">
+                <button>⬇ Download Invoice</button>
+            </div>
+        </section>
+    </main>
+
+    <my-footer></my-footer>
+</body>
+
+</html>

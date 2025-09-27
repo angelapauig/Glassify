@@ -36,45 +36,115 @@ h2, h3 {
 
 main {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   flex-direction: column;
   max-width: 1920px;
 }
 
 
 /* Make title full width and separate from flex row */
-.cart-title {
-  width: 100%;
+.info-title {
+  width: 65%;
   margin: 3% 10% 0 10%;
 }
 
 .title-divider{
   height: 1px;
   background-color: #333;
-  width: 72.5%;
+  width: 100%;
 }
 
-.cart-title h2 {
+.info-title h2 {
   font-size: 1.8em;
   color: #0f2b46;
   margin-bottom: 20px;
 }
 
-/* Keep sections side by side */
-.cart-container {
+/* Container that holds form + order summary */
+.info-container {
   display: flex;
-  gap: 30px;
+  justify-content: center;   /* center horizontally */
   align-items: flex-start;
-  margin: 2% 10% 10% 10%;
-  flex-direction: row;
+  gap: 30px;                 /* space between form and summary */
+  margin: 40px auto;
+  max-width: 1200px;         /* keeps layout centered within a fixed width */
+  width: 100%;
 }
 
 
-.cart-section {
-  flex: 2;
+/* Form section */
+.info-section {
+  flex: 2;                   /* takes more space than summary */
+  border: 1px solid #ccc;
   border-radius: 8px;
-  height: 500px;
-  width: 1000px;
+  padding: 25px;
+  background: #fafafa;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+/* Form rows */
+.form-row {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 15px;
+  flex-wrap: wrap; /* allows stacking on small screens */
+}
+
+.form-group {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group.full-width {
+  flex: 1 0 100%;
+}
+
+/* Labels */
+label {
+  margin-bottom: 6px;
+  font-weight: 600;
+  font-size: 14px;
+  color: #333;
+}
+
+/* Inputs */
+input[type="text"],
+input[type="email"],
+input[type="tel"] {
+  padding: 10px;
+  border: 1px solid #bbb;
+  border-radius: 4px;
+  background: #fff;
+  font-size: 14px;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus {
+  outline: none;
+  border-color: #0073e6;
+  box-shadow: 0 0 4px rgba(0, 115, 230, 0.3);
+}
+
+/* Checkbox row */
+.checkbox-row {
+  display: flex;
+  align-items: center;
+  margin: 15px 0;
+  font-size: 14px;
+}
+
+input[type="checkbox"] {
+  margin-right: 8px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .form-row {
+    flex-direction: column;
+  }
 }
 
 .cart-table {
@@ -85,60 +155,13 @@ main {
   background-color: #F4F4F4;
 }
 
-
-
-.cart-table th {
-  background: #0f2b46; /* dark blue like screenshot */
-  color: #fff;
-}
-
-.cart-table th, .cart-table td {
-  padding: 10px;
-  text-align: center;
-  border-bottom: 1px solid #ccc;
-}
-
-.cart-table td img {
-  width: 60px;
-  height: auto;
-  border-radius: 5px;
-}
-
-.quantity-btn {
-  padding: 5px 10px;
-  margin: 0 5px;
-  cursor: pointer;
-}
-
-.remove-btn {
-  background: transparent;
-  color: rgb(0, 0, 0);
-  padding: 5px 10px;
-  cursor: pointer;
-border: none;
-}
-
-.clear-btn {
-  background: transparent;
-  color: #0073aa;
-  border: none;
-  cursor: pointer;
-  text-decoration: underline;
-  margin-top: 10px;
-  float: right; /* Pushes button to the right */
-}
-
+/* Order summary section */
 .order-summary {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  padding: 0px 20px 20px 20px;
-  width: 25%;
- align-items: center;
+  flex: 1;                   /* smaller column */
 }
+
 
 .order-summary-content{
-    width: 100%;
     flex: 1;
      background: #fff;
      border: 1px solid #0f2b46;
@@ -155,7 +178,6 @@ border: none;
 }
 
 .order-summary p {
-  margin: 40px 0;
   display: flex;
   justify-content: space-between;
 }
@@ -179,8 +201,7 @@ border: none;
   font-size: 1.2em;
 }
 
-.checkout-btn {
-  
+.placeOrder-btn {
   width: 100%;
   padding: 12px;
   background: goldenrod;
@@ -188,16 +209,41 @@ border: none;
   border-radius: 5px;
   cursor: pointer;
   font-weight: bold;
-  margin-top: 5px;
+  margin-top: 40px;
 }
 
 .checkout-btn:hover {
   background: #d4a017;
 }
 
+.payment-section {
+    width: 100%;
+    margin: 50px 0px 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  text-align: start;
+}
+
+.payment-method-content{
+    flex:1;
+    background: #fff;
+     border: 1px solid #0f2b46;
+     padding: 20px;
+
+}
+
+.checkbox-terms{
+    margin-left: 50px;
+}
+.checkbox-terms a{
+    margin: 5px 25px;
+    text-align: left;
+}
+
 .generate-btn {
-    flex: 2;
-  width: 100%;
+  width: auto;   /* remove 100% */
+  padding: 12px 40px;
   padding: 12px 100px;
   background: #0f2b46;
   color: white;

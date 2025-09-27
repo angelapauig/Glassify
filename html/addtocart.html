@@ -21,51 +21,57 @@
     <div class="step">Complete</div>
   </div>
 
-<main>
+  <main>
 
-  <!-- Title outside sections -->
-  <div class="cart-title">
-    <h2>My Cart</h2>
-  </div>
+    <!-- Title outside sections -->
+    <div class="cart-title">
+      <h2>My Cart</h2>
+      <div class="title-divider"></div>
+    </div>
 
-  <!-- Content row -->
-  <div class="cart-container">
-    <!-- Cart Section -->
-    <section class="cart-section">
-      <table class="cart-table">
-        <thead>
-          <tr>
-            <th> </th>
-            <th>Product</th>
-            <th>Price</th>
-            <th>Quantity</th>
-            <th>Subtotal</th>
-          </tr>
-        </thead>
-        <tbody id="cart-body">
-          <!-- Cart items injected here -->
-        </tbody>
-      </table>
-      <button id="clear-cart" class="clear-btn">Clear Shopping Cart</button>
-    </section>
+    <!-- Content row -->
+    <div class="cart-container">
+      <!-- Cart Section -->
+      <section class="cart-section">
+        <table class="cart-table">
+          <thead>
+            <tr>
+              <th> </th>
+              <th>Product</th>
+              <th>Price</th>
+              <th>Quantity</th>
+              <th>Subtotal</th>
+            </tr>
+          </thead>
+          <tbody id="cart-body">
+            <!-- Cart items injected here -->
+          </tbody>
+        </table>
+        <button id="clear-cart" class="clear-btn">Clear Shopping Cart</button>
+      </section>
 
-    <!-- Order Summary Section -->
-    <section class="order-summary">
-      <div class="order-summary-content">
-      <h3>Order Summary</h3>
-      <p><span>Items:</span> <span id="summary-items">0</span></p>
-      <p><span>Subtotal:</span> ₱<span id="summary-subtotal">0.00</span></p>
-      <p><span>Shipping Fee:</span> ₱<span id="summary-shipping">0.00</span></p>
-      <p><span>Handling Fee:</span> ₱<span id="summary-handling">0.00</span></p>
-      <p class="total"><span>Total:</span> ₱<span id="summary-total">0.00</span></p>
-      <button class="checkout-btn">Check Out</button>
-      </div>
-      <div class="quotation-content">
-      <button class="generate-btn">Generate Quotation</button>
-    </section>
-  </div>
+      <!-- Order Summary Section -->
+      <section class="order-summary">
+        <div class="order-summary-content">
+          <h3>Order Summary</h3>
+          <p><span>Items:</span> <span id="summary-items">0</span></p>
+          <p><span>Subtotal:</span> ₱<span id="summary-subtotal">0.00</span></p>
+          <p><span>Shipping Fee:</span> ₱<span id="summary-shipping">0.00</span></p>
+          <p><span>Handling Fee:</span> ₱<span id="summary-handling">0.00</span></p>
+          <div class="summary-divider"></div>
+          <p class="total"><span>Total:</span> ₱<span id="summary-total">0.00</span></p>
+          <div class="btn-container">
+            <a href="/Glassify/html/checkout.html">
+              <button class="checkout-btn">Check Out</button>
+            </a>
+          </div>
+        </div>
+        <div class="quotation-content">
+          <button class="generate-btn">Generate Quotation</button>
+      </section>
+    </div>
 
-</main>
+  </main>
 
 
   <script src="/Glassify/assets/js/cart.js"></script>
