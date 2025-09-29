@@ -100,7 +100,7 @@ class Carousel {
     startAutoSlide() {
         this.autoSlideInterval = setInterval(() => {
             this.nextSlide();
-        }, 5000);
+        }, 10000);
     }
     
     stopAutoSlide() {
