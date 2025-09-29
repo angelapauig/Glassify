@@ -54,11 +54,6 @@ document.addEventListener("DOMContentLoaded", () => {
         <td>${prod.category}</td>
         <td>${prod.stock}</td>
         <td>${prod.unit}</td>
-        <td class="action-cell">
-          <button class="action-menu-trigger" aria-label="Actions">
-            <img src="/Assets/img_admin/dots.png" alt="Actions" />
-          </button>
-        </td>
       `;
       tableBody.appendChild(tr);
     });
@@ -119,3 +114,4 @@ document.addEventListener("DOMContentLoaded", () => {
   // Initial render
   renderTable();
 });
+
