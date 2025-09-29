@@ -1,0 +1,102 @@
+/* Sidebar container */
+.sidebar {
+  width: 250px;
+  background: #0c2c3a;
+  min-height: 100vh;
+  padding: 20px 0;
+  font-family: 'Montserrat', sans-serif;
+  transition: width 0.3s ease;
+  overflow: hidden;
+  position: fixed;  /* stays fixed on left */
+  top: 0;
+  left: 0;
+  z-index: 999;
+}
+
+/* Collapsed sidebar */
+.sidebar.collapsed {
+  width: 60px;
+}
+
+/* Logo */
+.sidebar .logo {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.sidebar .logo img {
+  max-width: 150px;
+  transition: max-width 0.3s ease;
+}
+
+.sidebar.collapsed .logo img {
+  max-width: 40px;
+}
+
+/* Menu items */
+.menu {
+  display: flex;
+  flex-direction: column;
+}
+
+.menu-item {
+  padding: 12px 20px;
+  color: #fff;
+  text-decoration: none;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: background 0.2s ease, padding 0.2s ease;
+}
+
+.menu-item:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.menu-item.active {
+  background: #fbc02d;
+  color: #000;
+  font-weight: bold;
+}
+
+/* Collapsed sidebar: hide text but keep icons */
+.sidebar.collapsed .menu-item span + * {
+  display: none;
+}
+
+/* Menu label */
+.menu-label {
+  margin: 15px 20px 5px;
+  color: #ccc;
+  font-size: 12px;
+}
+
+.sidebar.collapsed .menu-label {
+  display: none;
+}
+
+/* Toggle button */
+.menu-toggle {
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  background: #fbc02d;
+  border: none;
+  border-radius: 6px;
+  padding: 6px 10px;
+  cursor: pointer;
+  font-size: 18px;
+  z-index: 1001;
+}
+
+/* Make sure main content shifts when sidebar is present */
+.main {
+  margin-left: 250px;
+  padding: 20px;
+  transition: margin-left 0.3s ease;
+}
+
+.sidebar.collapsed ~ .main {
+  margin-left: 60px;
+}

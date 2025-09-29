@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="/Assets/admin_css/admin_dashboard.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+<body>
+  <div class="container">
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+        <div class="logo-container">
+            <img src="/Assets/img/logo.png" alt="GlassWorth Builders Logo" class="logo">
+        </div>
+        <nav class="sidebar-nav">
+            <ul>
+                <li class="active"><a href="admin_dashboard.html"><img src="/Assets/img_admin/dashboard.svg" alt="Dashboard"> <span>Dashboard</span></a></li> 
+                <li><a href="admin_orders.html"><img src="/Assets/img_admin/orders.svg" alt="Orders"></i> <span>Orders</span></a></li> 
+            </ul>
+        </nav>
+        
+        <div class="user-section">
+            <span class="section-title">Users</span>
+            <ul>
+                <li><a href="admin_employee.html"><img src="/Assets/img_admin/employees.svg" alt="Employees"> <span>Employees</span></a></li>
+                <li><a href="admin_endUser.html"><img src="/Assets/img_admin/end-user.svg" alt="End User"> <span>End User</span></a></li> 
+            </ul>
+        </div>
+        
+        <div class="general-section">
+            <span class="section-title">General</span>
+            <ul>
+                <li><a href="admin_reports.html"><img src="/Assets/img_admin/reports.svg" alt="Reports"> <span>Reports</span></a></li>
+                <li><a href="admin_appointment.html"><img src="/Assets/img_admin/appointments.svg" alt="Appointments"> <span>Appointments</span></a></li>
+                <li><a href="admin_product.html"><img src="/Assets/img_admin/products.svg" alt="Products"> <span>Products</span></a></li>
+                <li><a href="admin_inventory.html"><img src="/Assets/img_admin/inventory.svg" alt="Inventory"> <span>Inventory</span></a></li>
+                <li><a href="admin_payments.html"><img src="/Assets/img_admin/payments.svg" alt="Payments"> <span>Payments</span></a></li>
+                <li><a href="#"><img src="/Assets/img_admin/settings.svg" alt="Settings"> <span>Settings</span></a></li>
+            </ul>
+        </div>
+    </aside>
+    
+    <!-- Main Content -->
+    <main class="main-content">
+      <header class="header">
+        <div class="header-menu" id="menu-toggle"><i class="fas fa-bars"></i></div>
+        <div class="header-right">
+          <i class="fas fa-bell"></i>
+          <i class="fas fa-user-circle user-icon"></i>
+        </div>
+      </header>
+<section class="order-list-section">
+  <div class="section-header">
+    <h2>Dashboard</h2>
+  </div>
+
+  <div class="box">
+
+        <div class="dash-tabs">
+          <h2>Key Stats</h2>
+        </div>
+    <!-- Key Stats -->
+    <section class="key-stats">
+      <div class="stat-card stat-blue">
+        <div class="stat-value">125</div>
+        <div class="stat-title">Total Order</div>
+      </div>
+      <div class="stat-card stat-orange">
+        <div class="stat-value">11</div>
+        <div class="stat-title">Pending Orders</div>
+      </div>
+      <div class="stat-card stat-green">
+        <div class="stat-value">₱67,704</div>
+        <div class="stat-title">Weekly Sales</div>
+        <div class="stat-percent">↑ 18% from last week</div>
+      </div>
+    </section>
+
+    <!-- Sales Revenue -->
+    <section class="sales-revenue">
+        <div class="sales-header">
+            <h3>Sales Revenue</h3>
+            <div class="chart-legend">
+            <span class="legend-weekly">Weekly Sales</span>
+            <span class="legend-monthly">Monthly Sales</span>
+            </div>
+        </div>
+        <div class="chart-container">
+            <canvas id="salesChart"></canvas>
+        </div>
+    </section>
+
+<!-- INVENTORY & PROJECT PROGRESS -->
+<section class="inventory-progress">
+  
+  <!-- Inventory -->
+  <div class="inventory-section">
+    <div class="dash-tabs">
+      <h2>Inventory</h2>
+    </div>
+    <div class="inventory-box">
+      <table>
+        <thead>
+          <tr>
+            <th>Items</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>6mm Glass Sheets</td>
+            <td><span class="status-badge out">Out Of Stock</span></td>
+          </tr>
+          <tr>
+            <td>Aluminum Brackets</td>
+            <td><span class="status-badge low">Low Stock</span></td>
+          </tr>
+          <tr>
+            <td>Rubber Gasket</td>
+            <td><span class="status-badge in">In Stock</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Project Progress -->
+  <div class="progress-section">
+    <div class="dash-tabs">
+      <h2>Project Progress</h2>
+    </div>
+    <div class="progress-box">
+      <div class="progress-item">
+        <span>Store Front A</span>
+        <div class="progress-bar"><div style="width:75%"></div></div>
+        <span class="percent">75%</span>
+      </div>
+      <div class="progress-item">
+        <span>Residential Glasswork</span>
+        <div class="progress-bar"><div style="width:90%"></div></div>
+        <span class="percent">90%</span>
+      </div>
+      <div class="progress-item">
+        <span>Office Partitioning</span>
+        <div class="progress-bar"><div style="width:45%"></div></div>
+        <span class="percent">45%</span>
+      </div>
+      <div class="progress-item">
+        <span>SM North Facade</span>
+        <div class="progress-bar"><div style="width:30%"></div></div>
+        <span class="percent">30%</span>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+
+        <div class="dash-tabs">
+          <h2>Today's Appointment</h2>
+        </div>
+    <!-- Today's Appointments -->
+    <section class="appointments">
+      <table>
+        <thead>
+          <tr>
+            <th>Time</th>
+            <th>Type</th>
+            <th>Client</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>9:00 AM</td>
+            <td>Ocular Visit</td>
+            <td>Client A</td>
+            <td><span class="status confirmed">Confirmed</span></td>
+          </tr>
+          <tr>
+            <td>11:30 AM</td>
+            <td>Measurement</td>
+            <td>Client B</td>
+            <td><span class="status pending">Pending</span></td>
+          </tr>
+          <tr>
+            <td>3:00 PM</td>
+            <td>Consultation</td>
+            <td>Client C</td>
+            <td><span class="status canceled">Canceled</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+        <div class="dash-tabs">
+          <h2>Recent Activities</h2>
+        </div>
+    <!-- Recent Activities -->
+    <section class="recent-activities">
+      <table>
+        <thead>
+          <tr>
+            <th>Action</th>
+            <th>Description</th>
+            <th>Role</th>
+            <th>User</th>
+            <th>Timestamp</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="badge info">Info</span></td>
+            <td>New order created (Order #1024)</td>
+            <td>Client</td>
+            <td>Client A</td>
+            <td>5/28/2025 – 09:45 AM</td>
+          </tr>
+          <tr>
+            <td><span class="badge success">Success</span></td>
+            <td>Quotation sent to Client B</td>
+            <td>Staff</td>
+            <td>M. Lopez</td>
+            <td>5/28/2025 – 08:30 AM</td>
+          </tr>
+          <tr>
+            <td><span class="badge error">Error</span></td>
+            <td>Inventory update failed (Glass Panel)</td>
+            <td>Admin</td>
+            <td>L. Doria</td>
+            <td>5/27/2025 – 05:12 PM</td>
+          </tr>
+          <tr>
+            <td><span class="badge warning">Warning</span></td>
+            <td>Stock running low: Aluminum Brackets</td>
+            <td>System</td>
+            <td>System</td>
+            <td>5/27/2025 – 02:15 PM</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+  </div>
+</section>
+
+
+
+    </main>
+    </div>
+    <script src="/Assets/js/admin-sidebar.js"></script>
+<script src="/Assets/js/dashboard-chart.js"></script>
+
+</body>
+</html>
