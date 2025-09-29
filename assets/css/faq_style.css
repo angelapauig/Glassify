@@ -35,7 +35,7 @@ body {
 .hero {
   background: 
     linear-gradient(rgba(10, 42, 58, 0.6), rgba(10, 42, 58, 0.6)),
-    url('/Assets/img/faq_hero.jpg');
+    url('/Glassify/assets/img/faq_hero.jpg');
   background-size: cover;
   background-position: center;
   height: 80vh;
@@ -121,6 +121,7 @@ body {
   font-weight: 600;
   margin-bottom: 80px;
   color: #02455F;
+  padding-left: 5%;
 }
 
 .info-grid {
@@ -164,6 +165,7 @@ body {
   color: #02455F;
   margin-top: 100px;
   margin-bottom: 80px;
+  padding-right: 5%;
 }
 
 .support-boxes {
