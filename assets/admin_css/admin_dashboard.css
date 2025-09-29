@@ -26,23 +26,27 @@ body {
   min-height: 100vh;
 }
 
-/* ---------- SIDEBAR ---------- */
+/* Sidebar */
 .sidebar {
   width: 220px;
   background-color: #01374C;
   color: #fff;
-  transition: width 0.3s ease, padding 0.3s ease;
+  transition: width 0.3s ease, padding 0.3s ease; /* Added padding transition */
   flex-shrink: 0;
   font-family: 'Montserrat', sans-serif;
   font-size: 20px;
 }
 
-.sidebar.collapsed {
-  width: 65px;
-  padding: 1px 0;
+.sidebar li.active a {
+    background-color: #FDC103;
+    color: #fff;
 }
 
-/* Logo */
+.sidebar.collapsed {
+  width: 65px;
+  padding: 1px 0; /* Reduced horizontal padding for collapsed state */
+}
+
 .logo-container {
   display: flex;
   align-items: center;
@@ -52,37 +56,70 @@ body {
   justify-content: center;
   transition: justify-content 0.3s ease, padding-left 0.3s ease;
 }
-.sidebar.collapsed .logo-container { justify-content: center; padding-left: 0; }
+
+.sidebar.collapsed .logo-container {
+  justify-content: center;
+  padding-left: 0;
+}
 
 .logo {
   width: 150px;
   height: 150px;
   margin-right: 10px;
-  transition: all 0.3s ease;
+  transition: all 0.3s ease; /* Added transition for smooth sizing/margin */
 }
-.sidebar.collapsed .logo { width: 37px; height: 37px; margin-right: 0; }
 
-/* Lists / links (grouped to avoid duplicates) */
-.sidebar-nav ul,
-.general-section ul,
+.sidebar.collapsed .logo {
+  /* Minimize the logo image itself */
+  width: 37px;
+  height: 37px;
+  margin-right: 0; /* Remove margin when collapsed */
+}
+
+/* Grouped selectors for collapsing elements */
+.sidebar.collapsed .general-section span,
+.sidebar.collapsed .user-section span {
+  display: none;
+}
+
+/* --- Navigation Link Text Hiding --- */
+/* Grouped selectors for link text span transition */
+.sidebar-nav ul li a span, 
+.general-section ul li a span, 
+.user-section ul li a span {
+    transition: opacity 0.3s ease;
+}
+
+/* Grouped selectors for hiding link text span on collapse */
+.sidebar.collapsed .sidebar-nav ul li a span,
+.sidebar.collapsed .general-section ul li a span,
+.sidebar.collapsed .user-section ul li a span {
+  display: none; /* Hide the text */
+}
+
+/* Grouped selectors for UL structure */
+.sidebar-nav ul, 
+.general-section ul, 
 .user-section ul {
   list-style: none;
   padding: 0;
   margin: 0;
 }
 
-.sidebar-nav ul li,
-.general-section ul li,
+/* Grouped selectors for LI margin */
+.sidebar-nav ul li, 
+.general-section ul li, 
 .user-section ul li {
   margin-bottom: 2px;
 }
 
-.sidebar-nav ul li a,
-.general-section ul li a,
+/* Grouped selectors for Anchor/Link base styles */
+.sidebar-nav ul li a, 
+.general-section ul li a, 
 .user-section ul li a {
   display: flex;
   align-items: center;
-  padding: 12px 20px;
+  padding: 12px 20px; 
   color: white;
   text-decoration: none;
   transition: background-color 0.3s, color 0.3s, padding 0.3s;
@@ -90,45 +127,54 @@ body {
   background-color: #02455F;
 }
 
-.sidebar.collapsed .sidebar-nav ul li a,
+/* Grouped selectors for Collapsed link styles */
+.sidebar.collapsed .sidebar-nav ul li a, 
 .sidebar.collapsed .general-section ul li a,
 .sidebar.collapsed .user-section ul li a {
-  justify-content: center;
+  justify-content: center; 
   padding: 12px;
 }
 
-/* icons in links */
-.sidebar-nav ul li a img,
-.general-section ul li a img,
-.user-section ul li a img {
-  margin-right: 15px;
-  width: 20px;
-  transition: margin-right 0.3s ease, width 0.3s ease;
-}
-.sidebar.collapsed .sidebar-nav ul li a img,
-.sidebar.collapsed .general-section ul li a img,
-.sidebar.collapsed .user-section ul li a img {
-  margin-right: 0;
-  width: auto;
-}
-
-/* active/hover states */
-.sidebar-nav ul li.active a,
+/* Grouped selectors for Active and Hover states */
+.sidebar-nav ul li.active a, 
 .sidebar-nav ul li a:hover,
 .general-section ul li a:hover,
 .user-section ul li a:hover {
   background-color: #1a273b;
   color: #fff;
 }
+
 .sidebar-nav ul li.active a {
-  background-color: #FDC103;
+background-color: #FDC103;
   color: #fff;
 }
 
-/* grouped sections */
-.general-section,
-.user-section { margin-top: 10px; padding-top: 20px; }
+/* Grouped selectors for Icon base styles */
+.sidebar-nav ul li a img, 
+.general-section ul li a img, 
+.user-section ul li a img {
+  margin-right: 15px; 
+  width: 20px;
+  transition: margin-right 0.3s ease, width 0.3s ease;
+}
 
+/* Grouped selectors for Collapsed Icon styles */
+.sidebar.collapsed .sidebar-nav ul li a img, 
+.sidebar.collapsed .general-section ul li a img, 
+.sidebar.collapsed .user-section ul li a img {
+  margin-right: 0; 
+  width: auto;
+}
+
+/* Individual Section containers */
+.general-section,
+.user-section {
+  margin-top: 10px;
+  padding-top: 20px;
+}
+
+/* Individual Section Title (span) styles */
+/* Applying the previous .general-section span styles to the new .section-title class */
 .section-title {
   color: white;
   font-weight: 500;
@@ -418,3 +464,4 @@ table tbody tr:hover td {
   background-color: #f5f7fa;
   transition: background-color 0.25s ease;
 }
+
