@@ -31,8 +31,20 @@ document.addEventListener("DOMContentLoaded", () => {
               console.log("Login submitted ✅");
 
               // simulate success
-              localStorage.setItem("isLoggedIn", "true");
-              window.location.href = "/Glassify/html/home.html";
+              const email = document.getElementById("email").value.trim();
+              const password = document.getElementById("password").value.trim();
+
+              if (email === "admin@gmail.com" && password === "admin") {
+                // ✅ Admin login
+                localStorage.setItem("isLoggedIn", "true");
+                localStorage.setItem("role", "admin");
+                window.location.href = "/Glassify/html/admin_dashboard.html";
+              } else {
+                // ✅ Normal user login
+                localStorage.setItem("isLoggedIn", "true");
+                localStorage.setItem("role", "user");
+                window.location.href = "/Glassify/html/home.html";
+              }
             });
           }
 
