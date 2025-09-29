@@ -24,8 +24,48 @@ body {
   overflow-x: hidden;
 }
 
-/* Progress Navigation */
+/* Container for Back + Progress */
+.checkout-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+}
+
+.back-btn{
+  margin: 5% 0 0 15%;
+}
+/* Back button */
+.back-btn a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 16px;
+  color: #003049;
+}
+
+.back-btn img {
+  width: 20px;
+  height: 20px;
+  margin-right: 8px;
+  filter: brightness(0) saturate(100%) invert(73%) sepia(95%)
+          saturate(2260%) hue-rotate(12deg) brightness(97%) contrast(96%);
+}
+
+/* Progress nav */
 .progress-nav {
+  display: flex;
+  align-items: center;
+  font-size: 1.1em;
+  font-weight: bold;
+  color: #888;
+  margin: 5% auto 0px 17%; /* keeps it centered */
+}
+
+
+/* Progress Navigation */
+/* .progress-nav {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -34,7 +74,7 @@ body {
   font-weight: bold;
   color: #888;
 }
-
+ */
 .progress-nav .step {
   position: relative;
   padding: 0 20px;
@@ -45,10 +85,9 @@ body {
 }
 
 .progress-nav .divider {
-  flex: 1 0 0;
   height: 2px;
-  background: #ddd;
-  margin: 0 5px;
+  width: 100px;
+  background-color: #ccc; /* light gray line */
 }
 
 /* Confirmation */

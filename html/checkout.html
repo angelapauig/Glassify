@@ -12,14 +12,26 @@
 
 <body>
     <my-header></my-header>
-    <!-- Progress Navigation -->
-    <div class="progress-nav">
-        <div class="step">Cart</div>
-        <div class="divider"></div>
-        <div class="step active">Payment</div>
-        <div class="divider"></div>
-        <div class="step">Complete</div>
+
+    <div class="checkout-header">
+        <!-- Back button -->
+        <div class="back-btn">
+            <a href="/Glassify/html/addtocart.html">
+                <img src="/Glassify/assets/img/back_button.png" alt="Back Icon">
+                <span>Back</span>
+            </a>
+        </div>
+
+        <!-- Progress nav -->
+        <div class="progress-nav">
+            <div class="step">Cart</div>
+            <div class="divider"></div>
+            <div class="step active">Payment</div>
+            <div class="divider"></div>
+            <div class="step">Complete</div>
+        </div>
     </div>
+
 
     <main>
 
@@ -52,7 +64,8 @@
                         </div>
                         <div class="form-group">
                             <label>Phone number</label>
-                            <input type="tel" name="phone" title="Phone Number" placeholder="Enter your phone number">
+                            <input type="tel" name="phone" title="Phone Number" placeholder="Enter your phone number"
+                                maxlength="11">
                         </div>
                     </div>
 
@@ -134,16 +147,10 @@
                                 title="Select COD as payment method">
                         </p>
                     </div>
-                    <a href="/Glassify/html/order_complete.html">
-                        <button class="placeOrder-btn">Place Order</button>
-                    </a>
-                </div>
-                <div class="checkbox-terms">
-                    <input type="checkbox" id="terms" name="terms">
-                    <label for="terms">I have read and agree to Glassify’s <br> <a href="#"
-                            title="Terms and Conditions">Terms and Conditions of Purchase</a></label>
-                </div>
 
+                    <!-- Removed <a> and kept only button -->
+                    <button class="placeOrder-btn" id="placeOrderBtn">Place Order</button>
+                </div>
             </section>
         </div>
 
@@ -215,15 +222,52 @@
 
 
 <script>
-    const modal = document.getElementById("quotationModal");
-    const openBtn = document.getElementById("openModal");
-    const closeBtn = document.getElementById("closeModal");
+  // === Modal logic ===
+  const modal = document.getElementById("quotationModal");
+  const openBtn = document.getElementById("openModal");
+  const closeBtn = document.getElementById("closeModal");
 
-    openBtn.onclick = () => modal.style.display = "block";
-    closeBtn.onclick = () => modal.style.display = "none";
-    window.onclick = (event) => {
-        if (event.target === modal) {
-            modal.style.display = "none";
-        }
-    };
+  openBtn.onclick = () => modal.style.display = "block";
+  closeBtn.onclick = () => modal.style.display = "none";
+  window.onclick = (event) => {
+    if (event.target === modal) {
+      modal.style.display = "none";
+    }
+  };
+
+  // === Phone number validation (digits only, max 11) ===
+  const phoneInput = document.querySelector("input[name='phone']");
+  if (phoneInput) {
+    phoneInput.addEventListener("input", () => {
+      phoneInput.value = phoneInput.value.replace(/\D/g, ""); // keep only digits
+      if (phoneInput.value.length > 11) {
+        phoneInput.value = phoneInput.value.slice(0, 11); // limit to 11
+      }
+    });
+  }
+
+  // === Auto add "@gmail.com" for email if missing ===
+  const emailInput = document.querySelector("input[name='email']");
+  if (emailInput) {
+    emailInput.addEventListener("blur", () => {
+      const val = emailInput.value.trim();
+      if (val && !val.includes("@")) {
+        emailInput.value = val + "@gmail.com";
+      }
+    });
+  }
+
+  // === Place Order button logic ===
+  document.getElementById("placeOrderBtn").addEventListener("click", function () {
+    const ewallet = document.getElementById("ewallet-radio").checked;
+    const cod = document.getElementById("COD-radio").checked;
+
+    if (ewallet) {
+      window.location.href = "/Glassify/html/ewallet.html"; // redirect to e-wallet page
+    } else if (cod) {
+      window.location.href = "/Glassify/html/order_complete.html"; // redirect to COD page
+    } else {
+      alert("Please select a payment method before placing order.");
+    }
+  });
 </script>
