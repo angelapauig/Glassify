@@ -19,19 +19,13 @@
   font-style: italic;
 }
 
-my-header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 1000;
-}
 html {
   scroll-behavior: smooth;
   overflow: visible;
 }
 
 body {
+  margin: 0;
   padding: 0;
   font-family: 'DM Sans', sans-serif;
   color: #0C2C3D;
@@ -41,17 +35,17 @@ body {
 .hero {
   background: 
     linear-gradient(rgba(10, 42, 58, 0.6), rgba(10, 42, 58, 0.6)),
-    url('../img/office-build.jpg');
+    url('/Glassify/assets/img/faq_hero.jpg');
   background-size: cover;
   background-position: center;
   height: 80vh;
-  width: auto;
+  width: 100%;
   display: flex;
   padding-top: 30px; /* space for fixed header if needed */
   flex-direction: column;
   justify-content: center;
   color: white;
-  margin: 0 -8px 60px -8px;
+  margin-bottom: 60px;
 }
 
 .hero h1 {
@@ -62,7 +56,7 @@ body {
 }
 
 /* Section Styles */
-.faq-section {
+.section {
   padding: 60px;
   text-align: center;
 }
@@ -75,10 +69,10 @@ body {
   flex-wrap: wrap;
 }
 
-.faq-buttons span{
-  font-size: 14pt;
-  font-family: 'DM sans', sans-serif;
-  font-weight: 500;
+.faq-btn span {
+  font-size: 20px;   /* adjust size (px, em, rem) */
+  font-weight: 600;  /* 400 = normal, 600 = semi-bold, 700 = bold */
+  color: white;       /* optional: change text color */
 }
 
 .faq-buttons a { /* Selects the <a> tags which are the direct children of the flex container */
@@ -111,10 +105,6 @@ body {
   color: white;
 }
 
-.faq-btn.yellow img{
-  filter: invert(100%);
-}
-
 .faq-btn.blue {
   background-color: #02455F;
 }
@@ -129,8 +119,9 @@ body {
   text-align: left;
   font-size: 48px;
   font-weight: 600;
+  margin-bottom: 80px;
   color: #02455F;
-  margin: 0px 0px 80px 10rem;
+  padding-left: 5%;
 }
 
 .info-grid {
@@ -150,8 +141,8 @@ body {
     min-height: 70px;
     box-shadow: -10px 10px 3px #5D727D;
     text-align: center;
-    font-weight: 500;
-    font-size: 20px;
+    font-weight: 600;
+  font-size: 20px;   /* adjust size (px, em, rem) */
     cursor: pointer;
     transition: transform 0.2s ease;
     display: flex;
@@ -170,8 +161,11 @@ body {
   text-align: right;
   font-size: 48px;
   font-weight: bold;
-  margin: 100px 10rem 80px 0px ;
+  margin: 60px 0 30px;
   color: #02455F;
+  margin-top: 100px;
+  margin-bottom: 80px;
+  padding-right: 5%;
 }
 
 .support-boxes {
@@ -179,12 +173,12 @@ body {
   flex-wrap: wrap;
   justify-content: center;
   gap: 290px;
-  margin-bottom: 100px;
+  margin-bottom: 180px;
 }
 
 .support-card {
   flex: 1;
-  max-width: 500px;
+  max-width: 550px;
   background-color: #00455A;
   color: white;
   padding: 30px;
@@ -196,10 +190,13 @@ body {
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.support-card.yellow {
-  background-color: #FDC103;
-  color: white;
+.support-card p img {
+  vertical-align: middle; /* align with text */
+  margin-right: 30px;      /* space between icon and text */
+  width: 35px;            /* optional: control size */
+  height: auto;
 }
+
 
 .card-header {
   display: flex;
@@ -232,11 +229,33 @@ body {
 }
 
 .support-card p {
-  font-size: 20px;
+  font-size: 18px;
   line-height: 1.4;
   margin: 0;
   font-weight: 600;
   align-items: center;
   margin-left: 41px;
   margin-right: 41px;
+}
+
+.support-card p {
+  display: grid;
+  grid-template-columns: 40px auto; /* icon column + text column */
+  font-size: 18px;
+  line-height: 2;
+  font-weight: 300;
+  align-items: center;
+  margin-left: 41px;
+  margin-right: 41px;               /* spacing between rows */
+}
+
+.support-card p img {
+  width: 24px; /* adjust icon size */
+  height: auto;
+}
+
+.faq-buttons a,
+.info-grid a {
+  text-decoration: none;
+  color: inherit;
 }
