@@ -9,15 +9,16 @@ document.getElementById("loginForm").addEventListener("submit", function (e) {
       // ✅ Admin login
       localStorage.setItem("isLoggedIn", "true");
       localStorage.setItem("role", "admin");
-      window.location.href = "../html_admin/admin_dashboard.html";
+      window.location.href = "/Glassify/html_admin/admin_dashboard.html";
       console.log("Admin logged in ✅");
     } else {
       // ✅ Any other user login
       localStorage.setItem("isLoggedIn", "true");
       localStorage.setItem("role", "user");
-      window.location.href = "../html/home.html";
+      window.location.href = "/Glassify/html/home.html";
       console.log("User logged in ✅");
     }
+
   } else {
     alert("Please enter email and password.");
   }
