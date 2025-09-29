@@ -67,7 +67,7 @@
           </div>
         </div>
         <div class="quotation-content">
-          <button class="generate-btn">Generate Quotation</button>
+          <button class="generate-btn" id="openModal">Generate Quotation</button>
       </section>
     </div>
 
@@ -76,6 +76,77 @@
 
   <script src="/Glassify/assets/js/cart.js"></script>
   <my-footer></my-footer>
+  <div id="quotationModal" class="modal">
+    <div class="modal-content">
+      <span class="modal-close" id="closeModal">&times;</span>
+
+      <div class="modal-header">Quotation</div>
+      <p class="quotation-date">Date: 6/2/2025</p>
+
+      <div class="section-title">Customer Information:</div>
+      <div class="customer-info">
+        <p><strong>Name:</strong> John Doe</p>
+        <p><strong>Address:</strong> 123 Main Street, Anytown, USA</p>
+        <p><strong>Email:</strong> john.doe@example.com</p>
+        <p><strong>Phone:</strong> (123) 456-7890</p>
+      </div>
+
+      <div class="section-title">Quotation Details:</div>
+      <table class="quotation-table">
+        <thead>
+          <tr>
+            <th>Description</th>
+            <th>Quantity</th>
+            <th>Unit Price</th>
+            <th>Total</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Product A</td>
+            <td>2</td>
+            <td>$50.00</td>
+            <td>$100.00</td>
+          </tr>
+          <tr>
+            <td>Service B</td>
+            <td>1</td>
+            <td>$150.00</td>
+            <td>$150.00</td>
+          </tr>
+          <tr>
+            <td>Product C</td>
+            <td>3</td>
+            <td>$25.00</td>
+            <td>$75.00</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="quotation-total">
+        <p><strong>Subtotal:</strong> $325.00</p>
+        <p><strong>Tax (10%):</strong> $32.50</p>
+        <p><strong>Grand Total:</strong> $357.50</p>
+      </div>
+    </div>
+  </div>
+
 </body>
 
 </html>
+
+
+
+<script>
+    const modal = document.getElementById("quotationModal");
+    const openBtn = document.getElementById("openModal");
+    const closeBtn = document.getElementById("closeModal");
+
+    openBtn.onclick = () => modal.style.display = "block";
+    closeBtn.onclick = () => modal.style.display = "none";
+    window.onclick = (event) => {
+        if (event.target === modal) {
+            modal.style.display = "none";
+        }
+    };
+</script>

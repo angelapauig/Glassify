@@ -43,60 +43,71 @@
         <!-- Your Order -->
         <section class="your-order">
             <h3>Your Order</h3>
+
             <div class="order-content">
-
-                <!-- Products -->
-                <div class="products">
-                    <div class="products-header">
-                        <h4>Products</h4>
-                        <h4>Subtotal</h4>
+                <!-- Left Side -->
+                <div class="left-col">
+                    <!-- Products -->
+                    <div class="products">
+                        <div class="products-header">
+                            <h4>Products</h4>
+                            <h4>Subtotal</h4>
+                        </div>
+                        <table class="product-table">
+                            <tbody>
+                                <tr>
+                                    <td><img src="/Glassify/assets/images/sample-product.jpg" alt="Product"></td>
+                                    <td>798 Series Sliding Window</td>
+                                    <td class="price">₱9,000.00</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <a href="#" class="see-more">See more ▼</a>
                     </div>
-                    <table class="product-table">
-                        <tbody>
-                            <tr>
-                                <td><img src="/Glassify/assets/images/sample-product.jpg" alt="Product"></td>
-                                <td>798 Series Sliding Window</td>
-                                <td class="price">₱9,000.00</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <a href="#" class="see-more">See more ▼</a>
+
+                    <!-- Order Summary -->
+                    <div class="summary-box">
+                        <h4>Order Summary</h4>
+                        <p><span>Items</span> <span>9</span></p>
+                        <p><span>Subtotal</span> <span>₱32,700.00</span></p>
+                        <p><span>Shipping Fee</span> <span>₱543.00</span></p>
+                        <p><span>Handling Fee</span> <span>₱100.00</span></p>
+                        <div class="divider"></div>
+                        <p class="total"><span>Total</span> <span>₱33,343.00</span></p>
+                    </div>
                 </div>
 
+                <!-- Right Side -->
+                <div class="right-col">
+                    <!-- Shipping Address -->
+                    <div class="address-box">
+                        <h4>Shipping Address</h4>
+                        <p><strong>Ezekiel P. Bangug</strong></p>
+                        <p>(+63) 1234567890</p>
+                        <p>199 Regalado Ave,<br>Novaliches, Quezon City,<br>Metro Manila, Philippines<br>1118</p>
+                    </div>
 
-                <!-- Order Summary -->
-                <div class="summary-box">
-                    <h4>Order Summary</h4>
-                    <p><span>Items</span> <span>9</span></p>
-                    <p><span>Subtotal</span> <span>₱32,700.00</span></p>
-                    <p><span>Shipping Fee</span> <span>₱543.00</span></p>
-                    <p><span>Handling Fee</span> <span>₱100.00</span></p>
-                    <div class="divider"></div>
-                    <p class="total"><span>Total</span> <span>₱33,343.00</span></p>
+                    <!-- Billing Address -->
+                    <div class="address-box">
+                        <h4>Billing Address</h4>
+                        <p>Same as shipping address</p>
+                    </div>
+
+                    <!-- Invoice Button -->
+                    <div class="invoice-btn">
+                        <button id="downloadBtn">⬇ Download Invoice</button>
+                    </div>
+
+                    <!-- Import jsPDF & AutoTable -->
+                    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+                    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.29/jspdf.plugin.autotable.min.js"></script>
+
+                    <!-- Link external JS -->
+                    <script src="../assets/js/invoice.js"></script>
                 </div>
-
-                <!-- Shipping Address -->
-                <div class="address-box">
-                    <h4>Shipping Address</h4>
-                    <p><strong>Ezekiel P. Bangug</strong></p>
-                    <p>(+63) 1234567890</p>
-                    <p>199 Regalado Ave,<br>Novaliches, Quezon City,<br>Metro Manila, Philippines<br>1118</p>
-                </div>
-
-                <!-- Billing Address -->
-                <div class="address-box">
-                    <h4>Billing Address</h4>
-                    <p>Same as shipping address</p>
-                </div>
-            </div>
-
-            <!-- Invoice Button -->
-            <div class="invoice-btn">
-                <button>⬇ Download Invoice</button>
             </div>
         </section>
     </main>
-
     <my-footer></my-footer>
 </body>
 

@@ -114,23 +114,21 @@
                     <div class="summary-divider"></div>
                     <p class="total"><span>Total:</span> ₱<span id="summary-total">0.00</span></p>
                     <div class="btn-container">
-                        <a href="/Glassify/html/Generate.html">
-                            <button class="generate-btn">Generate Quotation</button>
-
-                        </a>
+                        <button class="generate-btn" id="openModal">Generate Quotation</button>
                     </div>
+
                 </div>
                 <div class="payment-section">
                     <div class="payment-method-content">
                         <h3>Payment Methods</h3>
                         <p>
-                            <img src="#" alt="dollaricon">
+                            <img src="../assets/img/dollar.png" alt="dollaricon">
                             <label for="ewallet-radio">E-Wallet</label>
                             <input type="radio" id="ewallet-radio" name="payment-method"
                                 title="Select E-Wallet as payment method">
                         </p>
                         <p>
-                            <img src="#" alt="COD-icon">
+                            <img src="../assets/img/wallet.png" alt="COD-icon">
                             <label for="COD-radio">Cash on Delivery</label>
                             <input type="radio" id="COD-radio" name="payment-method"
                                 title="Select COD as payment method">
@@ -154,6 +152,78 @@
 
     <script src="/Glassify/assets/js/cart.js"></script>
     <my-footer></my-footer>
+
+
+    <!-- Modal -->
+    <div id="quotationModal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close" id="closeModal">&times;</span>
+
+            <div class="modal-header">Quotation</div>
+            <p class="quotation-date">Date: 6/2/2025</p>
+
+            <div class="section-title">Customer Information:</div>
+            <div class="customer-info">
+                <p><strong>Name:</strong> John Doe</p>
+                <p><strong>Address:</strong> 123 Main Street, Anytown, USA</p>
+                <p><strong>Email:</strong> john.doe@example.com</p>
+                <p><strong>Phone:</strong> (123) 456-7890</p>
+            </div>
+
+            <div class="section-title">Quotation Details:</div>
+            <table class="quotation-table">
+                <thead>
+                    <tr>
+                        <th>Description</th>
+                        <th>Quantity</th>
+                        <th>Unit Price</th>
+                        <th>Total</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Product A</td>
+                        <td>2</td>
+                        <td>$50.00</td>
+                        <td>$100.00</td>
+                    </tr>
+                    <tr>
+                        <td>Service B</td>
+                        <td>1</td>
+                        <td>$150.00</td>
+                        <td>$150.00</td>
+                    </tr>
+                    <tr>
+                        <td>Product C</td>
+                        <td>3</td>
+                        <td>$25.00</td>
+                        <td>$75.00</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="quotation-total">
+                <p><strong>Subtotal:</strong> $325.00</p>
+                <p><strong>Tax (10%):</strong> $32.50</p>
+                <p><strong>Grand Total:</strong> $357.50</p>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>
+
+
+<script>
+    const modal = document.getElementById("quotationModal");
+    const openBtn = document.getElementById("openModal");
+    const closeBtn = document.getElementById("closeModal");
+
+    openBtn.onclick = () => modal.style.display = "block";
+    closeBtn.onclick = () => modal.style.display = "none";
+    window.onclick = (event) => {
+        if (event.target === modal) {
+            modal.style.display = "none";
+        }
+    };
+</script>
