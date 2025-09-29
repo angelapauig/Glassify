@@ -349,10 +349,6 @@ background-color: #FDC103;
   box-shadow: 0 2px 4px rgba(0,0,0,0.05);
 }
 
-thead th:last-child {
-  text-align: center;
-}
-
 .order-schedule-section table th:nth-child(2) {
   width: 700px; /* Adjust as needed */
 }
@@ -597,3 +593,4 @@ tbody tr:hover {
   color: black;
   border: 1px solid #00000077;
 }
+
