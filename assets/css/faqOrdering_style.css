@@ -84,6 +84,7 @@ body {
 
 .path .articles{
     text-decoration: none;
+    color: #00455A;
 }
 
 .path .articles:hover {
@@ -94,6 +95,9 @@ body {
   text-decoration: underline;
 }
 
+.path .visually-hidden:hover {
+  text-decoration: underline;
+}
 /* Page Title */
 .page-title {
     font-size: 50px;
