@@ -1,0 +1,157 @@
+@font-face {
+  font-family: 'DM Sans';
+  src: url('../fonts/dm-sans/DMSans-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'DM Sans';
+  src: url('../fonts/dm-sans/DMSans-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'DM Sans';
+  src: url('../fonts/dm-sans/DMSans-Italic.ttf') format('truetype');
+  font-weight: 400;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src: url('../fonts/montserrat/Montserrat-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src: url('../fonts/montserrat/Montserrat-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+* {
+    margin-top: 0;
+    margin-bottom: 15px;
+    padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #fff;
+  color: #333;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    margin-top: 50px;
+}
+
+.wishlist-title {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.wishlist-table {
+  color: #000;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+thead {
+  background: #0c2c3a;
+  color: #fff;
+  font-family: 'Montserrat', sans-serif;
+}
+
+thead th {
+  text-align: left;
+  padding: 12px;
+  font-weight: 700;
+}
+
+tbody tr {
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.product-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+}
+
+.product-info img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  margin-right: 10px;
+}
+
+.product-name {
+  max-width: 200px;
+}
+
+.remove {
+  cursor: pointer;
+  font-size: 18px;
+  margin-right: 10px;
+}
+
+td {
+  padding: 12px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+}
+
+.status {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  color: #2196f3;
+}
+
+.status.in-stock {
+  color: #009933;
+}
+
+.add-cart {
+  background: #02455F;
+  color: #fff;
+  border: none;
+  padding: 6px 12px;
+  font-family: 'Montserrat', sans-serif;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.add-cart:hover {
+  opacity: 0.9;
+}
+
+.clear-wishlist {
+  display: block;
+  text-align: right;
+  margin-top: 10px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  color: #2196f3;
+  text-decoration: none;
+}
+
+.clear-wishlist:hover {
+  text-decoration: underline;
+}
