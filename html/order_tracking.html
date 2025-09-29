@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Status</title>
+    <link rel="stylesheet" href="/Glassify/assets/css/order_tracking.css">
+    <script src="/Glassify/assets/js/header.js"></script>
+    <script src="/Glassify/assets/js/footer.js"></script>
+</head>
+
+<body>
+    <my-header></my-header>
+    <main class="order-status-page">
+        <!-- Title -->
+        <section class="order-header">
+            <h2>Order Status</h2>
+            <p>Order ID: <span>20259821030131</span></p>
+            <div class="divider"></div>
+        </section>
+
+        <!-- Order Info -->
+        <section class="order-info">
+            <div>
+                <h4>Order ID:</h4>
+                <p>20259821030131</p>
+            </div>
+            <div>
+                <h4>Payment Method:</h4>
+                <p>COD</p>
+            </div>
+            <div>
+                <h4>Transaction ID:</h4>
+                <p>20259821030131</p>
+            </div>
+            <div>
+                <h4>Estimated Date:</h4>
+                <p>June 19, 2025</p>
+            </div>
+        </section>
+
+        <!-- Order Progress -->
+        <section class="order-progress">
+            <div class="step completed">
+                <img src="../assets/img/checkout_track.svg" class="order-icon" alt="checkout">
+                <p>Order Placed</p>
+                <span class="icon"><img src="../assets/img/check-track.png" alt="check"></span>
+                <small>May 22, 2025<br>8:00 AM</small>
+            </div>
+            <div class="step completed">
+                <img src="../assets/img/ocular_track.svg" class="order-icon" alt="ocular visit">
+                <p>Ocular Visit</p>
+                <span class="icon"><img src="../assets/img/check-track.png" alt="check"></span>
+
+                <small>May 24, 2025<br>1:23 PM</small>
+            </div>
+            <div class="step completed">
+                <img src="../assets/img/package_track.svg" class="order-icon" alt="fabrication">
+                <p>In Fabrication</p>
+                <span class="icon"><img src="../assets/img/check-track.png" alt="check"></span>
+
+                <small>May 27, 2025<br>10:30 AM</small>
+            </div>
+            <div class="step pending">
+                <img src="../assets/img/window_track.svg" class="order-icon" alt="Installation">
+                <p>Installed</p>
+                <span class="icon"></span>
+                <small>Expected<br>June 9, 2025</small>
+            </div>
+            <div class="step pending">
+                <img src="../assets/img/delivered_track.svg" class="order-icon" alt="delivery">
+                <p>Completed</p>
+                <span class="icon"></span>
+                <small>Expected<br>June 19, 2025</small>
+            </div>
+        </section>
+
+        <!-- Products Table -->
+        <section class="order-products">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Product</th>
+                        <th>Price</th>
+                        <th>Quantity</th>
+                        <th>Subtotal</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><img src="img/window.jpg" alt=""> 798 Series Sliding Window</td>
+                        <td>₱3000.00</td>
+                        <td>3</td>
+                        <td>₱9,000.00</td>
+                    </tr>
+                    <tr>
+                        <td><img src="img/frame.jpg" alt=""> Rounded Edge Frameless</td>
+                        <td>₱3700.00</td>
+                        <td>1</td>
+                        <td>₱3,700.00</td>
+                    </tr>
+                    <tr>
+                        <td><img src="img/kitchen.jpg" alt=""> Aluminum Kitchen Cabinet</td>
+                        <td>₱2500.00</td>
+                        <td>2</td>
+                        <td>₱2,500.00</td>
+                    </tr>
+                    <tr>
+                        <td><img src="img/door.jpg" alt=""> 4 Panel Sliding Door</td>
+                        <td>₱4500.00</td>
+                        <td>1</td>
+                        <td>₱9,000.00</td>
+                    </tr>
+                    <tr>
+                        <td><img src="img/mirror.jpg" alt=""> Frameless Rectangle Mirror</td>
+                        <td>₱1500.00</td>
+                        <td>1</td>
+                        <td>₱1,500.00</td>
+                    </tr>
+                    <tr>
+                        <td><img src="img/round-mirror.jpg" alt=""> Black Framed Round Mirror</td>
+                        <td>₱700.00</td>
+                        <td>1</td>
+                        <td>₱700.00</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        <section class="order-summary">
+            <!-- Left side (big box) -->
+            <div class="summary-box">
+                <h4>Order Summary</h4>
+                <p>Items: <span>9</span></p>
+                <p>Subtotal: <span>₱32,700.00</span></p>
+                <p>Shipping Fee: <span>₱543.00</span></p>
+                <p>Handling Fee: <span>₱100.00</span></p>
+                <h3>Total: <span>₱33,343.00</span></h3>
+            </div>
+
+            <!-- Right side (stacked addresses) -->
+            <div class="addresses">
+                <div class="address-box">
+                    <h4>Shipping Address</h4>
+                    <p><b>Ezekiel P. Bangug</b></p>
+                    <p>(+63) 1234567890</p>
+                    <p>199 Regalado Ave, Novaliches, Quezon City,<br>
+                        Metro Manila, Philippines 1118</p>
+                </div>
+
+                <div class="address-box">
+                    <h4>Billing Address</h4>
+                    <p>Same as shipping address</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <script src="order-status.js"></script>
+</body>
+<my-footer></my-footer>
+
+</html>

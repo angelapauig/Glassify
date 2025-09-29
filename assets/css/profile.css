@@ -125,5 +125,5 @@ body {
 }
 
 #uploadPhoto {
-  display: none; /* hides the ugly choose file */
+  display: none; 
 }
