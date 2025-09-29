@@ -56,19 +56,3 @@
     </div>
   </div>
 </section>
-
-<script>
-  document.getElementById("loginForm").addEventListener("submit", function(e) {
-    e.preventDefault(); // stop form from refreshing page
-
-    const email = document.getElementById("email").value.trim();
-    const password = document.getElementById("password").value.trim();
-
-    if (email === "admin@gmail.com" && password === "admin") {
-      window.location.href = "admin_dashboard.html"; 
-    } else {
-      alert("Invalid email or password.");
-    }
-  });
-</script>
-
