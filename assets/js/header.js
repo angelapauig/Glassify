@@ -59,15 +59,26 @@ class MyHeader extends HTMLElement {
       })
       .catch(error => console.error("Error loading header:", error));
   }
+
+
+
+
+
 }
 
 customElements.define("my-header", MyHeader);
 
-  // Logout functionality
-  document.addEventListener("click", (e) => {
-    if (e.target.id === "logoutBtn") {
-      e.preventDefault();
-      localStorage.removeItem("isLoggedIn");
-      window.location.href = "/Glassify/index.html"; // back to guest home
-    }
-  });
+// Logout functionality
+logoutBtn.addEventListener("click", (e) => {
+  e.preventDefault();
+  localStorage.setItem("isLoggedIn", "false");
+
+  // re-render header without full reload
+  const header = document.querySelector("my-header");
+  if (header) header.connectedCallback();
+
+  // also go back to guest home page
+  history.pushState({}, "", "/Glassify/index.html");
+  document.getElementById("content").innerHTML = "";
+});
+
