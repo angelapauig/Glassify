@@ -9,7 +9,7 @@ document.getElementById("loginForm").addEventListener("submit", function (e) {
       // ✅ Admin login
       localStorage.setItem("isLoggedIn", "true");
       localStorage.setItem("role", "admin");
-      window.location.href = "../html/admin_dashboard.html";
+      window.location.href = "../html_admin/admin_dashboard.html";
       console.log("Admin logged in ✅");
     } else {
       // ✅ Any other user login
