@@ -1,3 +1,38 @@
+@font-face {
+  font-family: 'DM Sans';
+  src: url('../fonts/dm-sans/DMSans-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'DM Sans';
+  src: url('../fonts/dm-sans/DMSans-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'DM Sans';
+  src: url('../fonts/dm-sans/DMSans-Italic.ttf') format('truetype');
+  font-weight: 400;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src: url('../fonts/montserrat/Montserrat-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src: url('../fonts/montserrat/Montserrat-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -5,8 +40,8 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
     color: #333;
+  font-family: 'DM Sans', sans-serif;
 }
 
 .container {
@@ -44,6 +79,19 @@ body {
 
 .path .current {
     color: #FDC103;
+  text-decoration: none;
+}
+
+.path .articles{
+    text-decoration: none;
+}
+
+.path .articles:hover {
+  text-decoration: underline;
+}
+
+.path .current:hover {
+  text-decoration: underline;
 }
 
 /* Page Title */
@@ -52,6 +100,7 @@ body {
     font-weight: bold;
     color: #00455A;
     margin-bottom: 20px;
+  font-family: 'DM Sans', sans-serif;
 }
 
 .title-underline {
@@ -73,8 +122,9 @@ body {
     background: white;
     border: 2px solid #afaeae;
     border-radius: 8px;
-    padding: 25px;
+    padding: 50px 20px;
     transition: all 0.3s ease;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .faq-card:hover {
@@ -98,6 +148,7 @@ body {
     line-height: 1.5;
     margin-left: 41px;
     margin-right: 41px;
+    text-align: justify;
 }
 
 /* Single column card */
