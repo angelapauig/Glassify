@@ -251,3 +251,9 @@ body {
   width: 24px; /* adjust icon size */
   height: auto;
 }
+
+.faq-buttons a,
+.info-grid a {
+  text-decoration: none;
+  color: inherit;
+}
