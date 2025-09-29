@@ -8,13 +8,14 @@ body {
 }
 
 .account-settings {
-  padding: 2rem;
+  padding: 5rem 20rem;
+  background-image:  linear-gradient(to bottom, #02455F 50%, #FFFF 50% );
 }
 
 .settings-title {
   font-size: 1.5rem;
   margin-bottom: 1.5rem;
-  color: #083c5d;
+  color: #ffffff;
 }
 
 /* Container */
@@ -26,15 +27,17 @@ body {
   border-radius: 8px;
 }
 
+
 /* Left Form */
 .settings-form {
-  flex: 2;
+  flex: 1;
   margin-right: 2rem;
 }
 
 .settings-form form {
   display: flex;
   flex-direction: column;
+  gap: 10px;
 }
 
 .settings-form label {
@@ -80,7 +83,7 @@ body {
 }
 
 .profile-img {
-  width: 140px;
+  width: 250px;
   border-radius: 6px;
   margin-bottom: 1rem;
 }
@@ -119,4 +122,8 @@ body {
   padding: 0.6rem 1.5rem;
   border-radius: 4px;
   cursor: pointer;
+}
+
+#uploadPhoto {
+  display: none; /* hides the ugly choose file */
 }

@@ -22,15 +22,6 @@ class MyHeader extends HTMLElement {
           if (homeLink) homeLink.setAttribute("href", "/Glassify/index.html");
         }
 
-        // --- Logout button ---
-        const logoutBtn = this.querySelector("#logoutBtn");
-        if (logoutBtn) {
-          logoutBtn.addEventListener("click", (e) => {
-            e.preventDefault();
-            localStorage.setItem("isLoggedIn", "false");
-            location.reload();
-          });
-        }
 
         // --- Active link highlighting ---
         const currentUrl = new URL(window.location.href);

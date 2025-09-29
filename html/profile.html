@@ -1,93 +1,119 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Account Settings</title>
-  <link rel="stylesheet" href="../assets/css/profile.css">
- <script src="/Glassify/assets/js/header.js"></script>
- <script src="/Glassify/assets/js/footer.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account Settings</title>
+    <link rel="stylesheet" href="../assets/css/profile.css">
+    <script src="/Glassify/assets/js/header.js"></script>
+    <script src="/Glassify/assets/js/footer.js"></script>
 </head>
+
 <body>
     <my-header></my-header>
-  <main class="account-settings">
-    <section class="settings-container">
-      
-      <!-- Left: Form -->
-      <section class="settings-form">
+    <main class="account-settings">
         <h2 class="settings-title">Account Settings</h2>
-        <form id="accountForm">
-          <label for="fullname">Full Name</label>
-          <input type="text" id="fullname" name="fullname" placeholder="">
+        <section class="settings-container">
 
-          <label for="email">Email Address</label>
-          <input type="email" id="email" name="email" placeholder="">
+            <!-- Left: Form -->
+            <section class="settings-form">
 
-          <label for="phone">Phone Number</label>
-          <input type="text" id="phone" name="phone" placeholder="">
+                <form id="accountForm">
+                    <label for="fullname">Full Name</label>
+                    <input type="text" id="fullname" name="fullname" placeholder="">
 
-          <label for="address">Address</label>
-          <input type="text" id="address" name="address" placeholder="">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" placeholder="">
 
-          <label for="password">Password</label>
-          <input type="password" id="password" name="password" placeholder="">
+                    <label for="phone">Phone Number</label>
+                    <input type="text" id="phone" name="phone" placeholder="">
 
-          <div class="form-buttons">
-            <button type="button" class="btn-cancel">Cancel</button>
-            <button type="submit" class="btn-save">Save Changes</button>
-          </div>
-        </form>
-      </section>
+                    <label for="address">Address</label>
+                    <input type="text" id="address" name="address" placeholder="">
 
-      <!-- Right: Profile Image -->
-      <section class="settings-photo">
-        <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" 
-             alt="Profile Photo" class="profile-img">
-        <div class="photo-buttons">
-          <label for="uploadPhoto" class="btn-photo">Change Photo</label>
-          <input type="file" id="uploadPhoto">
-          <button class="btn-delete">Delete Photo</button>
-        </div>
-      </section>
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" placeholder="">
 
-    </section>
+                    <div class="form-buttons">
+                        <button type="button" class="btn-cancel">Cancel</button>
+                        <button type="submit" class="btn-save">Save Changes</button>
+                    </div>
+                </form>
+            </section>
 
-    <section class="logout-container">
-      <button class="btn-logout">Logout</button>
-    </section>
-  </main>
+            <!-- Right: Profile Image -->
+            <section class="settings-photo">
+                <img src="../assets/img/pfp.png" alt="Profile Photo" class="profile-img">
 
-  <script>
-    // Handle form submission
-document.getElementById("accountForm").addEventListener("submit", function(e) {
-  e.preventDefault();
-  alert("Changes saved successfully!");
-});
+                <div class="photo-buttons">
+                    <button type="button" class="btn-photo" id="changePhotoBtn">Change Photo</button>
+                    <input type="file" id="uploadPhoto" accept="image/*" title="Upload Profile Photo">
+                    <button class="btn-delete">Delete Photo</button>
+                </div>
+            </section>
 
-// Handle cancel button
-document.querySelector(".btn-cancel").addEventListener("click", () => {
-  document.getElementById("accountForm").reset();
-});
 
-// Handle photo change
-document.getElementById("uploadPhoto").addEventListener("change", function(e) {
-  const file = e.target.files[0];
-  if (file) {
-    const reader = new FileReader();
-    reader.onload = function(event) {
-      document.querySelector(".profile-img").src = event.target.result;
-    };
-    reader.readAsDataURL(file);
-  }
-});
+        </section>
 
-// Handle photo delete
-document.querySelector(".btn-delete").addEventListener("click", () => {
-  document.querySelector(".profile-img").src = 
-    "https://cdn-icons-png.flaticon.com/512/3135/3135715.png";
-});
+        <section class="logout-container">
+            <button id="accountLogoutBtn" class="btn-logout">Logout</button>
+        </section>
 
-  </script>
-  <my-footer></my-footer>
+    </main>
+
+    <script>
+        // Handle form submission
+        document.getElementById("accountForm").addEventListener("submit", function (e) {
+            e.preventDefault();
+            alert("Changes saved successfully!");
+        });
+
+        // Handle cancel button
+        document.querySelector(".btn-cancel").addEventListener("click", () => {
+            document.getElementById("accountForm").reset();
+        });
+
+        // Handle photo change
+        document.getElementById("changePhotoBtn").addEventListener("click", function () {
+            document.getElementById("uploadPhoto").click();
+        });
+
+        document.getElementById("uploadPhoto").addEventListener("change", function (e) {
+            const file = e.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function (event) {
+                    document.querySelector(".profile-img").src = event.target.result;
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+
+        // Handle photo delete
+        document.querySelector(".btn-delete").addEventListener("click", () => {
+            document.querySelector(".profile-img").src =
+                "https://cdn-icons-png.flaticon.com/512/3135/3135715.png";
+        });
+
+
+        document.addEventListener("DOMContentLoaded", () => {
+            const accountLogoutBtn = document.getElementById("accountLogoutBtn");
+
+            if (accountLogoutBtn) {
+                accountLogoutBtn.addEventListener("click", (e) => {
+                    e.preventDefault();
+                    // clear login state
+                    localStorage.setItem("isLoggedIn", "false");
+                    // redirect to guest homepage
+                    location.href = "/Glassify/index.html";
+                });
+            }
+        });
+
+
+    </script>
+    <my-footer></my-footer>
 </body>
+
 </html>
