@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>2D Modeling</title>
+  <link rel="stylesheet" href="/Glassify/assets/css/2DModeling_styles.css">
+  <script src="assets/js/header.js"></script>
+  <script src="assets/js/footer.js" defer></script>
+
+</head>
+
+<body>
+  <my-header></my-header>
+
+    <main>
+    <section class="page-title">
+        <h1>Products & Services</h1>
+    </section>
+
+    <section class="product-2dmodeling">
+        <!-- Left Side - Product Preview -->
+        <div class="product-preview">
+            <div class="image-slider">
+                <img id="main-product-image" src="/Glassify/assets/img/glass-window.jpg" alt="Window Preview" class="main-image">
+                <div class="slider-controls">
+                    <button class="prev">&#10094;</button>
+                    <button class="next">&#10095;</button>
+                </div>
+                <div class="image-count">1/3</div>
+            </div>
+        <script src="/Assets/js/product-preview.js"></script>
+
+            <div class="preview-2d">
+                <div class="preview-diagram">
+                    <!-- 2D diagram would go here -->
+                    <img src="/Assets/img/2d-diagram.png" alt="2D Window Diagram" style="max-width: 100%; height: auto;">
+                </div>
+                <h3>2D Preview</h3>
+            </div>
+
+            <div class="upload-2d">
+            <button class="upload-file" onclick="openPopup()">
+                <h3>Upload a File</h3>
+                <img src="/Assets/img/attach-file.png" alt="Upload Icon">
+            </button>
+            </div>
+
+            <!-- Overlay & Popup -->
+            <div class="overlay" id="uploadPopup">
+            <div class="popup">
+                <!-- Header -->
+                <div class="popup-header">
+                <span>File Upload</span>
+                <button onclick="closePopup()">&times;</button>
+                </div>
+
+                <!-- Content -->
+                <div class="popup-content">
+                <div>
+                    <div class="upload-area">
+                    <img src="/Glassify/assets/img/upload-file.png" alt="Upload Icon">
+                    <p><strong>Choose a file or drag & drop it here</strong></p>
+                    <p>Supported file types: JPG, PNG, PDF<br>Maximum size: 25MB</p>
+
+                    <!-- hidden input -->
+                    <input type="file" id="fileInput" accept=".jpg,.jpeg,.png,.pdf" style="display: none;">
+                    <!-- trigger input -->
+                    <button class="browse-btn" onclick="document.getElementById('fileInput').click()">Browse Files</button>
+                    </div>
+
+                    <div class="uploaded-files">
+                    <h4>Uploaded Files</h4>
+                    <div class="file-placeholder" id="filePlaceholder">
+                        Uploaded files will appear here
+                    </div>
+                    </div>
+                </div>
+                </div>
+
+                <!-- Footer -->
+                <div class="popup-footer">
+                <button class="cancel-btn" onclick="closePopup()">Cancel</button>
+                <button class="done-btn">Done</button>
+                </div>
+            </div>
+            </div>
+
+            <script src="/Glassify/assets/js/upload-file.js"></script>
+
+            <div class="estimated-price">
+                <h3>Estimated Price</h3>
+                <div class="price-details">
+                    <table>
+                        <tr>
+                            <td>Shape:</td>
+                            <td>Rectangle</td>
+                        </tr>
+                        <tr>
+                            <td>Dimension:</td>
+                            <td>24", 0", 18", 0"</td>
+                        </tr>
+                        <tr>
+                            <td>Type:</td>
+                            <td>Tempered</td>
+                        </tr>
+                        <tr>
+                            <td>Thickness:</td>
+                            <td>8mm</td>
+                        </tr>
+                        <tr>
+                            <td>Edge Work:</td>
+                            <td>Flat Polish</td>
+                        </tr>
+                        <tr>
+                            <td>Frame Type:</td>
+                            <td>Vinyl</td>
+                        </tr>
+                        <tr>
+                            <td>Engraving:</td>
+                            <td>N/A</td>
+                        </tr>
+                        <tr class="total-row">
+                            <td>Total:</td>
+                            <td>₱3,100.00</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div class="add-to-cart-container">
+                <button onclick="window.location.href='add-to-cart.html'" class="add-to-cart">
+                    <img src="/Glassify/assets/img/shopping-cart.png" alt="Add to Cart">
+                    <h3>Add to Cart</h3>
+                </button>
+            </div>
+        </div>
+
+        <!-- Right Side - Product Customize -->
+        <div class="product-customize">
+            <div class="product-header">
+                <h2>Glass & Aluminum Window</h2>
+                <button class="wishlist-btn" onclick="toggleWishlist(this)">
+                    <img src="/Glassify/assets/img/heart.png" alt="Wishlist" class="heart-icon">
+                </button>
+            </div>
+            <script src="/Glassify/assets/js/wishlist-btn.js"></script>
+
+            <p>Start building today!</p>
+
+            <div class="build-options">
+                <button id="custom-build-btn" class="custom-build active">Customize Build</button>
+                <button id="standard-btn" class="standard">Standard</button>
+            </div>
+
+            <div id="custom-build-content" class="build-content active">
+                <div class="option-group">
+                    <h3>Glass Shape</h3>
+                    <div class="shape-buttons">
+                        <button class="option-btn">Rectangle</button>
+                        <button class="option-btn">Square</button>
+                        <button class="option-btn">Triangle</button>
+                        <button class="option-btn">Pentagon</button>
+                    </div>
+                </div>
+                
+                <div class="option-group">
+                    <div class="dimension-inputs">
+                        <div class="dimension-input-group">
+                            <label>Height</label>
+                            <select>
+                                <option>45"</option>
+                                <option>35"</option>
+                                <option>50"</option>
+                            </select>
+                        </div>
+                        <div class="dimension-input-group">
+                            <label>Fraction</label>
+                            <select>
+                                <option>0"</option>
+                                <option>1/2"</option>
+                                <option>1/4"</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="option-group">
+                    <div class="dimension-inputs">
+                        <div class="dimension-input-group">
+                            <label>Width</label>
+                            <select>
+                                <option>35"</option>
+                                <option>45"</option>
+                                <option>55"</option>
+                            </select>
+                        </div>
+                        <div class="dimension-input-group">
+                            <label>Fraction</label>
+                            <select>
+                                <option>0"</option>
+                                <option>1/2"</option>
+                                <option>1/4"</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="option-group">
+                    <h3>Glass Type</h3>
+                    <div class="shape-buttons">
+                        <button class="option-btn">Tempered</button>
+                        <button class="option-btn">Laminated</button>
+                        <button class="option-btn">Double</button>
+                        <button class="option-btn">Low-E</button>
+                        <button class="option-btn">Tinted</button>
+                        <button class="option-btn">Frosted</button>
+                    </div>
+                </div>
+
+                <div class="option-group">
+                    <h3>Glass Thickness</h3>
+                    <div class="shape-buttons">
+                        <button class="option-btn">5mm</button>
+                        <button class="option-btn">6mm</button>
+                        <button class="option-btn">8mm</button>
+                        <button class="option-btn">10mm</button>
+                        <button class="option-btn">12mm</button>
+                    </div>
+                </div>
+
+                <div class="option-group">
+                    <h3>Edge Work</h3>
+                    <div class="shape-buttons">
+                        <button class="option-btn">Flat Polish</button>
+                        <button class="option-btn">Metered</button>
+                        <button class="option-btn">Beveled</button>
+                        <button class="option-btn">Seamed</button>
+                    </div>
+                </div>
+
+                <div class="option-group">
+                    <h3>Frame Type</h3>
+                    <div class="shape-buttons">
+                        <button class="option-btn">Vinyl</button>
+                        <button class="option-btn">Aluminum</button>
+                        <button class="option-btn">Wood</button>
+                    </div>
+                </div>
+
+                <div class="option-group">
+                    <h3>Engraving (Optional)</h3>
+                    <div class="engraving-input">
+                        <input type="text" placeholder="Enter engraving text">
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Standard Build Section (Initially Hidden) -->
+            <div id="standard-content" class="build-content">
+                <div class="option-group">
+                    <h3>Glass Size</h3>
+                    <div class="size-buttons">
+                        <button class="option-btn">45" x 35"</button>
+                        <button class="option-btn">55" x 45"</button>
+                        <button class="option-btn">70" x 55"</button>
+                    </div>
+                </div>
+
+                <div class="option-group">
+                    <h3>Engraving (Optional)</h3>
+                    <div class="engraving-input">
+                        <input type="text" placeholder="Enter engraving text">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="/Assets/js/order-option.js"></script>
+
+    <section class="related-products">
+        <h2>Related Products</h2>
+        <div class="product-grid">
+        <div class="product">
+            <img src="/Glassify/assets/img/glass-window4.jpg" alt="900 Series Sliding Window">
+            <p>900 Series Sliding Window</p>
+            <button onclick="window.location.href='#'">Build and Buy</button>
+        </div>
+        <div class="product">
+            <img src="/Glassify/assets/img/glass-window5.jpg" alt="798 Series Sliding Window">
+            <p>798 Series Sliding Window</p>
+            <button onclick="window.location.href='#'">Build and Buy</button>
+        </div>
+        <div class="product">
+            <img src="/Glassify/assets/img/glass-window6.jpg" alt="900 Series French Type Sliding Window">
+            <p>900 Series French Type Sliding Window</p>
+            <button onclick="window.location.href='#'">Build and Buy</button>
+        </div>
+        <div class="product">
+            <img src="/Glassify/assets/img/glass-window7.jpg" alt="38 Series Awning Window">
+            <p>38 Series Awning Window</p>
+            <button onclick="window.location.href='#'">Build and Buy</button>
+        </div>
+        </div>
+
+    </section>
+    
+    <!-- Testimonials -->
+    <section class="testimonials">
+      <h2>Customer Testimonials</h2>
+      <div class="testimonial-content">
+        <button class="testimonial-arrow left">
+          <img src="/Glassify/assets/img/testimonials-arrow.png" alt="Previous">
+        </button>
+        <div class="testimonial-text">
+          <p>Highly recommending this shop! Very smooth and fast transaction. Despite unfortunate events, they were still able to deliver. Owner and staff are committed at great service. Exceeds expectations. Will definitely be our go-to-shop for glass and aluminum.</p>
+          <div class="stars">
+            <img src="/Glassify/assets/img/mdi--star-circle-outline.svg" alt="ratings" class="ratings">
+            <img src="/Glassify/assets/img/mdi--star-circle-outline.svg" alt="ratings" class="ratings">
+            <img src="/Glassify/assets/img/mdi--star-circle-outline.svg" alt="ratings" class="ratings">
+            <img src="/Glassify/assets/img/mdi--star-circle-outline.svg" alt="ratings" class="ratings">
+            <img src="/Glassify/assets/img/mdi--star-circle-outline.svg" alt="ratings" class="ratings">
+          </div>
+          <h3 class="author">Kris-Ann Munda-Rebullana</h3>
+        </div>
+        <button class="testimonial-arrow right">
+          <img src="/Glassify/assets/img/testimonials-arrow.png" alt="Next">
+        </button>
+      </div>
+    </section>
+    </main>
+
+</body>
+ <my-footer></my-footer>
+
+</html>

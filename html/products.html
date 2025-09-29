@@ -6,8 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Prodcuts</title>
   <link rel="stylesheet" href="/Glassify/assets/css/products_style.css">
-  <script src="/Glassify/assets/js/header.js"></script>
-  <script src="/Glassify/assets/js/footer.js" defer></script>
+  <script src="assets/js/header.js"></script>
+  <script src="assets/js/footer.js" defer></script>
 
 </head>
 
@@ -23,7 +23,7 @@
     <section class="search-results">
       <div class="search-container">
         <input type="text" placeholder="Search" class="search">
-        <img src="../assets/img/search.png" alt="Search Icon" class="search-icon">
+        <img src="/Glassify/assets/img/search.png" alt="Search Icon" class="search-icon">
       </div>
       <p>Showing 1-6 of 9 results</p>
     </section>
@@ -36,18 +36,12 @@
 
         <div class="filter-group">
           <h4>Category</h4>
-          <label><input type="checkbox" value="Balcony"> Balcony</label>
-          <label><input type="checkbox" value="Board"> Board</label>
           <label><input type="checkbox" value="Cabinet"> Cabinet</label>
-          <label><input type="checkbox" value="Doors"> Doors</label>
-          <label><input type="checkbox" value="Mirrors"> Mirrors</label>
+          <label><input type="checkbox" value="Doors"> Door</label>
+          <label><input type="checkbox" value="Mirrors"> Mirror</label>
           <label><input type="checkbox" value="Partition"> Partition</label>
-          <label><input type="checkbox" value="Shower Enclosure"> Shower Enclosure</label>
-          <label><input type="checkbox" value="Sliding Doors"> Sliding Doors</label>
-          <label><input type="checkbox" value="Sliding Windows"> Sliding Windows</label>
-          <label><input type="checkbox" value="Stair Railings"> Stair Railings</label>
-          <label><input type="checkbox" value="Storefront"> Storefront</label>
-          <label><input type="checkbox" value="Windows"> Windows</label>
+          <label><input type="checkbox" value="Railings"> Railings</label>
+          <label><input type="checkbox" value="Windows"> Window</label>
         </div>
 
         <div class="filter-group">
@@ -73,56 +67,96 @@
           <a href="#" class="clear">Clear All</a>
         </div>
 
-      <script src="../assets/js/filters.js"></script>
+      <script src="/Glassify/assets/js/filters.js"></script>
 
-        <div class="product-grid">
-          <div class="product">
-            <img src="../assets/img/cabinet1.png" alt="cabinet1">
-            <p>Glass & Aluminum Window</p>
-            <button onclick="window.location.href='2DModeling.html'">Build and Buy</button>
-          </div>
-          <div class="product">
-            <img src="../assets/img/cabinet2.png" alt="cabinet2">
-            <p>Aluminum Kitchen Cabinet</p>
-            <button onclick="window.location.href='2DModeling.html'">Build and Buy</button>
-          </div>
-          <div class="product">
-            <img src="../assets/img/cabinet3.png" alt="cabinet3">
-            <p>Aluminum Kitchen Cabinet</p>
-            <button onclick="window.location.href='2DModeling.html'">Build and Buy</button>
-          </div>
-          <div class="product">
-            <img src="../assets/img/cabinet4.png" alt="cabinet4">
-            <p>Aluminum Kitchen Cabinet</p>
-            <button onclick="window.location.href='2DModeling.html'">Build and Buy</button>
-          </div>
-          <div class="product">
-            <img src="../assets/img/cabinet5.png" alt="cabinet5">
-            <p>Aluminum Kitchen Cabinet</p>
-            <button onclick="window.location.href='2DModeling.html'">Build and Buy</button>
-          </div>
-          <div class="product">
-            <img src="../assets/img/cabinet6.png" alt="cabinet6">
-            <p>Aluminum Kitchen Cabinet</p>
-            <button onclick="window.location.href='2DModeling.html'">Build and Buy</button>
-          </div>
-          <div class="product">
-            <img src="../assets/img/cabinet7.png" alt="cabinet7">
-            <p>Aluminum Kitchen Cabinet</p>
-            <button onclick="window.location.href='2DModeling.html'">Build and Buy</button>
-          </div>
-          <div class="product">
-            <img src="../assets/img/cabinet8.png" alt="cabinet8">
-            <p>Aluminum Kitchen Cabinet</p>
-            <button onclick="window.location.href='2DModeling.html'">Build and Buy</button>
-          </div>
-          <div class="product">
-            <img src="../assets/img/cabinet9.png" alt="cabinet9">
-            <p>Aluminum Kitchen Cabinet</p>
-            <button onclick="window.location.href='2DModeling.html'">Build and Buy</button>
-          </div>
-        </div>
+ <div class="product-grid">
+  <div class="product" data-category="Windows" data-material="Glass,Aluminum" data-availability="In Stock">
+    <img src="/Glassify/assets/img/glass-window.jpg" alt="Glass & Aluminum Window">
+    <p>Glass & Aluminum Window</p>
+    <button onclick="window.location.href='2DModeling.html'">Build and Buy</button>
+  </div>
 
+  <div class="product" data-category="Cabinet" data-material="Aluminum" data-availability="In Stock">
+    <img src="/Glassify/assets/img/cabinet8.jpg" alt="Aluminum Kitchen Cabinet">
+    <p>Aluminum Kitchen Cabinet</p>
+    <button onclick="window.location.href='2DModeling.html'">Build and Buy</button>
+  </div>
+
+  <div class="product" data-category="Windows" data-material="Aluminum,Glass" data-availability="In Stock">
+    <img src="/Glassify/assets/img/798_window.png" alt="798 Series Sliding Window">
+    <p>798 Series Sliding Window</p>
+    <button onclick="window.location.href='2DModeling.html'">Build and Buy</button>
+  </div>
+
+  <div class="product" data-category="Railings" data-material="Aluminum,Glass" data-availability="In Stock">
+    <img src="/Glassify/assets/img/balcony railings.png" alt="Balcony Railing">
+    <p>Balcony Railing</p>
+    <button onclick="window.location.href='2DModeling.html'">Build and Buy</button>
+  </div>
+
+  <div class="product" data-category="Partition" data-material="Glass,Aluminum" data-availability="In Stock">
+    <img src="/Glassify/assets/img/fixed-glass.png" alt="Fixed and Swing Shower Enclosure">
+    <p>Fixed and Swing Shower Enclosure</p>
+    <button onclick="window.location.href='2DModeling.html'">Build and Buy</button>
+  </div>
+
+  <div class="product" data-category="Railings" data-material="Glass" data-availability="In Stock">
+    <img src="/Glassify/assets/img/stair-railings.png" alt="Stair Railings">
+    <p>Stair Railings</p>
+    <button onclick="window.location.href='2DModeling.html'">Build and Buy</button>
+  </div>
+
+  <div class="product" data-category="Doors" data-material="Glass,Aluminum" data-availability="In Stock">
+    <img src="/Glassify/assets/img/french-sliding-door.png" alt="Traditional French Type Sliding Door with Customized Frosted Sticker">
+    <p>Traditional French Type Sliding Door with Customized Frosted Sticker</p>
+    <button onclick="window.location.href='2DModeling.html'">Build and Buy</button>
+  </div>
+
+  <div class="product" data-category="Doors" data-material="Glass,Aluminum" data-availability="In Stock">
+    <img src="/Glassify/assets/img/2-panel-sliding-door.png" alt="2 Panel Sliding Door with 2 Fixed Glass">
+    <p>2 Panel Sliding Door with 2 Fixed Glass</p>
+    <button onclick="window.location.href='2DModeling.html'">Build and Buy</button>
+  </div>
+
+  <div class="product" data-category="Doors" data-material="Glass,Aluminum" data-availability="In Stock">
+    <img src="/Glassify/assets/img/french-type-swing-door.png" alt="French Type Swing Door with 2 Fixed Glass">
+    <p>French Type Swing Door with 2 Fixed Glass</p>
+    <button onclick="window.location.href='2DModeling.html'">Build and Buy</button>
+  </div>
+
+  <!-- SHOULD STAY HIDDEN -->
+  <div class="product" data-category="Partition" data-material="Glass" data-availability="In Stock">
+    <img src="/Glassify/assets/img/glass-partition.png" alt="Glass Partition">
+    <p>Glass Partition</p>
+    <button onclick="window.location.href='2DModeling.html'">Build and Buy</button>
+  </div>
+
+  <div class="product" data-category="Doors" data-material="Glass,Aluminum" data-availability="In Stock">
+    <img src="/Glassify/assets/img/glass-door.png" alt="Glass Door">
+    <p>Glass & Aluminum Door</p>
+    <button onclick="window.location.href='2DModeling.html'">Build and Buy</button>
+  </div>
+
+  <div class="product" data-category="Mirrors" data-material="Glass" data-availability="In Stock">
+    <img src="/Glassify/assets/img/frameless-whole-mirror.png" alt="Frameless Whole Body Rectangle Mirror">
+    <p>Frameless Whole Body Rectangle Mirror</p>
+    <button onclick="window.location.href='2DModeling.html'">Build and Buy</button>
+  </div>
+
+  <div class="product" data-category="Cabinet" data-material="Aluminum,Glass" data-availability="In Stock">
+    <img src="/Assets/img/cabinet5.jpg" alt="Kitchen Cabinet">
+    <p>Kitchen Cabinet</p>
+    <button onclick="window.location.href='2DModeling.html'">Build and Buy</button>
+  </div>
+
+  <div class="product" data-category="Mirrors" data-material="Glass" data-availability="In Stock">
+    <img src="/Glassify/assets/img/rectangle mirror.png" alt="Rectangle Mirror">
+    <p>Rectangle Mirror</p>
+    <button onclick="window.location.href='2DModeling.html'">Build and Buy</button>
+  </div>
+</div>
+
+         
         <!-- Pagination -->
         <div class="pagination">
           <a href="#">&lt;</a>
@@ -139,26 +173,55 @@
       <h2>Customer Testimonials</h2>
       <div class="testimonial-content">
         <button class="testimonial-arrow left">
-          <img src="../assets/img/arrow-testimonial.png" alt="Previous">
+          <img src="/Glassify/assets/img/testimonials-arrow.png" alt="Previous">
         </button>
-        <div class="testimonial-text">
-          <p>Highly recommending this shop! Very smooth and fast transaction. Despite unfortunate events, they were still able to deliver. Owner and staff are committed at great service. Exceeds expectations. Will definitely be our go-to-shop for glass and aluminum.</p>
-          <div class="stars">
-            <img src="../assets/img/stars.png" alt="ratings" class="ratings">
-            <img src="../assets/img/stars.png" alt="ratings" class="ratings">
-            <img src="../assets/img/stars.png" alt="ratings" class="ratings">
-            <img src="../assets/img/stars.png" alt="ratings" class="ratings">
-            <img src="../assets/img/stars.png" alt="ratings" class="ratings">
+
+        <div class="testimonial-wrapper">
+          <div class="testimonial-text active">
+            <p>Highly recommending this shop! Very smooth and fast transaction. Despite unfortunate events, they were still able to deliver. Owner and staff are committed at great service. Exceeds expectations. Will definitely be our go-to-shop for glass and aluminum.</p>
+            <div class="stars">
+              <img src="/Glassify/assets/img/mdi--star-circle-outline.svg" alt="ratings">
+              <img src="/Glassify/assets/img/mdi--star-circle-outline.svg" alt="ratings">
+              <img src="/Glassify/assets/img/mdi--star-circle-outline.svg" alt="ratings">
+              <img src="/Glassify/assets/img/mdi--star-circle-outline.svg" alt="ratings">
+              <img src="/Glassify/assets/img/mdi--star-circle-outline.svg" alt="ratings">
+            </div>
+            <h3 class="author">Kris-Ann Munda-Rebullana</h3>
           </div>
-          <h3 class="author">Kris-Ann Munda-Rebullana</h3>
+
+          <div class="testimonial-text">
+            <p>Highly recommended ⭐⭐⭐⭐⭐ Very accommodating staff. Responded immediately to queries and concerns. Quality materials and great workmanship. We'll ask them DEFINITELY to do collab again in our next project 👍👍</p>
+            <div class="stars">
+              <img src="/Glassify/assets/img/mdi--star-circle-outline.svg" alt="ratings">
+              <img src="/Glassify/assets/img/mdi--star-circle-outline.svg" alt="ratings">
+              <img src="/Glassify/assets/img/mdi--star-circle-outline.svg" alt="ratings">
+              <img src="/Glassify/assets/img/mdi--star-circle-outline.svg" alt="ratings">
+              <img src="/Glassify/assets/img/mdi--star-circle-outline.svg" alt="ratings">
+            </div>
+            <h3 class="author">Anne Cruz</h3>
+          </div>
+
+          <div class="testimonial-text">
+            <p>Highly recommended! GlassWorth Builders service was excellent, and the quality of materials was top-notch. Their installers were kind and demonstrated good workmanship. I'm thoroughly impressed!</p>
+            <div class="stars">
+              <img src="/Glassify/assets/img/mdi--star-circle-outline.svg" alt="ratings">
+              <img src="/Glassify/assets/img/mdi--star-circle-outline.svg" alt="ratings">
+              <img src="/Glassify/assets/img/mdi--star-circle-outline.svg" alt="ratings">
+              <img src="/Glassify/assets/img/mdi--star-circle-outline.svg" alt="ratings">
+              <img src="/Glassify/assets/img/mdi--star-circle-outline.svg" alt="ratings">
+            </div>
+            <h3 class="author">Jandoc Jun</h3>
+          </div>
         </div>
+
         <button class="testimonial-arrow right">
-          <img src="../assets/img/arrow-testimonial.png" alt="Next">
+          <img src="/Glassify/assets/img/testimonials-arrow.png" alt="Next">
         </button>
       </div>
     </section>
-  </main>
 
+  </main>
+    <script src="/Glassify/assets/js/testimonial.js"></script>
 </body>
  <my-footer></my-footer>
 </html> 
