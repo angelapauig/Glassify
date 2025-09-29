@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 // ✅ Admin login
                 localStorage.setItem("isLoggedIn", "true");
                 localStorage.setItem("role", "admin");
-                window.location.href = "/Glassify/html/admin_dashboard.html";
+                window.location.href = "/Glassify/html_admin/admin_dashboard.html";
               } else {
                 // ✅ Normal user login
                 localStorage.setItem("isLoggedIn", "true");
