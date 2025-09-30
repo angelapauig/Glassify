@@ -6,8 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>2D Modeling</title>
   <link rel="stylesheet" href="/Glassify/assets/css/2DModeling_styles.css">
-  <script src="assets/js/header.js"></script>
-  <script src="assets/js/footer.js" defer></script>
+  <script src="/Glassify/assets/js/header.js"></script>
+  <script src="/Glassify/assets/js/footer.js" defer></script>
 
 </head>
 
@@ -30,12 +30,12 @@
                 </div>
                 <div class="image-count">1/3</div>
             </div>
-        <script src="/Assets/js/product-preview.js"></script>
+        <script src="../assets/js/product-preview.js"></script>
 
             <div class="preview-2d">
                 <div class="preview-diagram">
                     <!-- 2D diagram would go here -->
-                    <img src="/Assets/img/2d-diagram.png" alt="2D Window Diagram" style="max-width: 100%; height: auto;">
+                    <img src="../assets/img/2d-diagram.png" alt="2D Window Diagram" class="diagram-image">
                 </div>
                 <h3>2D Preview</h3>
             </div>
@@ -65,7 +65,8 @@
                     <p>Supported file types: JPG, PNG, PDF<br>Maximum size: 25MB</p>
 
                     <!-- hidden input -->
-                    <input type="file" id="fileInput" accept=".jpg,.jpeg,.png,.pdf" style="display: none;">
+                    <label for="fileInput" class="hidden-label">Upload file</label>
+                    <input type="file" id="fileInput" accept=".jpg,.jpeg,.png,.pdf" title="Upload file" placeholder="Select a file">
                     <!-- trigger input -->
                     <button class="browse-btn" onclick="document.getElementById('fileInput').click()">Browse Files</button>
                     </div>
@@ -168,7 +169,7 @@
                     <div class="dimension-inputs">
                         <div class="dimension-input-group">
                             <label>Height</label>
-                            <select>
+                            <select aria-label="Height">
                                 <option>45"</option>
                                 <option>35"</option>
                                 <option>50"</option>
@@ -176,7 +177,7 @@
                         </div>
                         <div class="dimension-input-group">
                             <label>Fraction</label>
-                            <select>
+                            <select aria-label="Height Fraction">
                                 <option>0"</option>
                                 <option>1/2"</option>
                                 <option>1/4"</option>
@@ -189,15 +190,15 @@
                     <div class="dimension-inputs">
                         <div class="dimension-input-group">
                             <label>Width</label>
-                            <select>
+                            <select aria-label="Width">
                                 <option>35"</option>
                                 <option>45"</option>
                                 <option>55"</option>
                             </select>
                         </div>
                         <div class="dimension-input-group">
-                            <label>Fraction</label>
-                            <select>
+                            <label for="width-fraction">Fraction</label>
+                            <select id="width-fraction" aria-label="Width Fraction">
                                 <option>0"</option>
                                 <option>1/2"</option>
                                 <option>1/4"</option>

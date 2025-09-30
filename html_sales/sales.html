@@ -1,0 +1,857 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GlassWorth UI</title>
+    <link rel="stylesheet" href="/Glassify/assets/sales_css/sales_style.css">
+    <script src="https://kit.fontawesome.com/fc5ceca38c.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <!-- ===== SIDEBAR NAVIGATION ===== -->
+    <aside class="sidebar">
+        <div class="logo">
+            <img src="/Glassify/assets/img/logo.png" alt="GlassWorth Logo">
+            <h2>GlassWorth</h2>
+        </div>
+        <nav class="menu">
+            <a href="#dashboard" class="active"><i class="fas fa-home"></i> Dashboard</a>
+            <a href="#orders"><i class="fas fa-clipboard-list"></i> Orders</a>
+            <p class="section-title">Users</p>
+            <a href="#end-users"><i class="fas fa-user-cog"></i> End User</a>
+            <a href="#issue-support"><i class="fas fa-headset"></i> Issue/Support</a>
+            <p class="section-title">General</p>
+            <a href="#inventory"><i class="fas fa-boxes"></i> Inventory</a>
+            <a href="#products"><i class="fas fa-cube"></i> Products</a>
+            <a href="#payments"><i class="fas fa-credit-card"></i> Payments</a>
+            <a href="#"><i class="fas fa-cog"></i> Settings</a>
+        </nav>
+    </aside>
+
+    <!-- ===== MAIN CONTENT ===== -->
+    <main class="main-content">
+
+        <!-- ===== TOPBAR ===== -->
+        <header class="topbar">
+            <h1 id="page-title">Dashboard</h1>
+            <div class="topbar-icons">
+                <i class="fas fa-bell"></i>
+                <i class="fas fa-user-circle"></i>
+            </div>
+        </header>
+
+        <!-- ===== DASHBOARD PAGE ===== -->
+        <section id="dashboard" class="page active">
+            <div class="tasks">
+                <div class="card">
+                    <h2>16</h2>
+                    <p>Orders Assigned Today</p>
+                    <span>2 need Approval</span>
+                    <button>View Orders</button>
+                </div>
+                <div class="card">
+                    <h2>3</h2>
+                    <p>Receipts to Review</p>
+                    <span>Awaiting Verification</span>
+                    <button>Review Payments</button>
+                </div>
+                <div class="card warning">
+                    <h2><span class="circle-badge">3</span></h2>
+                    <p>High Priority Issues</p>
+                    <span>Customer support needed</span>
+                    <button>View Issues</button>
+                </div>
+            </div>
+
+            <h2>Recent Activities</h2>
+            <div class="activities-container">
+                <div class="activities">
+                    <table>
+                        <thead>
+                            <tr class="activity-header">
+                                <th>Action</th>
+                                <th>Description</th>
+                                <th>Role</th>
+                                <th>User</th>
+                                <th>Timestamp</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><span class="badge info">Info</span></td>
+                                <td>New order created (Order #1024)</td>
+                                <td>Client</td>
+                                <td>Client A</td>
+                                <td>5/28/2025 – 09:45 AM</td>
+                            </tr>
+                            <tr>
+                                <td><span class="badge success">Success</span></td>
+                                <td>Quotation sent to Client B</td>
+                                <td>Staff</td>
+                                <td>M. Lopez</td>
+                                <td>5/28/2025 – 08:30 AM</td>
+                            </tr>
+                            <tr>
+                                <td><span class="badge error">Error</span></td>
+                                <td>Inventory update failed (Glass Panel)</td>
+                                <td>Admin</td>
+                                <td>L. Doria</td>
+                                <td>5/27/2025 – 05:12 PM</td>
+                            </tr>
+                            <tr>
+                                <td><span class="badge warning">Warning</span></td>
+                                <td>Stock running low: Aluminum Brackets</td>
+                                <td>System</td>
+                                <td>System</td>
+                                <td>5/27/2025 – 02:15 PM</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+        <!-- ===== ORDERS PAGE ===== -->
+        <section id="orders" class="page">
+            <div class="orders-header">
+                <h2>Order <span class="subtitle">16 Orders found</span></h2>
+            </div>
+
+            <!-- ===== TABS ===== -->
+            <div class="order-tabs">
+                <a href="#" class="tab-link active" id="pending-id" data-tab="pending">Pending Review 10</a>
+                <a href="#" class="tab-link" id="awaiting-id" data-tab="awaiting">Awaiting Admin 4</a>
+                <a href="#" class="tab-link" id="ready-id" data-tab="ready">Ready to Approve 2</a>
+                <div class="order-date">
+                    <span>May</span>
+                    <span>2025</span>
+                </div>
+            </div>
+
+
+            <input type="text" placeholder="Search products..." class="search-box">
+
+            <!-- ===== PENDING REVIEW SECTION ===== -->
+            <section id="tab-pending" class="order-section active">
+                <table class="order-table">
+                    <thead>
+                        <tr class="order-header">
+                            <th>#</th>
+                            <th>Order ID</th>
+                            <th>Product Name</th>
+                            <th>Address</th>
+                            <th>Date</th>
+                            <th>Price</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>#GI001</td>
+                            <td>Tempered Glass</td>
+                            <td>351 Shearwood...</td>
+                            <td>20/03/2025</td>
+                            <td>₱376.00</td>
+                            <td><button class="btn-approve">Request Approval</button></td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>#GI002</td>
+                            <td>Aluminum Frame</td>
+                            <td>6391 Elgin St...</td>
+                            <td>21/03/2025</td>
+                            <td>₱276.00</td>
+                            <td><button class="btn-approve">Request Approval</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </section>
+
+            <!-- ===== AWAITING ADMIN SECTION ===== -->
+            <section id="tab-awaiting" class="order-section">
+                <table class="order-table awaiting">
+                    <thead>
+                        <tr class="order-header">
+                            <th>#</th>
+                            <th>Order ID</th>
+                            <th>Product Name</th>
+                            <th>Address</th>
+                            <th>Date</th>
+                            <th>Price</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>#GI003</td>
+                            <td>Sliding Track</td>
+                            <td>8502 Preston...</td>
+                            <td>01/05/2025</td>
+                            <td>₱300.00</td>
+                            <td><button class="btn-view">View</button></td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>#GI004</td>
+                            <td>Sliding Track</td>
+                            <td>3221 Elana St...</td>
+                            <td>07/05/2025</td>
+                            <td>₱300.00</td>
+                            <td><button class="btn-view">View</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </section>
+
+            <!-- ===== READY TO APPROVE SECTION ===== -->
+            <section id="tab-ready" class="order-section">
+                <table class="order-table ready">
+                    <thead>
+                        <tr class="order-header">
+                            <th>#</th>
+                            <th>Order ID</th>
+                            <th>Product Name</th>
+                            <th>Address</th>
+                            <th>Date</th>
+                            <th>Admin Status</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>#GI001</td>
+                            <td>Tempered Glass</td>
+                            <td>351 Shearwood...</td>
+                            <td>20/03/2025</td>
+                            <td><span class="status disapproved">Disapproved</span></td>
+                            <td><button class="btn-check">Check</button></td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>#GI002</td>
+                            <td>Handle Set</td>
+                            <td>4517 Washington...</td>
+                            <td>02/04/2025</td>
+                            <td><span class="status approved">Approved</span></td>
+                            <td><button class="btn-check">Check</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+            <div class="order-footer">
+                <p>Showing 1–5 of 10 items</p>
+                <div class="pagination">
+                    <button class="page-btn">&lt;</button>
+                    <span class="page-number">1</span>
+                    <button class="page-btn">&gt;</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== END USERS PAGE ===== -->
+        <section id="end-users" class="page">
+            <h2>End Users</h2>
+            <p class="subtitle">Easily update user details, list of registered customers, and their contact information.
+            </p>
+
+            <!-- Search bar -->
+            <div class="search-container">
+                <input type="text" placeholder="Search by name, email, or phone..." class="search-box">
+                <button class="btn-search">Search</button>
+            </div>
+
+            <!-- Users Table -->
+            <table class="user-table">
+                <thead>
+                    <tr class="user-header">
+                        <th>
+                            <label for="selectAllUsers" class="visually-hidden"></label>
+                            <input type="checkbox" id="selectAllUsers" title="Select All Users">
+                        </th>
+                        <th>Full Name</th>
+                        <th>Email</th>
+                        <th>Joined Date</th>
+                        <th>Last Active</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <label for="userCheckbox1" class="visually-hidden"></label>
+                            <input type="checkbox" id="userCheckbox1" title="Select User">
+                        </td>
+                        <td>Michael P. Johnson</td>
+                        <td>michaelj@gmail.com</td>
+                        <td>October 03, 2025</td>
+                        <td>1 minute ago</td>
+                        <td>
+                            <button class="btn-edit">Edit</button>
+                            <button class="btn-delete">Delete</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="userCheckbox2" class="visually-hidden"></label>
+                            <input type="checkbox" id="userCheckbox2" title="Select User">
+                        </td>
+                        <td>Emily S. Dizon</td>
+                        <td>emilyy@gmail.com</td>
+                        <td>October 05, 2025</td>
+                        <td>3 days ago</td>
+                        <td>
+                            <button class="btn-edit">Edit</button>
+                            <button class="btn-delete">Delete</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <!-- Footer -->
+            <div class="user-footer">
+                <p>Showing 1–8 of 140 items</p>
+                <div class="pagination">
+                    <button class="page-btn">&lt;</button>
+                    <span class="page-number">1</span>
+                    <span class="page-number">2</span>
+                    <span>...</span>
+                    <span class="page-number">17</span>
+                    <button class="page-btn">&gt;</button>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ===== ISSUE / SUPPORT PAGE ===== -->
+        <section id="issue-support" class="page">
+            <h2>Issue / Support</h2>
+            <p class="subtitle">12 open issues | <span class="high-priority">3 High Priority</span></p>
+
+            <div class="issue-table-container">
+                <table class="issue-table">
+                    <thead>
+                        <tr>
+                            <th>
+                                <label for="selectAllIssues" class="visually-hidden"></label>
+                                <input type="checkbox" id="selectAllIssues" title="Select All Issues">
+                            </th>
+                            <th>Ticket ID</th>
+                            <th>Category</th>
+                            <th>Priority</th>
+                            <th>Email</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <label for="issueCheckbox1" class="visually-hidden"></label>
+                                <input type="checkbox" id="issueCheckbox1" title="Select Issue">
+                            </td>
+                            <td>#TC-12</td>
+                            <td>General Inquiry</td>
+                            <td><span class="badge low">● Low</span></td>
+                            <td>examplemail@gmail.com</td>
+                            <td class="action-cell">
+                                <button class="action-btn">⋮</button>
+                                <ul class="dropdown">
+                                    <li>View</li>
+                                    <li>Mark as Resolved</li>
+                                    <li>Cancel</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="issueCheckbox2" class="visually-hidden"></label>
+                                <input type="checkbox" id="issueCheckbox2" title="Select Issue">
+                            </td>
+                            <td>#TC-11</td>
+                            <td>Installation Problems</td>
+                            <td><span class="badge high">● High</span></td>
+                            <td>examplemail@gmail.com</td>
+                            <td class="action-cell">
+                                <button class="action-btn">⋮</button>
+                                <ul class="dropdown">
+                                    <li>View</li>
+                                    <li>Mark as Resolved</li>
+                                    <li>Cancel</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="issueCheckbox3" class="visually-hidden"></label>
+                                <input type="checkbox" id="issueCheckbox3" title="Select Issue">
+                            </td>
+                            <td>#TC-10</td>
+                            <td>Product Defect/Damage</td>
+                            <td><span class="badge high">● High</span></td>
+                            <td>examplemail@gmail.com</td>
+                            <td class="action-cell">
+                                <button class="action-btn">⋮</button>
+                                <ul class="dropdown">
+                                    <li>View</li>
+                                    <li>Mark as Resolved</li>
+                                    <li>Cancel</li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+
+
+
+
+        <!-- ===== INVENTORY PAGE ===== -->
+        <section id="inventory" class="page">
+            <h2>Inventory</h2>
+
+            <!-- Summary Cards -->
+            <div class="inventory-cards">
+                <div class="card">
+                    <h3>6</h3>
+                    <p>Total Items</p>
+                </div>
+                <div class="card">
+                    <h3>1</h3>
+                    <p>Low Stocks Alerts</p>
+                </div>
+                <div class="card">
+                    <h3>1</h3>
+                    <p>New Items</p>
+                </div>
+                <div class="card">
+                    <h3>4</h3>
+                    <p>Recent Requests</p>
+                </div>
+            </div>
+
+            <h3 class="list-title">List of Items</h3>
+
+            <!-- Filter/Search -->
+            <div class="inventory-controls">
+                <input type="text" placeholder="Filter by name or category..." class="search-box">
+                <button class="btn-show-request">Show Recent Request</button>
+            </div>
+
+            <!-- Inventory Table -->
+            <div class="inventory-table-container">
+                <table class="inventory-table">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Item ID</th>
+                            <th>Name</th>
+                            <th>Category</th>
+                            <th>In Stock</th>
+                            <th>Unit</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>GL-001</td>
+                            <td>Tempered Glass</td>
+                            <td>Glass</td>
+                            <td>150</td>
+                            <td>sqm</td>
+                            <td class="action-cell">
+                                <button class="action-btn">⋮</button>
+                                <ul class="dropdown">
+                                    <li>View</li>
+                                    <li>Request Restock</li>
+                                    <li>Remove</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>AL-022</td>
+                            <td>Aluminum Frame</td>
+                            <td>Aluminum</td>
+                            <td>10 <span class="badge low-stock">Low Stock</span></td>
+                            <td>pcs</td>
+                            <td class="action-cell">
+                                <button class="action-btn">⋮</button>
+                                <ul class="dropdown">
+                                    <li>View</li>
+                                    <li>Request Restock</li>
+                                    <li>Remove</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>6</td>
+                            <td>HD-007</td>
+                            <td>Handle Set <span class="badge new">New</span></td>
+                            <td>Hardware</td>
+                            <td>45</td>
+                            <td>sets</td>
+                            <td class="action-cell">
+                                <button class="action-btn">⋮</button>
+                                <ul class="dropdown">
+                                    <li>View</li>
+                                    <li>Request Restock</li>
+                                    <li>Remove</li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Footer -->
+            <div class="inventory-footer">
+                <p>Showing 1–10 of 255 items</p>
+                <div class="footer-controls">
+                    <div class="footer-row">
+                        <label for="rowsPerPageSelect">Rows per page:</label>
+                        <select id="rowsPerPageSelect" title="Rows per page">
+                            <option>10</option>
+                            <option>20</option>
+                            <option>50</option>
+                        </select>
+
+                    </div>
+                    <div class="pagination">
+                        <button class="page-btn">&lt;</button>
+                        <span class="page-number">1</span>
+                        <button class="page-btn">&gt;</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+        <!-- ===== PRODUCTS PAGE ===== -->
+        <section id="products" class="page">
+            <h2>Products</h2>
+
+            <!-- Search + Filters -->
+            <div class="product-controls">
+                <input type="text" placeholder="Search products" class="search-box">
+                <select class="filter-category" title="Filter by category">
+                    <option>Category</option>
+                    <option>Glass</option>
+                    <option>Aluminum</option>
+                    <option>Accessories</option>
+                    <option>Hardware</option>
+                </select>
+                <select class="filter-sort" title="Sort products">
+                    <option>Last Added</option>
+                    <option>Price: Low to High</option>
+                    <option>Price: High to Low</option>
+                    <option>Name: A–Z</option>
+                </select>
+            </div>
+
+            <!-- Product Grid -->
+            <div class="product-grid">
+                <div class="product-card">
+                    <div class="image-placeholder">🖼</div>
+                    <p class="product-name">[Product Name]</p>
+                    <p class="product-price">₱0.00</p>
+                </div>
+                <div class="product-card">
+                    <div class="image-placeholder">🖼</div>
+                    <p class="product-name">[Product Name]</p>
+                    <p class="product-price">₱0.00</p>
+                </div>
+                <div class="product-card">
+                    <div class="image-placeholder">🖼</div>
+                    <p class="product-name">[Product Name]</p>
+                    <p class="product-price">₱0.00</p>
+                </div>
+                <div class="product-card">
+                    <div class="image-placeholder">🖼</div>
+                    <p class="product-name">[Product Name]</p>
+                    <p class="product-price">₱0.00</p>
+                </div>
+                <div class="product-card">
+                    <div class="image-placeholder">🖼</div>
+                    <p class="product-name">[Product Name]</p>
+                    <p class="product-price">₱0.00</p>
+                </div>
+                <div class="product-card">
+                    <div class="image-placeholder">🖼</div>
+                    <p class="product-name">[Product Name]</p>
+                    <p class="product-price">₱0.00</p>
+                </div>
+                <div class="product-card">
+                    <div class="image-placeholder">🖼</div>
+                    <p class="product-name">[Product Name]</p>
+                    <p class="product-price">₱0.00</p>
+                </div>
+                <div class="product-card">
+                    <div class="image-placeholder">🖼</div>
+                    <p class="product-name">[Product Name]</p>
+                    <p class="product-price">₱0.00</p>
+                </div>
+            </div>
+
+            <!-- Pagination -->
+            <div class="product-footer">
+                <div class="pagination">
+                    <button class="page-btn">&lt;</button>
+                    <span class="page-number">1</span>
+                    <button class="page-btn">&gt;</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== PAYMENTS PAGE ===== -->
+        <section id="payments" class="page">
+            <div class="section-header">
+                <h2>Payments</h2>
+
+                <!-- Stats Cards -->
+                <div class="inventory-stats">
+                    <div class="stat-card stat-green">
+                        <div class="stat-value">₱67,704</div>
+                        <div class="stat-title">Weekly Sales</div>
+                        <div class="stat-percent">↑ 18% from last week</div>
+                    </div>
+
+                    <div class="stat-card stat-orange">
+                        <div class="stat-value">3</div>
+                        <div class="stat-title">Pending Payments</div>
+                    </div>
+
+                    <div class="stat-card stat-red">
+                        <div class="stat-value">1</div>
+                        <div class="stat-title">Overdue Payments</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Payment Tables Header -->
+            <div class="order-tabs">
+                <h2>Payment Tables</h2>
+            </div>
+
+            <!-- Filter Tabs -->
+            <div class="payment-filters">
+                <span class="filter-tab active">All</span>
+                <span class="filter-tab">Paid</span>
+                <span class="filter-tab">Pending</span>
+                <span class="filter-tab">Under Review</span>
+                <span class="filter-tab">Overdue</span>
+            </div>
+
+            <!-- Table -->
+            <div class="table-container">
+                <table class="payment-table">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Order ID</th>
+                            <th>Customer</th>
+                            <th>Method</th>
+                            <th>Status</th>
+                            <th>Receipt</th>
+                            <th>Date</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>#G1001</td>
+                            <td>Calista Flockhart</td>
+                            <td><span class="method-gcash">Gcash</span></td>
+                            <td><span class="status-badge pending">Pending</span></td>
+                            <td><button class="receipt-btn"><i class="fas fa-camera camera-icon"></i></button></td>
+                            <td>03/23/2025</td>
+                            <td class="action-cell">⋮</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>#G1002</td>
+                            <td>Jeremy Tan</td>
+                            <td>Cash</td>
+                            <td><span class="status-badge overdue">Overdue</span></td>
+                            <td><button class="receipt-btn"><i class="fas fa-camera camera-icon"></i></button></td>
+                            <td>03/23/2025</td>
+                            <td class="action-cell">⋮</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>#G1003</td>
+                            <td>David Discaya</td>
+                            <td><span class="method-gcash">Gcash</span></td>
+                            <td><span class="status-badge pending">Pending</span></td>
+                            <td><button class="receipt-btn"><i class="fas fa-camera camera-icon"></i></button></td>
+                            <td>03/23/2025</td>
+                            <td class="action-cell">⋮</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>#G1004</td>
+                            <td>Harold Sy</td>
+                            <td><span class="method-gcash">Gcash</span></td>
+                            <td><span class="status-badge review">Under Review</span></td>
+                            <td><button class="receipt-btn"><i class="fas fa-camera camera-icon"></i></button></td>
+                            <td>03/23/2025</td>
+                            <td class="action-cell">⋮</td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>#G1005</td>
+                            <td>Krishanne Gravidez</td>
+                            <td><span class="method-gcash">Gcash</span></td>
+                            <td><span class="status-badge paid">Paid</span></td>
+                            <td><button class="receipt-btn"><i class="fas fa-camera camera-icon"></i></button></td>
+                            <td>03/23/2025</td>
+                            <td class="action-cell">⋮</td>
+                        </tr>
+                        <tr>
+                            <td>6</td>
+                            <td>#G1006</td>
+                            <td>Julianne Copiaza</td>
+                            <td>Cash</td>
+                            <td><span class="status-badge review">Under Review</span></td>
+                            <td><button class="receipt-btn"><i class="fas fa-camera camera-icon"></i></button></td>
+                            <td>03/23/2025</td>
+                            <td class="action-cell">⋮</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Pagination -->
+            <div class="pagination">
+                <span>Showing 1-10 of 255 items</span>
+                <div class="rows-per-page">
+                    <label for="rows">Rows per page:</label>
+                    <select id="rows">
+                        <option>10</option>
+                        <option>25</option>
+                        <option>50</option>
+                    </select>
+                </div>
+                <div class="pagination-controls">
+                    <button><i class="fas fa-chevron-left"></i></button>
+                    <button class="active">1</button>
+                    <button><i class="fas fa-chevron-right"></i></button>
+                </div>
+            </div>
+
+            <!-- Action Menu -->
+            <div id="actionMenu" class="action-menu hidden">
+                <ul>
+                    <li><a href="#">View Receipt</a></li>
+                    <li><a href="#">Mark as Paid</a></li>
+                    <li><a href="#">Cancel</a></li>
+                </ul>
+            </div>
+
+            <!-- Popup Overlay -->
+            <div class="popup-overlay" id="productPopup">
+                <div class="popup">
+                    <span class="close-btn" id="closePopup">&times;</span>
+                    <h3>Order ID: <span id="popupOrderId">#</span></h3>
+
+                    <!-- Image Preview -->
+                    <div class="form-group">
+                        <div class="image-preview">
+                            <img src="https://cdn-icons-png.flaticon.com/512/4211/4211763.png" alt="Preview">
+                        </div>
+                    </div>
+
+                    <!-- Form Fields -->
+                    <div class="form-group">
+                        <label>Customer: <span id="popupCustomer"></span></label>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Price:</label>
+                        <div class="price-input">
+                            <span>₱</span>
+                            <input type="number" id="popupPrice" class="input-text" readonly>
+                        </div>
+                    </div>
+
+                    <div class="form-group method-field">
+                        <label>Method:</label>
+                    </div>
+
+                    <!-- Action Buttons -->
+                    <div class="popup-actions">
+                        <button class="save-btn">Mark as Paid</button>
+                        <button class="cancel-btn">Cancel</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+    </main>
+
+
+    <!-- ===== Modal ===== -->
+    <div id="approvalModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+
+            <h2>Request Approval</h2>
+            <div class="modal-body">
+
+                <!-- Left Side: Order Details -->
+                <div class="order-details">
+                    <h3>Order Details</h3>
+                    <p><b>Order ID:</b> <span id="orderId">#</span></p>
+                    <p><b>Product:</b> <span id="product"></span></p>
+                    <p><b>Address:</b> <span id="address"></span></p>
+                    <p><b>Date:</b> <span id="date"></span></p>
+                    <p><b>Status:</b> Pending</p>
+                    <p><b>Dimension:</b> <span id="dimension">24", 0”, 18”, 0”</span></p>
+                    <p><b>Type:</b> <span id="type">Tempered</span></p>
+                    <p><b>Thickness:</b> <span id="thickness">8mm</span></p>
+                    <p><b>Edge Work:</b> <span id="edgeWork">Flat Polish</span></p>
+                    <p><b>Engraving:</b> <span id="engraving">N/A</span></p>
+                    <p><b>File Attached:</b> <a id="fileLink" href="#" target="_blank">design.pdf</a></p>
+                    <p><b>Total Quotation:</b> ₱<span id="quotation"></span></p>
+                </div>
+
+                <!-- Right Side: Notes -->
+                <div class="notes-section">
+                    <h3>Notes</h3>
+                    <textarea id="notes" class="notes-txtArea" placeholder="empty..."></textarea>
+
+                    <!-- Barcode -->
+                    <div class="barcode">
+                        <svg id="barcode"></svg>
+                        <p id="barcodeText"></p>
+                    </div>
+
+                    <!-- Buttons -->
+                    <div class="modal-actions">
+                        <button class="btn-submit">Submit to Admin</button>
+                        <button class="btn-cancel">Cancel</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/jsbarcode@3.11.5/dist/JsBarcode.all.min.js"></script>
+    <script src="/Glassify/assets/js/sales.js"></script>
+</body>
+
+</html>
