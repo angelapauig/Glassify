@@ -5,9 +5,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>2D Modeling</title>
-  <link rel="stylesheet" href="/Glassify/assets/css/2DModeling_styles.css">
-  <script src="/Glassify/assets/js/header.js"></script>
-  <script src="/Glassify/assets/js/footer.js" defer></script>
+  <link rel="stylesheet" href="/Assets/css/2DModeling_styles.css">
+  <script src="assets/js/header.js"></script>
+  <script src="assets/js/footer.js" defer></script>
 
 </head>
 
@@ -23,19 +23,19 @@
         <!-- Left Side - Product Preview -->
         <div class="product-preview">
             <div class="image-slider">
-                <img id="main-product-image" src="/Glassify/assets/img/glass-window.jpg" alt="Window Preview" class="main-image">
+                <img id="main-product-image" src="/Assets/img/glass-window.jpg" alt="Window Preview" class="main-image">
                 <div class="slider-controls">
                     <button class="prev">&#10094;</button>
                     <button class="next">&#10095;</button>
                 </div>
                 <div class="image-count">1/3</div>
             </div>
-        <script src="../assets/js/product-preview.js"></script>
+        <script src="/Assets/js/product-preview.js"></script>
 
             <div class="preview-2d">
                 <div class="preview-diagram">
                     <!-- 2D diagram would go here -->
-                    <img src="../assets/img/2d-diagram.png" alt="2D Window Diagram" class="diagram-image">
+                    <img src="/Assets/img/2d-diagram.png" alt="2D Window Diagram" style="max-width: 100%; height: auto;">
                 </div>
                 <h3>2D Preview</h3>
             </div>
@@ -60,13 +60,12 @@
                 <div class="popup-content">
                 <div>
                     <div class="upload-area">
-                    <img src="/Glassify/assets/img/upload-file.png" alt="Upload Icon">
+                    <img src="/Assets/img/upload-file.png" alt="Upload Icon">
                     <p><strong>Choose a file or drag & drop it here</strong></p>
                     <p>Supported file types: JPG, PNG, PDF<br>Maximum size: 25MB</p>
 
                     <!-- hidden input -->
-                    <label for="fileInput" class="hidden-label">Upload file</label>
-                    <input type="file" id="fileInput" accept=".jpg,.jpeg,.png,.pdf" title="Upload file" placeholder="Select a file">
+                    <input type="file" id="fileInput" accept=".jpg,.jpeg,.png,.pdf" style="display: none;">
                     <!-- trigger input -->
                     <button class="browse-btn" onclick="document.getElementById('fileInput').click()">Browse Files</button>
                     </div>
@@ -88,7 +87,7 @@
             </div>
             </div>
 
-            <script src="/Glassify/assets/js/upload-file.js"></script>
+            <script src="/Assets/js/upload-file.js"></script>
 
             <div class="estimated-price">
                 <h3>Estimated Price</h3>
@@ -131,7 +130,7 @@
             </div>
             <div class="add-to-cart-container">
                 <button onclick="window.location.href='add-to-cart.html'" class="add-to-cart">
-                    <img src="/Glassify/assets/img/shopping-cart.png" alt="Add to Cart">
+                    <img src="/Assets/img/shopping-cart.png" alt="Add to Cart">
                     <h3>Add to Cart</h3>
                 </button>
             </div>
@@ -142,10 +141,10 @@
             <div class="product-header">
                 <h2>Glass & Aluminum Window</h2>
                 <button class="wishlist-btn" onclick="toggleWishlist(this)">
-                    <img src="/Glassify/assets/img/heart.png" alt="Wishlist" class="heart-icon">
+                    <img src="/Assets/img/heart.png" alt="Wishlist" class="heart-icon">
                 </button>
             </div>
-            <script src="/Glassify/assets/js/wishlist-btn.js"></script>
+            <script src="/Assets/js/wishlist-btn.js"></script>
 
             <p>Start building today!</p>
 
@@ -160,52 +159,124 @@
                     <div class="shape-buttons">
                         <button class="option-btn">Rectangle</button>
                         <button class="option-btn">Square</button>
-                        <button class="option-btn">Triangle</button>
-                        <button class="option-btn">Pentagon</button>
+
                     </div>
                 </div>
-                
+
+                <div class="option-group grid-controls">
+                <h3>Glass Grid</h3>
+                <div class="dimension-inputs">
+                    <div class="dimension-input-group">
+                    <label>Rows</label>
+                    <select id="rows">
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                    </select>
+                    </div>
+                    <div class="dimension-input-group">
+                    <label>Columns</label>
+                    <select id="columns">
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                    </select>
+                    </div>
+                </div>
+                </div>
+
+
                 <div class="option-group">
-                    <div class="dimension-inputs">
-                        <div class="dimension-input-group">
-                            <label>Height</label>
-                            <select aria-label="Height">
-                                <option>45"</option>
-                                <option>35"</option>
-                                <option>50"</option>
-                            </select>
-                        </div>
-                        <div class="dimension-input-group">
-                            <label>Fraction</label>
-                            <select aria-label="Height Fraction">
-                                <option>0"</option>
-                                <option>1/2"</option>
-                                <option>1/4"</option>
-                            </select>
-                        </div>
+                <h3>Dimensions</h3>
+                <div class="dimension-inputs">
+                    <!-- Height -->
+                    <div class="dimension-input-group">
+                    <label>Height</label>
+                    <select id="height">
+                        <option selected>10"</option>
+                        <option>15"</option>
+                        <option>20"</option>
+                        <option>25"</option>
+                        <option>30"</option>
+                        <option>35"</option>
+                        <option>40"</option>
+                        <option>45"</option>
+                        <option>50"</option>
+                        <option>55"</option>
+                        <option>60"</option>
+                        <option>65"</option>
+                        <option>70"</option>
+                        <option>75"</option>
+                        <option>80"</option>
+                        <option>85"</option>
+                        <option>90"</option>
+                        <option>95"</option>
+                        <option>100"</option>
+                    </select>
+                    </div>
+
+                    <!-- Height Fraction -->
+                    <div class="dimension-input-group">
+                    <label>Fraction</label>
+                    <select id="heightFraction">
+                        <option selected>0"</option>
+                        <option>1/8"</option>
+                        <option>1/4"</option>
+                        <option>3/8"</option>
+                        <option>1/2"</option>
+                        <option>5/8"</option>
+                        <option>3/4"</option>
+                        <option>7/8"</option>
+                    </select>
                     </div>
                 </div>
-                
+                </div>
+
                 <div class="option-group">
-                    <div class="dimension-inputs">
-                        <div class="dimension-input-group">
-                            <label>Width</label>
-                            <select aria-label="Width">
-                                <option>35"</option>
-                                <option>45"</option>
-                                <option>55"</option>
-                            </select>
-                        </div>
-                        <div class="dimension-input-group">
-                            <label for="width-fraction">Fraction</label>
-                            <select id="width-fraction" aria-label="Width Fraction">
-                                <option>0"</option>
-                                <option>1/2"</option>
-                                <option>1/4"</option>
-                            </select>
-                        </div>
+                <div class="dimension-inputs">
+                    <!-- Width -->
+                    <div class="dimension-input-group">
+                    <label>Width</label>
+                    <select id="width">
+                        <option>10"</option>
+                        <option>15"</option>
+                        <option>20"</option>
+                        <option>25"</option>
+                        <option>30"</option>
+                        <option selected>35"</option>
+                        <option>40"</option>
+                        <option>45"</option>
+                        <option>50"</option>
+                        <option>55"</option>
+                        <option>60"</option>
+                        <option>65"</option>
+                        <option>70"</option>
+                        <option>75"</option>
+                        <option>80"</option>
+                        <option>85"</option>
+                        <option>90"</option>
+                        <option>95"</option>
+                        <option>100"</option>
+                    </select>
+                    </div>
+
+                    <!-- Width Fraction -->
+                    <div class="dimension-input-group">
+                    <label>Fraction</label>
+                    <select id="widthFraction">
+                        <option selected>0"</option>
+                        <option>1/8"</option>
+                        <option>1/4"</option>
+                        <option>3/8"</option>
+                        <option>1/2"</option>
+                        <option>5/8"</option>
+                        <option>3/4"</option>
+                        <option>7/8"</option>
+                    </select>
                     </div>
                 </div>
+                </div>
+
 
                 <div class="option-group">
                     <h3>Glass Type</h3>
@@ -248,6 +319,7 @@
                         <button class="option-btn">Wood</button>
                     </div>
                 </div>
+                
 
                 <div class="option-group">
                     <h3>Engraving (Optional)</h3>
@@ -262,9 +334,9 @@
                 <div class="option-group">
                     <h3>Glass Size</h3>
                     <div class="size-buttons">
-                        <button class="option-btn">45" x 35"</button>
-                        <button class="option-btn">55" x 45"</button>
-                        <button class="option-btn">70" x 55"</button>
+                        <button class="option-btn">20" x 65"</button>
+                        <button class="option-btn">96" x 130"</button>
+                        <button class="option-btn">100" x 144"</button>
                     </div>
                 </div>
 
@@ -283,22 +355,22 @@
         <h2>Related Products</h2>
         <div class="product-grid">
         <div class="product">
-            <img src="/Glassify/assets/img/glass-window4.jpg" alt="900 Series Sliding Window">
+            <img src="/Assets/img/glass-window4.jpg" alt="900 Series Sliding Window">
             <p>900 Series Sliding Window</p>
             <button onclick="window.location.href='#'">Build and Buy</button>
         </div>
         <div class="product">
-            <img src="/Glassify/assets/img/glass-window5.jpg" alt="798 Series Sliding Window">
+            <img src="/Assets/img/glass-window5.jpg" alt="798 Series Sliding Window">
             <p>798 Series Sliding Window</p>
             <button onclick="window.location.href='#'">Build and Buy</button>
         </div>
         <div class="product">
-            <img src="/Glassify/assets/img/glass-window6.jpg" alt="900 Series French Type Sliding Window">
+            <img src="/Assets/img/glass-window6.jpg" alt="900 Series French Type Sliding Window">
             <p>900 Series French Type Sliding Window</p>
             <button onclick="window.location.href='#'">Build and Buy</button>
         </div>
         <div class="product">
-            <img src="/Glassify/assets/img/glass-window7.jpg" alt="38 Series Awning Window">
+            <img src="/Assets/img/glass-window7.jpg" alt="38 Series Awning Window">
             <p>38 Series Awning Window</p>
             <button onclick="window.location.href='#'">Build and Buy</button>
         </div>
@@ -311,27 +383,27 @@
       <h2>Customer Testimonials</h2>
       <div class="testimonial-content">
         <button class="testimonial-arrow left">
-          <img src="/Glassify/assets/img/testimonials-arrow.png" alt="Previous">
+          <img src="/Assets/img/testimonials-arrow.png" alt="Previous">
         </button>
         <div class="testimonial-text">
           <p>Highly recommending this shop! Very smooth and fast transaction. Despite unfortunate events, they were still able to deliver. Owner and staff are committed at great service. Exceeds expectations. Will definitely be our go-to-shop for glass and aluminum.</p>
           <div class="stars">
-            <img src="/Glassify/assets/img/mdi--star-circle-outline.svg" alt="ratings" class="ratings">
-            <img src="/Glassify/assets/img/mdi--star-circle-outline.svg" alt="ratings" class="ratings">
-            <img src="/Glassify/assets/img/mdi--star-circle-outline.svg" alt="ratings" class="ratings">
-            <img src="/Glassify/assets/img/mdi--star-circle-outline.svg" alt="ratings" class="ratings">
-            <img src="/Glassify/assets/img/mdi--star-circle-outline.svg" alt="ratings" class="ratings">
+            <img src="/Assets/img/mdi--star-circle-outline.svg" alt="ratings" class="ratings">
+            <img src="/Assets/img/mdi--star-circle-outline.svg" alt="ratings" class="ratings">
+            <img src="/Assets/img/mdi--star-circle-outline.svg" alt="ratings" class="ratings">
+            <img src="/Assets/img/mdi--star-circle-outline.svg" alt="ratings" class="ratings">
+            <img src="/Assets/img/mdi--star-circle-outline.svg" alt="ratings" class="ratings">
           </div>
           <h3 class="author">Kris-Ann Munda-Rebullana</h3>
         </div>
         <button class="testimonial-arrow right">
-          <img src="/Glassify/assets/img/testimonials-arrow.png" alt="Next">
+          <img src="/Assets/img/testimonials-arrow.png" alt="Next">
         </button>
       </div>
     </section>
     </main>
+<script src="/Assets/js/2d_customization.js"></script>
 
 </body>
  <my-footer></my-footer>
-
 </html>
