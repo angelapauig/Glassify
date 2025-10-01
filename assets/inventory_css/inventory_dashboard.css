@@ -1,0 +1,336 @@
+/* ---------- FONTS (keep as provided) ---------- */
+@font-face {
+  font-family: 'Montserrat';
+  src: url('../fonts/montserrat/Montserrat-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src: url('../fonts/montserrat/Montserrat-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+/* ---------- BASE / LAYOUT ---------- */
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #f4f6f9;
+  color: #333;
+}
+
+.container {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 220px;
+  background-color: #01374C;
+  color: #fff;
+  transition: width 0.3s ease, padding 0.3s ease; /* Added padding transition */
+  flex-shrink: 0;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 20px;
+}
+
+.sidebar li.active a {
+    background-color: #FDC103;
+    color: #fff;
+}
+
+.sidebar.collapsed {
+  width: 65px;
+  padding: 1px 0; /* Reduced horizontal padding for collapsed state */
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  padding-left: 10px;
+  justify-content: center;
+  transition: justify-content 0.3s ease, padding-left 0.3s ease;
+}
+
+.sidebar.collapsed .logo-container {
+  justify-content: center;
+  padding-left: 0;
+}
+
+.logo {
+  width: 150px;
+  height: 150px;
+  margin-right: 10px;
+  transition: all 0.3s ease; /* Added transition for smooth sizing/margin */
+}
+
+.sidebar.collapsed .logo {
+  /* Minimize the logo image itself */
+  width: 37px;
+  height: 37px;
+  margin-right: 0; /* Remove margin when collapsed */
+}
+
+/* Grouped selectors for collapsing elements */
+.sidebar.collapsed .general-section span,
+.sidebar.collapsed .user-section span {
+  display: none;
+}
+
+/* --- Navigation Link Text Hiding --- */
+/* Grouped selectors for link text span transition */
+.sidebar-nav ul li a span, 
+.general-section ul li a span, 
+.user-section ul li a span {
+    transition: opacity 0.3s ease;
+}
+
+/* Grouped selectors for hiding link text span on collapse */
+.sidebar.collapsed .sidebar-nav ul li a span,
+.sidebar.collapsed .general-section ul li a span,
+.sidebar.collapsed .user-section ul li a span {
+  display: none; /* Hide the text */
+}
+
+/* Grouped selectors for UL structure */
+.sidebar-nav ul, 
+.general-section ul, 
+.user-section ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Grouped selectors for LI margin */
+.sidebar-nav ul li, 
+.general-section ul li, 
+.user-section ul li {
+  margin-bottom: 2px;
+}
+
+/* Grouped selectors for Anchor/Link base styles */
+.sidebar-nav ul li a, 
+.general-section ul li a, 
+.user-section ul li a {
+  display: flex;
+  align-items: center;
+  padding: 12px 20px; 
+  color: white;
+  text-decoration: none;
+  transition: background-color 0.3s, color 0.3s, padding 0.3s;
+  justify-content: flex-start;
+  background-color: #02455F;
+}
+
+/* Grouped selectors for Collapsed link styles */
+.sidebar.collapsed .sidebar-nav ul li a, 
+.sidebar.collapsed .general-section ul li a,
+.sidebar.collapsed .user-section ul li a {
+  justify-content: center; 
+  padding: 12px;
+}
+
+/* Grouped selectors for Active and Hover states */
+.sidebar-nav ul li.active a, 
+.sidebar-nav ul li a:hover,
+.general-section ul li a:hover,
+.user-section ul li a:hover {
+  background-color: #1a273b;
+  color: #fff;
+}
+
+.sidebar-nav ul li.active a {
+background-color: #FDC103;
+  color: #fff;
+}
+
+/* Grouped selectors for Icon base styles */
+.sidebar-nav ul li a img, 
+.general-section ul li a img, 
+.user-section ul li a img {
+  margin-right: 15px; 
+  width: 20px;
+  transition: margin-right 0.3s ease, width 0.3s ease;
+}
+
+/* Grouped selectors for Collapsed Icon styles */
+.sidebar.collapsed .sidebar-nav ul li a img, 
+.sidebar.collapsed .general-section ul li a img, 
+.sidebar.collapsed .user-section ul li a img {
+  margin-right: 0; 
+  width: auto;
+}
+
+/* Individual Section containers */
+.general-section,
+.user-section {
+  margin-top: 10px;
+  padding-top: 20px;
+}
+
+/* Individual Section Title (span) styles */
+/* Applying the previous .general-section span styles to the new .section-title class */
+.section-title {
+  color: white;
+  font-weight: 500;
+  margin-left: 20px;
+  display: block;
+  margin-bottom: 15px;
+}
+
+
+/* ---------- MAIN CONTENT ---------- */
+.main-content {
+  flex-grow: 1;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  font-family: 'DM Sans', sans-serif;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.header-menu { font-size: 1.5em; cursor: pointer; color: #02455F; }
+.header-right i { font-size: 1.2em; margin-left: 20px; color: #02455F; cursor: pointer; }
+
+/* page section basics */
+.order-list-section,
+.order-schedule-section {
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.section-header { margin-bottom: 20px; }
+.section-header h2 {
+  font-size: 45px;
+  font-weight: 700;
+  color: #02455F;
+  margin: 0;
+}
+
+/* ---------- STAT CARDS (merged single definition) ---------- */
+.stat-card {
+  padding: 40px 0;
+  flex: 1 1 150px;
+  text-align: center;
+  border-radius: 25px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.121);
+  transition: transform 0.2s;
+  color: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.stat-card:hover { transform: translateY(-3px); }
+
+.stat-value {
+  font-size: 45px;
+  font-weight: 600;
+  color: inherit;
+}
+.stat-title {
+  font-size: 20px;
+  color: inherit;
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+
+/* stat variants */
+.stat-green { background: linear-gradient(135deg, #00c853, #007a00); }
+.stat-orange { background: linear-gradient(135deg, #ffa000, #8d5600); }
+.stat-red { background: linear-gradient(135deg, #ff5252, #b71c1c); }
+
+.review-btn {
+  border: 1px solid black;
+  border-radius: 8px;
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.15);
+  transition: all 0.2s ease;
+  background: transparent; /* no background */
+}
+
+/* Hover effect */
+.review-btn:hover {
+  transform: translateY(-2px);
+}
+
+/* On click (active state) */
+.review-btn:active {
+  transform: scale(0.95);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+/* ---------- order/dash tabs header (kept both names) ---------- */
+/* SECTION TITLES (OUTSIDE BOXES) */
+.dash-tabs {
+    margin-top: 40px;
+  margin-bottom: 20px;
+}
+
+.dash-tabs h2 {
+  font-size: 35px;
+  font-weight: 700;
+  margin: 0 0 12px 0;
+  padding-bottom: 6px;
+  border-bottom: 1px solid #ccc; /* ✅ keep only this */
+  color: #000;
+}
+
+
+/* ---------- BOX WRAPPER ---------- */
+.box {
+  padding: 20px;
+  font-family: 'DM Sans', sans-serif;
+  color: #333;
+}
+.box h3 { font-size: 18px; font-weight: 600; margin-bottom: 15px; color: #333; }
+
+/* ---------- KEY STATS (kept compact single block) ---------- */
+.key-stats { display: flex; gap: 20px; margin-top: 40px;margin-bottom: 25px; }
+
+/* stat-card alternative card sizes used earlier (kept height) */
+.stat-card.small { height: 140px; padding: 40px 20px; }
+
+
+/* blue/orange/green variants (kept final values you used) */
+.stat-blue { background: linear-gradient(135deg, #FDC103, #DE8400); }
+.stat-orange { background: linear-gradient(135deg, #FFABAF, #DE3C44); }
+.stat-green { background: linear-gradient(135deg, #0FBCFF, #12617F); }
+
+/* ---------- RECENT ACTIVITIES ---------- */
+.recent-activities {
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  font-family: 'DM Sans', sans-serif;
+}
+.recent-activities table { width: 100%; border-collapse: collapse; }
+.recent-activities th, .recent-activities td { padding: 10px; font-size: 14px; text-align: left; }
+.recent-activities th { background: #f5f7fa; font-weight: 600; }
+
+
+/* ---------- OPTIONAL: table hover highlight (suggested, not forced) ---------- */
+table tbody tr:hover td {
+  background-color: #f5f7fa;
+  transition: background-color 0.25s ease;
+}
