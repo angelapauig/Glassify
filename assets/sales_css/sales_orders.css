@@ -1,0 +1,701 @@
+/* ===== RESET & BASE ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #f4f6f9;
+  color: #333;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  padding-left: 10px;
+  justify-content: center;
+  transition: justify-content 0.3s ease, padding-left 0.3s ease;
+}
+
+
+/* Sidebar */
+.sidebar {
+  width: 220px;
+  background-color: #01374C;
+  color: #fff;
+  transition: width 0.3s ease, padding 0.3s ease;
+  flex-shrink: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow-y: auto;
+  z-index: 100;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 20px;
+  padding-bottom: 100px; /* or any size */
+  height: 100vh;
+}
+
+.sidebar li.active a {
+    background-color: #FDC103;
+    color: #fff;
+}
+
+.sidebar.collapsed {
+  width: 65px;
+  padding: 1px 0; /* Reduced horizontal padding for collapsed state */
+}
+
+.sidebar.collapsed ~ .main-content {
+  margin-left: 65px;   /* match collapsed width */
+}
+
+.sidebar.collapsed .logo-container {
+  justify-content: center;
+  padding-left: 0;
+}
+
+.logo {
+  width: 150px;
+  height: 150px;
+  margin-right: 10px;
+  transition: all 0.3s ease; /* Added transition for smooth sizing/margin */
+}
+
+.sidebar.collapsed .logo {
+  /* Minimize the logo image itself */
+  width: 37px;
+  height: 37px;
+  margin-right: 0; /* Remove margin when collapsed */
+}
+
+/* Grouped selectors for collapsing elements */
+.sidebar.collapsed .general-section span,
+.sidebar.collapsed .user-section span {
+  display: none;
+}
+
+/* --- Navigation Link Text Hiding --- */
+/* Grouped selectors for link text span transition */
+.sidebar-nav ul li a span, 
+.general-section ul li a span, 
+.user-section ul li a span {
+    transition: opacity 0.3s ease;
+}
+
+/* Grouped selectors for hiding link text span on collapse */
+.sidebar.collapsed .sidebar-nav ul li a span,
+.sidebar.collapsed .general-section ul li a span,
+.sidebar.collapsed .user-section ul li a span {
+  display: none; /* Hide the text */
+}
+
+/* Grouped selectors for UL structure */
+.sidebar-nav ul, 
+.general-section ul, 
+.user-section ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Grouped selectors for LI margin */
+.sidebar-nav ul li, 
+.general-section ul li, 
+.user-section ul li {
+  margin-bottom: 2px;
+}
+
+/* Grouped selectors for Anchor/Link base styles */
+.sidebar-nav ul li a, 
+.general-section ul li a, 
+.user-section ul li a {
+  display: flex;
+  align-items: center;
+  padding: 12px 20px; 
+  color: white;
+  text-decoration: none;
+  transition: background-color 0.3s, color 0.3s, padding 0.3s;
+  justify-content: flex-start;
+  background-color: #02455F;
+}
+
+/* Grouped selectors for Collapsed link styles */
+.sidebar.collapsed .sidebar-nav ul li a, 
+.sidebar.collapsed .general-section ul li a,
+.sidebar.collapsed .user-section ul li a {
+  justify-content: center; 
+  padding: 12px;
+}
+
+/* Grouped selectors for Active and Hover states */
+.sidebar-nav ul li.active a, 
+.sidebar-nav ul li a:hover,
+.general-section ul li a:hover,
+.user-section ul li a:hover {
+  background-color: #1a273b;
+  color: #fff;
+}
+
+.sidebar-nav ul li.active a {
+background-color: #FDC103;
+  color: #fff;
+}
+
+/* Grouped selectors for Icon base styles */
+.sidebar-nav ul li a img, 
+.general-section ul li a img, 
+.user-section ul li a img {
+  margin-right: 15px; 
+  width: 20px;
+  transition: margin-right 0.3s ease, width 0.3s ease;
+}
+
+/* Grouped selectors for Collapsed Icon styles */
+.sidebar.collapsed .sidebar-nav ul li a img, 
+.sidebar.collapsed .general-section ul li a img, 
+.sidebar.collapsed .user-section ul li a img {
+  margin-right: 0; 
+  width: auto;
+}
+
+/* Individual Section containers */
+.general-section,
+.user-section {
+  margin-top: 10px;
+  padding-top: 20px;
+}
+
+/* Individual Section Title (span) styles */
+.section-title {
+  color: white;
+  font-weight: 500;
+  margin-left: 20px;
+  display: block;
+  margin-bottom: 15px;
+}
+
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.header-menu { font-size: 1.5em; cursor: pointer; color: #02455F; }
+.header-right i { font-size: 1.2em; margin-left: 20px; color: #02455F; cursor: pointer; }
+
+.section-header { margin-bottom: 20px; }
+.section-header h2 {
+  font-size: 45px;
+  font-weight: 700;
+  color: #02455F;
+  margin: 0;
+}
+
+.container {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* ===== MAIN CONTENT ===== */
+.main-content {
+  margin-left: 220px;       /* match sidebar expanded width */
+  transition: margin-left 0.3s ease;
+  padding: 20px;
+  flex-grow: 1;
+  height: 100vh;
+  overflow-y: auto;
+  font-family: 'DM Sans', sans-serif;
+}
+
+/* ===== ORDERS ===== */
+.order-tabs {
+    margin: 15px 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between; 
+}
+
+.order-tabs .tab-links-container {
+    display: flex; 
+    flex-grow: 1; 
+    justify-content: flex-start; 
+    gap: 50px; 
+    font-size: 20px;
+}
+
+.order-tabs a {
+    text-decoration: none;
+    font-weight: bold;
+    color: #006494;
+    flex-grow: 0; 
+    text-align: left; 
+    padding-bottom: 5px;
+    border-bottom: 3px solid transparent;
+    border-color: #02455F; 
+}
+
+.order-tabs a.active {
+    border-bottom: 3px solid; 
+}
+
+a#pending-id.active { 
+    color: #FDC103; 
+    border-color: #FDC103; 
+}
+
+a#awaiting-id.active { 
+    color: #C837AB; 
+    border-color: #C837AB; 
+}
+
+a#ready-id.active { 
+    color: #4CAF50; 
+    border-color: #4CAF50; 
+}
+
+.order-tabs .tab-count {
+    color: #99a3aa; 
+    font-weight: normal;
+    margin-left: 5px;
+    text-decoration: none;
+}
+
+.order-tabs a.active .tab-count {
+    color: #99a3aa;
+    font-weight: bold;
+    text-decoration: none; /* Reconfirms no underline */
+}
+
+.order-date {
+    display: flex;
+    gap: 5px;
+    background: #006494;
+    color: #fff;
+    margin-left: 15%;
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-weight: bold;
+    font-size: 15px;
+    height: 33px;
+    width: 10%;
+    justify-content: center;
+    align-items: center;
+}
+
+.search-box {
+    width: 250px;
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+.order-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+    overflow: hidden;
+    border-radius: 6px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+th,
+td {
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+/* ===== Shared order header styles ===== */
+.order-header {
+    color: #fff;
+    text-align: left;
+    font-size: 20px;
+}
+
+tbody td {
+    font-size: 16px;
+}
+
+tbody td:last-child, thead th:last-child {
+    text-align: center;        /* Horizontally center the icon */
+    vertical-align: middle;    /* Vertically center the icon */
+}
+
+
+/* ===== Different colors per section ===== */
+#tab-pending .order-header {
+    background: linear-gradient(to right, #FDC103, #765D0D); /* yellow-gold */
+}
+
+#tab-awaiting .order-header {
+    background: linear-gradient(to right, #C837AB, #702260); /* purple */
+}
+
+#tab-ready .order-header {
+    background: linear-gradient(to right, #45A927, #2B5B1C); /* green */
+}
+
+
+/* ===== BUTTONS ===== */
+.btn-approve,
+.btn-view,
+.btn-check {
+    padding: 6px 12px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+/* Pending Review Button */
+.btn-approve {
+    background: #048EC4;
+    color: #fff;
+    width: 70%;
+    padding: 8px 15px; 
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.2s ease;
+}
+.btn-approve:hover {
+    background: #006494;
+}
+
+/* Awaiting Admin Button and Ready to Approve Button*/
+.btn-view, .btn-check {
+    background-color: transparent; 
+    border: 1px solid #000; 
+    color: #000;
+    padding: 8px 15px; 
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.2s ease;
+    width: 70%;
+}
+
+.btn-view:hover, .btn-check:hover {
+    background-color: #f0f0f0;
+}
+
+.btn-view .button-icon {
+    width: 20px; 
+    height: 20px;
+    vertical-align: middle; 
+    margin-right: 3px; 
+}
+
+/* ===== STATUS LABELS ===== */
+.status {
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: bold;
+    display: inline-block;
+    text-align: center;
+}
+
+.status.approved {
+    background: #d4f5d4;
+    color: #2a8d2a;
+}
+
+.status.disapproved {
+    background: #f8d4d4;
+    color: #c72c2c;
+}
+
+/* Approved status - green color */
+.status-approved {
+    color: #28a745;
+    font-weight: bold;
+}
+
+/* Declined status - red color */
+.status-declined {
+    color: #dc3545;
+    font-weight: bold;
+}
+
+/* ===== Section Visibility ===== */
+.order-section {
+    display: none;
+}
+
+.order-section.active {
+    display: block;
+}
+
+/* ===== Orders Header ===== */
+.dash-tabs {
+    margin-top: 40px;
+  margin-bottom: 20px;
+}
+
+.dash-tabs h2 {
+  font-size: 35px;
+  font-weight: 700;
+  margin: 0 0 12px 0;
+  padding-bottom: 15px;
+}
+
+.dash-tabs .subtitle {
+    font-weight: normal;
+    color: #666;
+    margin-left: 5px;
+}
+
+
+/* ===== Order Footer ===== */
+.order-footer {
+    margin-top: 10px;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    font-size: 13px;
+    color: #333;
+}
+
+
+/* Overlay */
+.popup-overlay {
+    display: none;
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 999;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Popup Container */
+.popup {
+    background: #fff;
+    padding: 20px 25px;
+    width: 700px; 
+    max-width: 90%;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    position: relative;
+    animation: fadeIn 0.3s ease-in-out;
+  font-family: 'DM Sans', sans-serif;
+
+}
+
+.popup h3.popup-title {
+    margin-top: 0;
+    margin-bottom: 25px;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* Close Button */
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 20px;
+    cursor: pointer;
+    color: #555;
+}
+.close-btn:hover {
+    color: #000;
+}
+
+/* Content Layout: Two Columns */
+.popup-content-grid {
+    display: flex;
+    gap: 40px;
+    margin-bottom: 20px;
+}
+
+.order-details {
+    flex: 1 1 55%;
+}
+
+.notes-barcode {
+    flex: 1 1 85%;
+}
+
+/* Detail Headers */
+.order-details h4.details-title {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: #02455F;
+}
+.notes-barcode h4.notes-title {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: #02455F;
+}
+
+/* Detail Rows */
+.detail-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+    font-size: 14px;
+}
+
+.detail-row.total-row {
+    border-top: 1px solid #ddd;
+    padding-top: 10px;
+    margin-top: 15px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.detail-value.file-link {
+    color: #0066FF; 
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+/* Notes Text Area */
+.notes-textarea {
+    width: 100%;
+    height: 150px;
+    padding: 10px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    resize: none;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+
+/* Barcode Section */
+.barcode-container {
+    text-align: center;
+    margin-top: 25px;
+}
+
+.barcode-container img {
+    width: 150px; 
+    height: 50px;
+    display: block;
+    margin: 0 auto 5px;
+}
+
+/* Action Buttons (Submit/Cancel) */
+.popup-actions.approval-actions {
+    display: flex;
+    justify-content: flex-end; 
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.approved-btn, .submit-btn {
+    background: #28a745;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.disapproved-btn {
+    background: #F7363F;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.cancel-btn {
+    background: #9A9A9A;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+
+/* Pagination */
+.page-btn {
+    background: #004080;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 4px 10px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.page-number {
+    background: #ffffff;
+    color: #000000;
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+.pagination {
+  display: flex;
+  align-items: center;
+  margin-top: 25px;
+  font-size: 0.9em;
+  color: #666;
+  justify-content: space-between;
+    position: relative;
+}
+
+.pagination-controls {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+}
+
+.pagination > span {
+  flex-shrink: 0;
+  text-align: left;
+}
+
+.pagination-controls button {
+  background-color: #006494;
+  border: none;
+  padding: 8px 12px;
+  cursor: pointer;
+  color: #fff;
+  min-width: 35px;
+}
+
+.pagination-controls button:first-child {
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+.pagination-controls button:last-child {
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.pagination-controls button.active {
+  background-color: #fff;
+  color: black;
+  border: 1px solid #00000077;
+}

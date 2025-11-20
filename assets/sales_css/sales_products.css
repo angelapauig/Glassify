@@ -1,0 +1,399 @@
+@font-face {
+  font-family: 'Montserrat';
+  src: url('../fonts/montserrat/Montserrat-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src: url('../fonts/montserrat/Montserrat-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+/* ===== RESET & BASE ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #f4f6f9;
+  color: #333;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  padding-left: 10px;
+  justify-content: center;
+  transition: justify-content 0.3s ease, padding-left 0.3s ease;
+}
+
+
+/* Sidebar */
+.sidebar {
+  width: 220px;
+  background-color: #01374C;
+  color: #fff;
+  transition: width 0.3s ease, padding 0.3s ease;
+  flex-shrink: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow-y: auto;
+  z-index: 100;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 20px;
+  padding-bottom: 100px; /* or any size */
+  height: 100vh;
+}
+
+.sidebar li.active a {
+    background-color: #FDC103;
+    color: #fff;
+}
+
+.sidebar.collapsed {
+  width: 65px;
+  padding: 1px 0; /* Reduced horizontal padding for collapsed state */
+}
+
+.sidebar.collapsed ~ .main-content {
+  margin-left: 65px;   /* match collapsed width */
+}
+
+.sidebar.collapsed .logo-container {
+  justify-content: center;
+  padding-left: 0;
+}
+
+.logo {
+  width: 150px;
+  height: 150px;
+  margin-right: 10px;
+  transition: all 0.3s ease; /* Added transition for smooth sizing/margin */
+}
+
+.sidebar.collapsed .logo {
+  /* Minimize the logo image itself */
+  width: 37px;
+  height: 37px;
+  margin-right: 0; /* Remove margin when collapsed */
+}
+
+/* Grouped selectors for collapsing elements */
+.sidebar.collapsed .general-section span,
+.sidebar.collapsed .user-section span {
+  display: none;
+}
+
+/* --- Navigation Link Text Hiding --- */
+/* Grouped selectors for link text span transition */
+.sidebar-nav ul li a span, 
+.general-section ul li a span, 
+.user-section ul li a span {
+    transition: opacity 0.3s ease;
+}
+
+/* Grouped selectors for hiding link text span on collapse */
+.sidebar.collapsed .sidebar-nav ul li a span,
+.sidebar.collapsed .general-section ul li a span,
+.sidebar.collapsed .user-section ul li a span {
+  display: none; /* Hide the text */
+}
+
+/* Grouped selectors for UL structure */
+.sidebar-nav ul, 
+.general-section ul, 
+.user-section ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Grouped selectors for LI margin */
+.sidebar-nav ul li, 
+.general-section ul li, 
+.user-section ul li {
+  margin-bottom: 2px;
+}
+
+/* Grouped selectors for Anchor/Link base styles */
+.sidebar-nav ul li a, 
+.general-section ul li a, 
+.user-section ul li a {
+  display: flex;
+  align-items: center;
+  padding: 12px 20px; 
+  color: white;
+  text-decoration: none;
+  transition: background-color 0.3s, color 0.3s, padding 0.3s;
+  justify-content: flex-start;
+  background-color: #02455F;
+}
+
+/* Grouped selectors for Collapsed link styles */
+.sidebar.collapsed .sidebar-nav ul li a, 
+.sidebar.collapsed .general-section ul li a,
+.sidebar.collapsed .user-section ul li a {
+  justify-content: center; 
+  padding: 12px;
+}
+
+/* Grouped selectors for Active and Hover states */
+.sidebar-nav ul li.active a, 
+.sidebar-nav ul li a:hover,
+.general-section ul li a:hover,
+.user-section ul li a:hover {
+  background-color: #1a273b;
+  color: #fff;
+}
+
+.sidebar-nav ul li.active a {
+background-color: #FDC103;
+  color: #fff;
+}
+
+/* Grouped selectors for Icon base styles */
+.sidebar-nav ul li a img, 
+.general-section ul li a img, 
+.user-section ul li a img {
+  margin-right: 15px; 
+  width: 20px;
+  transition: margin-right 0.3s ease, width 0.3s ease;
+}
+
+/* Grouped selectors for Collapsed Icon styles */
+.sidebar.collapsed .sidebar-nav ul li a img, 
+.sidebar.collapsed .general-section ul li a img, 
+.sidebar.collapsed .user-section ul li a img {
+  margin-right: 0; 
+  width: auto;
+}
+
+/* Individual Section containers */
+.general-section,
+.user-section {
+  margin-top: 10px;
+  padding-top: 20px;
+}
+
+/* Individual Section Title (span) styles */
+/* Applying the previous .general-section span styles to the new .section-title class */
+.section-title {
+  color: white;
+  font-weight: 500;
+  margin-left: 20px;
+  display: block;
+  margin-bottom: 15px;
+}
+
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.header-menu { font-size: 1.5em; cursor: pointer; color: #02455F; }
+.header-right i { font-size: 1.2em; margin-left: 20px; color: #02455F; cursor: pointer; }
+
+.container {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* ===== MAIN CONTENT ===== */
+.main-content {
+  margin-left: 220px;       /* match sidebar expanded width */
+  transition: margin-left 0.3s ease;
+  padding: 20px;
+  flex-grow: 1;
+  height: 100vh;
+  overflow-y: auto;
+  font-family: 'DM Sans', sans-serif;
+}
+
+
+.page-title {
+    color: #02455f;
+    font-weight: 600;
+    font-size: 40px;
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.products-section-main {
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+/* Controls (search + filters + buttons) */
+.controls-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+  gap: 12px;
+}
+
+.search-bar {
+    display: flex;
+    overflow: hidden;
+    max-width: 500px;
+    width: 100%;
+    gap: 10px;
+}
+
+.search-input {
+    border: 1px solid #828282;
+    padding: 10px 15px;
+    font-size: 1em;
+    flex-grow: 1;
+    border-radius: 5px;
+}
+
+.search-button {
+    background-color: #006494;
+    color: white;
+    border: 1px solid #828282;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s;
+    border-radius: 5px;
+}
+
+
+.controls-right {
+  display: flex;
+  gap: 10px;
+}
+
+.filter-category {
+    padding: 10px 20px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+/* Product grid */
+.table-container {
+  margin-top: 10px;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.product-card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 15px;
+  background: #fff;
+  text-align: center;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.product-image {
+  background: #f6f6f6;
+  border-radius: 6px;
+  height: 270px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+  font-size: 28px;
+  color: #aaa;
+}
+
+.product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* ensures the image fills the box without distortion */
+}
+
+.product-name {
+  font-weight: 500;
+  font-size: 15px;
+  margin: 12px 0;
+  text-align: left;
+}
+
+.product-price {
+  font-size: 14px;
+  color: #666;
+  margin: 12px 0;
+  text-align: left;
+}
+
+/* Pagination */
+.pagination {
+  display: flex;
+  align-items: lef;
+  margin-top: 25px;
+  font-size: 0.9em;
+  color: #666;
+  justify-content: space-between;
+    position: relative;
+  margin-bottom: 100px;
+
+}
+
+.pagination-controls {
+  position: absolute;
+  right: 0;
+  display: flex;
+}
+
+.pagination > span {
+  flex-shrink: 0;
+  text-align: left;
+}
+
+.pagination-controls button {
+  background-color: #006494;
+  border: none;
+  padding: 8px 12px;
+  cursor: pointer;
+  color: #fff;
+  min-width: 35px;
+}
+
+.pagination-controls button:first-child {
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+.pagination-controls button:last-child {
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.pagination-controls button.active {
+  background-color: #fff;
+  color: black;
+  border: 1px solid #00000077;
+}
+
