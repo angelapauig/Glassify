@@ -195,6 +195,12 @@ background-color: #FDC103;
 .header-menu { font-size: 1.5em; cursor: pointer; color: #02455F; }
 .header-right i { font-size: 1.2em; margin-left: 20px; color: #02455F; cursor: pointer; }
 
+/* Alternative: More specific targeting */
+.header-right #notification-link, 
+.header-right #user-profile-link {
+    text-decoration: none; 
+}
+
 .section-header { margin-bottom: 20px; }
 .section-header h2 {
   font-size: 45px;
@@ -699,3 +705,4 @@ tbody td:last-child, thead th:last-child {
   color: black;
   border: 1px solid #00000077;
 }
+
