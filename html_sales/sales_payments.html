@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payments</title>
+    <link rel="stylesheet" href="/Assets/admin_css/admin_payments.css">
+    <script src="https://kit.fontawesome.com/fc5ceca38c.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <!-- ===== SIDEBAR NAVIGATION ===== -->
+    <div class="container">
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <div class="logo-container">
+                <img src="/Assets/img/logo.png" alt="GlassWorth Builders Logo" class="logo">
+            </div>
+            <nav class="sidebar-nav">
+                <ul>
+                    <li class="active">
+                        <a href="sales.html">
+                            <img src="/Assets/img_admin/dashboard.svg" alt="Dashboard">
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="sales_orders.html">
+                            <img src="/Assets/img_admin/orders.svg" alt="Orders">
+                            <span>Orders</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+
+            <div class="user-section">
+                <span class="section-title">Users</span>
+                <ul>
+                    <li>
+                        <a href="sales_endUser.html">
+                            <img src="/Assets/img_admin/end-user.svg" alt="End User">
+                            <span>End User</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="sales_orders.html">
+                            <img src="/Assets/img_admin/support.svg" alt="Issue/Support">
+                            <span>Issue/Support</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="general-section">
+                <span class="section-title">General</span>
+                <ul>
+                    <li>
+                        <a href="sales_inventory.html">
+                            <img src="/Assets/img_admin/inventory.svg" alt="Inventory">
+                            <span>Inventory</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="sales_products.html">
+                            <img src="/Assets/img_admin/products.svg" alt="Products">
+                            <span>Products</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="sales_payments.html">
+                            <img src="/Assets/img_admin/payments.svg" alt="Payments">
+                            <span>Payments</span>
+                        </a>
+                    </li>
+
+                </ul>
+            </div>
+        </aside>
+
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <header class="header">
+        <div class="header-menu" id="menu-toggle"><i class="fas fa-bars"></i></div>
+        <div class="header-right">
+          <i class="fas fa-bell"></i>
+          <i class="fas fa-user-circle user-icon"></i>
+        </div>
+      </header>
+
+<!-- Payments -->
+<section class="order-list-section">
+  <div class="section-header">
+    <h2>Payments</h2>
+
+    <div class="inventory-stats">
+    <div class="stat-card stat-green">
+        <div class="stat-value">₱67,704</div>
+        <div class="stat-title">Weekly Sales</div>
+        <div class="stat-percent">↑ 18% from last week</div>
+    </div>
+
+    <div class="stat-card stat-orange">
+        <div class="stat-value" id="statPendingValue">3</div> 
+        <div class="stat-title">Pending Payments</div>
+    </div>
+
+    <div class="stat-card stat-red">
+        <div class="stat-value" id="statOverdueValue">1</div> 
+        <div class="stat-title">Overdue Payments</div>
+    </div>
+</div>
+
+  </div>
+
+  <div class="order-tabs">
+    <h2>Payment Tables</h2>
+  </div>
+
+    <div class="payment-filters">
+    <span class="filter-tab active" data-status="all">All</span>
+    <span class="filter-tab" data-status="paid">Paid</span>
+    <span class="filter-tab" data-status="pending">Pending</span>
+    <span class="filter-tab" data-status="review">Under Review</span>
+    <span class="filter-tab" data-status="overdue">Overdue</span>
+    </div>
+
+
+  <div class="table-container">
+    <table class="payment-table">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Order ID</th>
+          <th>Customer</th>
+          <th>Method</th>
+          <th>Status</th>
+          <th>Receipt</th>
+          <th>Date</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>#G1001</td>
+          <td>Calista Flockhart</td>
+          <td><span class="method-gcash">Gcash</span></td>
+          <td><span class="status-badge pending">Pending</span></td>
+          <td><button class="receipt-btn"><i class="fas fa-camera camera-icon"></i></button></td>
+          <td>03/23/2025</td>
+          <td class="action-cell">⋮</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>#G1002</td>
+          <td>Jeremy Tan</td>
+          <td>Cash</td>
+          <td><span class="status-badge overdue">Overdue</span></td>
+          <td><button class="receipt-btn"><i class="fas fa-camera camera-icon"></i></button></td>
+          <td>03/23/2025</td>
+          <td class="action-cell">⋮</td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>#G1003</td>
+          <td>David Discaya</td>
+          <td><span class="method-gcash">Gcash</span></td>
+          <td><span class="status-badge pending">Pending</span></td>
+          <td><button class="receipt-btn"><i class="fas fa-camera camera-icon"></i></button></td>
+          <td>03/23/2025</td>
+          <td class="action-cell">⋮</td>
+        </tr>
+        <tr>
+          <td>4</td>
+          <td>#G1004</td>
+          <td>Harold Sy</td>
+          <td><span class="method-gcash">Gcash</span></td>
+          <td><span class="status-badge review">Under Review</span></td>
+          <td><button class="receipt-btn"><i class="fas fa-camera camera-icon"></i></button></td>
+          <td>03/23/2025</td>
+          <td class="action-cell">⋮</td>
+        </tr>
+        <tr>
+          <td>5</td>
+          <td>#G1005</td>
+          <td>Krishanne Gravidez</td>
+          <td><span class="method-gcash">Gcash</span></td>
+          <td><span class="status-badge paid">Paid</span></td>
+          <td><button class="receipt-btn"><i class="fas fa-camera camera-icon"></i></button></td>
+          <td>03/23/2025</td>
+          <td class="action-cell">⋮</td>
+        </tr>
+        <tr>
+          <td>6</td>
+          <td>#G1006</td>
+          <td>Julianne Copiaza</td>
+          <td>Cash</td>
+          <td><span class="status-badge review">Under Review</span></td>
+          <td><button class="receipt-btn"><i class="fas fa-camera camera-icon"></i></button></td>
+          <td>03/23/2025</td>
+          <td class="action-cell">⋮</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+        <div class="pagination">
+          <span>Showing 1-10 of 255 items</span>
+          <div class="pagination-controls">
+            <button><i class="fas fa-chevron-left"></i></button>
+            <button class="active">1</button>
+            <button><i class="fas fa-chevron-right"></i></button>
+          </div>
+        </div>
+        <div id="actionMenu" class="action-menu hidden">
+        <ul>
+            <li><a href="#">View Receipt</a></li>
+            <li><a href="#">Mark as Paid</a></li>
+            <li><a href="#">Cancel</a></li>
+        </ul>
+        </div>
+
+<!-- Popup Overlay -->
+<div class="popup-overlay" id="productPopup">
+  <div class="popup">
+    <span class="close-btn" id="closePopup">&times;</span>
+    <h3>Order ID: <span id="popupOrderId">#</span></h3>
+
+    <!-- Image Preview -->
+    <div class="form-group">
+      <div class="image-preview">
+        <img src="https://cdn-icons-png.flaticon.com/512/4211/4211763.png" alt="Preview">
+      </div>
+    </div>
+
+    <!-- Form Fields -->
+    <div class="form-group">
+      <label>Customer: <span id="popupCustomer"></span></label>
+    </div>
+
+    <div class="form-group">
+      <label>Price:</label>
+      <div class="price-input">
+        <span>₱</span>
+        <input type="number" id="popupPrice" class="input-text" readonly>
+      </div>
+    </div>
+
+    <div class="form-group method-field">
+        <label>Method:</label>
+    </div>
+
+
+    <!-- Action Buttons -->
+    <div class="popup-actions">
+      <button class="save-btn">Mark as Paid</button>
+      <button class="cancel-btn">Cancel</button>
+    </div>
+  </div>
+</div>
+
+
+
+      </section>
+    <script src="/Assets/js/order-status.js"></script>
+
+    </main>
+    </div>
+    <script src="/Assets/js/admin-sidebar.js"></script>
+
+    <script src="/Assets/js/payments-action.js"></script>
+    <script src="/Assets/js/payment-filter.js"></script>
+    <script src="/Assets/js/view-receipt-payments.js"></script>
+
+</body>
+</html>

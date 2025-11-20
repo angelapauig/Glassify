@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orders</title>
+    <link rel="stylesheet" href="/Assets/sales_css/sales_orders.css">
+    <script src="https://kit.fontawesome.com/fc5ceca38c.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="container">
+        <aside class="sidebar" id="sidebar">
+            <div class="logo-container">
+                <img src="/Assets/img/logo.png" alt="GlassWorth Builders Logo" class="logo">
+            </div>
+            <nav class="sidebar-nav">
+                <ul>
+                    <li class="active">
+                        <a href="sales.html">
+                            <img src="/Assets/img_admin/dashboard.svg" alt="Dashboard">
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="sales_orders.html">
+                            <img src="/Assets/img_admin/orders.svg" alt="Orders">
+                            <span>Orders</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+
+            <div class="user-section">
+                <span class="section-title">Users</span>
+                <ul>
+                    <li>
+                        <a href="sales_endUser.html">
+                            <img src="/Assets/img_admin/end-user.svg" alt="End User">
+                            <span>End User</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="sales_orders.html">
+                            <img src="/Assets/img_admin/support.svg" alt="Issue/Support">
+                            <span>Issue/Support</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="general-section">
+                <span class="section-title">General</span>
+                <ul>
+                    <li>
+                        <a href="sales_inventory.html">
+                            <img src="/Assets/img_admin/inventory.svg" alt="Inventory">
+                            <span>Inventory</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="sales_products.html">
+                            <img src="/Assets/img_admin/products.svg" alt="Products">
+                            <span>Products</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="sales_payments.html">
+                            <img src="/Assets/img_admin/payments.svg" alt="Payments">
+                            <span>Payments</span>
+                        </a>
+                    </li>
+
+                </ul>
+            </div>
+        </aside>
+
+
+        <main class="main-content">
+
+            <header class="header">
+                <div class="header-menu" id="menu-toggle"><i class="fas fa-bars"></i></div>
+                <div class="header-right">
+                    <i class="fas fa-bell"></i>
+                    <i class="fas fa-user-circle user-icon"></i>
+                </div>
+            </header>
+            <section id="orders" class="page">
+                <div class="dash-tabs">
+                    <h2>Order <span class="subtitle">16 Orders found</span></h2>
+                </div>
+
+                <div class="order-tabs">
+                    <div class="tab-links-container">
+                        <a href="#" class="tab-link active" id="pending-id" data-tab="pending">
+                            Pending Review <span class="tab-count">10</span>
+                        </a>
+
+                        <a href="#" class="tab-link" id="awaiting-id" data-tab="awaiting">
+                            Awaiting Admin <span class="tab-count">4</span>
+                        </a>
+
+                        <a href="#" class="tab-link" id="ready-id" data-tab="ready">
+                            Ready to Approve <span class="tab-count">2</span>
+                        </a>
+                    </div>
+                    <div class="order-date">
+                        <span>May</span>
+                        <span>2025</span>
+                    </div>
+                </div>
+
+
+
+                <input type="text" placeholder="Search products..." class="search-box">
+
+                <section id="tab-pending" class="order-section active">
+                    <table class="order-table">
+                        <thead>
+                            <tr class="order-header">
+                                <th>#</th>
+                                <th>Order ID</th>
+                                <th>Product Name</th>
+                                <th>Address</th>
+                                <th>Date</th>
+                                <th>Price</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>#GI001</td>
+                                <td>Tempered Glass</td>
+                                <td>351 Shearwood...</td>
+                                <td>20/03/2025</td>
+                                <td>₱376.00</td>
+                                <td><button class="btn-approve">Request Approval</button></td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>#GI002</td>
+                                <td>Aluminum Frame</td>
+                                <td>6391 Elgin St...</td>
+                                <td>21/03/2025</td>
+                                <td>₱276.00</td>
+                                <td><button class="btn-approve">Request Approval</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                </section>
+
+                <section id="tab-awaiting" class="order-section">
+                    <table class="order-table awaiting">
+                        <thead>
+                            <tr class="order-header">
+                                <th>#</th>
+                                <th>Order ID</th>
+                                <th>Product Name</th>
+                                <th>Address</th>
+                                <th>Date</th>
+                                <th>Price</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>#GI003</td>
+                                <td>Sliding Track</td>
+                                <td>8502 Preston...</td>
+                                <td>01/05/2025</td>
+                                <td>₱300.00</td>
+                                <td>
+                                    <button class="btn-view">
+                                        <img src="/Assets/img_admin/search-icon.svg" alt="View Icon" class="button-icon"> View
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>#GI004</td>
+                                <td>Sliding Track</td>
+                                <td>3221 Elana St...</td>
+                                <td>07/05/2025</td>
+                                <td>₱300.00</td>
+                                <td>
+                                    <button class="btn-view">
+                                        <img src="/Assets/img_admin/search-icon.svg" alt="View Icon" class="button-icon"> View
+                                    </button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                </section>
+
+                <section id="tab-ready" class="order-section">
+                    <table class="order-table ready">
+                        <thead>
+                            <tr class="order-header">
+                                <th>#</th>
+                                <th>Order ID</th>
+                                <th>Product Name</th>
+                                <th>Address</th>
+                                <th>Date</th>
+                                <th>Admin Status</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>#GI001</td>
+                                <td>Tempered Glass</td>
+                                <td>351 Shearwood...</td>
+                                <td>20/03/2025</td>
+                                <td><span class="status disapproved">Disapproved</span></td>
+                                <td><button class="btn-check">Check</button></td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>#GI002</td>
+                                <td>Handle Set</td>
+                                <td>4517 Washington...</td>
+                                <td>02/04/2025</td>
+                                <td><span class="status approved">Approved</span></td>
+                                <td><button class="btn-check">Check</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+                <div class="pagination">
+                    <span>Showing 1-10 of 255 items</span>
+                    <div class="pagination-controls">
+                        <button><i class="fas fa-chevron-left"></i></button>
+                        <button class="active">1</button>
+                        <button><i class="fas fa-chevron-right"></i></button>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <div class="popup-overlay" id="approvalPopup">
+        <div class="popup">
+            <span class="close-btn" id="closePopup">&times;</span>
+
+            <h3 class="popup-title">Request Approval</h3>
+
+            <div class="popup-content-grid">
+
+                <div class="order-details">
+                    <h4 class="details-title">Order Details</h4>
+                    <div class="detail-row">
+                        <span class="detail-label">Order ID:</span>
+                        <span class="detail-value">#GI001</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="detail-label">Product:</span>
+                        <span class="detail-value">Tempered Glass Panel</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="detail-label">Address:</span>
+                        <span class="detail-value">123 Glass St. Manila</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="detail-label">Date:</span>
+                        <span class="detail-value">30/05/2025</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="detail-label">Status:</span>
+                        <span class="detail-value">Pending</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="detail-label">Shape:</span>
+                        <span class="detail-value">Rectangle</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="detail-label">Dimension:</span>
+                        <span class="detail-value">24", 0", 18", 0"</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="detail-label">Type:</span>
+                        <span class="detail-value">Tempered</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="detail-label">Thickness:</span>
+                        <span class="detail-value">8mm</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="detail-label">Edge Work:</span>
+                        <span class="detail-value">Flat Polish</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="detail-label">Engraving:</span>
+                        <span class="detail-value">N/A</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="detail-label">File Attached:</span>
+                        <a href="#" class="detail-value file-link" id="designPdfLink">design.pdf</a>
+                    </div>
+                    <div class="detail-row total-row">
+                        <span class="detail-label">Total Quotation (₱):</span>
+                        <span class="detail-value total-price">3,100</span>
+                    </div>
+                </div>
+
+                <div class="notes-barcode">
+                    <h4 class="notes-title">Notes</h4>
+                    <textarea class="notes-textarea" placeholder="empty..."></textarea>
+
+                    <div class="barcode-container">
+                        <img id="pendingBarcode" alt="Barcode">
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="popup-actions approval-actions">
+                <button class="save-btn submit-btn">Submit to Admin</button>
+                <button class="cancel-btn">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="popup-overlay" id="awaitingPopup">
+        <div class="popup">
+            <span class="close-btn" id="closePopup">&times;</span>
+
+            <h3 class="popup-title">Awaiting Approval</h3>
+
+            <div class="popup-content-grid">
+
+                <div class="order-details">
+                    <h4 class="details-title">Order Details</h4>
+                    <div class="detail-row">
+                        <span class="detail-label">Order ID:</span>
+                        <span class="detail-value">#GI001</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="detail-label">Product:</span>
+                        <span class="detail-value">Tempered Glass Panel</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="detail-label">Address:</span>
+                        <span class="detail-value">123 Glass St. Manila</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="detail-label">Date:</span>
+                        <span class="detail-value">30/05/2025</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="detail-label">Status:</span>
+                        <span class="detail-value">Pending</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="detail-label">Shape:</span>
+                        <span class="detail-value">Rectangle</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="detail-label">Dimension:</span>
+                        <span class="detail-value">24", 0", 18", 0"</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="detail-label">Type:</span>
+                        <span class="detail-value">Tempered</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="detail-label">Thickness:</span>
+                        <span class="detail-value">8mm</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="detail-label">Edge Work:</span>
+                        <span class="detail-value">Flat Polish</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="detail-label">Engraving:</span>
+                        <span class="detail-value">N/A</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="detail-label">File Attached:</span>
+                        <a href="#" class="detail-value file-link" id="designPdfLink">design.pdf</a>
+                    </div>
+                    <div class="detail-row total-row">
+                        <span class="detail-label">Total Quotation (₱):</span>
+                        <span class="detail-value total-price">3,100</span>
+                    </div>
+                </div>
+
+                <div class="notes-barcode">
+                    <h4 class="notes-title">Notes</h4>
+                    <textarea class="notes-textarea" placeholder="empty..."></textarea>
+
+                    <div class="barcode-container">
+                        <img id="barcodeAwaitingApproval" alt="Barcode">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="popup-overlay" id="approvedPopup">
+        <div class="popup">
+            <span class="close-btn" id="closeApprovedPopup">&times;</span>
+
+            <h3 class="popup-title">Request Approval - <span class="status-approved">Approved</span></h3>
+
+            <div class="popup-content-grid">
+
+                <div class="order-details">
+                    <h4 class="details-title">Order Details</h4>
+                    <div class="detail-row">
+                        <span class="detail-label">Order ID:</span>
+                        <span class="detail-value">#GI001</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="detail-label">Product:</span>
+                        <span class="detail-value">Tempered Glass Panel</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="detail-label">Address:</span>
+                        <span class="detail-value">123 Glass St. Manila</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="detail-label">Date:</span>
+                        <span class="detail-value">30/05/2025</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="detail-label">Status:</span>
+                        <span class="detail-value">Pending</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="detail-label">Shape:</span>
+                        <span class="detail-value">Rectangle</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="detail-label">Dimension:</span>
+                        <span class="detail-value">24", 0", 18", 0"</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="detail-label">Type:</span>
+                        <span class="detail-value">Tempered</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="detail-label">Thickness:</span>
+                        <span class="detail-value">8mm</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="detail-label">Edge Work:</span>
+                        <span class="detail-value">Flat Polish</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="detail-label">Engraving:</span>
+                        <span class="detail-value">N/A</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="detail-label">File Attached:</span>
+                        <a href="#" class="detail-value file-link" id="designPdfLink">design.pdf</a>
+                    </div>
+                    <div class="detail-row total-row">
+                        <span class="detail-label">Total Quotation (₱):</span>
+                        <span class="detail-value total-price">3,100</span>
+                    </div>
+                </div>
+
+                <div class="notes-barcode">
+                    <h4 class="notes-title">Notes</h4>
+                    <textarea class="notes-textarea" placeholder="empty..."></textarea>
+
+                    <div class="barcode-container">
+                        <img id="readyApprovedBarcode" alt="Barcode">
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="popup-actions approval-actions">
+                <button class="approved-btn">Approve Order</button>
+                <button class="cancel-btn">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="popup-overlay" id="disapprovedPopup">
+        <div class="popup">
+            <span class="close-btn" id="closeDisapprovedPopup">&times;</span>
+
+            <h3 class="popup-title">Request Approval - <span class="status-declined">Declined</span></h3>
+
+            <div class="popup-content-grid">
+
+                <div class="order-details">
+                    <h4 class="details-title">Order Details</h4>
+                    <div class="detail-row">
+                        <span class="detail-label">Order ID:</span>
+                        <span class="detail-value">#GI001</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="detail-label">Product:</span>
+                        <span class="detail-value">Tempered Glass Panel</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="detail-label">Address:</span>
+                        <span class="detail-value">123 Glass St. Manila</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="detail-label">Date:</span>
+                        <span class="detail-value">30/05/2025</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="detail-label">Status:</span>
+                        <span class="detail-value">Pending</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="detail-label">Shape:</span>
+                        <span class="detail-value">Rectangle</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="detail-label">Dimension:</span>
+                        <span class="detail-value">24", 0", 18", 0"</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="detail-label">Type:</span>
+                        <span class="detail-value">Tempered</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="detail-label">Thickness:</span>
+                        <span class="detail-value">8mm</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="detail-label">Edge Work:</span>
+                        <span class="detail-value">Flat Polish</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="detail-label">Engraving:</span>
+                        <span class="detail-value">N/A</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="detail-label">File Attached:</span>
+                        <a href="#" class="detail-value file-link" id="designPdfLink">design.pdf</a>
+                    </div>
+                    <div class="detail-row total-row">
+                        <span class="detail-label">Total Quotation (₱):</span>
+                        <span class="detail-value total-price">3,100</span>
+                    </div>
+                </div>
+
+                <div class="notes-barcode">
+                    <h4 class="notes-title">Notes</h4>
+                    <textarea class="notes-textarea" placeholder="empty..."></textarea>
+
+                    <div class="barcode-container">
+                        <img id="barcodeImageDisapproved" alt="Barcode">
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="popup-actions approval-actions">
+                <button class="disapproved-btn">Disapprove Order</button>
+                <button class="cancel-btn">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="/Assets/js/sales-order-tabs.js"></script>
+    <script src="/Assets/js/admin-sidebar.js"></script>
+    <script src="/Assets/js/sales-order-approval-btn.js"></script>
+    <script src="/Assets/js/sales-order-check-btn.js"></script>
+    <script src="/Assets/js/sales-order-barcode.js"></script>
+    <script src="/Assets/js/sales-order-view-btn.js"></script>
+
+</body>
+</html>
