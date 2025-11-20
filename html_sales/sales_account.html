@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account</title>
+    <link rel="stylesheet" href="/Assets/sales_css/sales_account.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+  <div class="container">
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <div class="logo-container">
+                <img src="/Assets/img/logo.png" alt="GlassWorth Builders Logo" class="logo">
+            </div>
+            <nav class="sidebar-nav">
+                <ul>
+                    <li>
+                        <a href="sales.html">
+                            <img src="/Assets/img_admin/dashboard.svg" alt="Dashboard">
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="sales_orders.html">
+                            <img src="/Assets/img_admin/orders.svg" alt="Orders">
+                            <span>Orders</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+
+            <div class="user-section">
+                <span class="section-title">Users</span>
+                <ul>
+                    <li>
+                        <a href="sales_endUser.html">
+                            <img src="/Assets/img_admin/end-user.svg" alt="End User">
+                            <span>End User</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="sales_orders.html">
+                            <img src="/Assets/img_admin/support.svg" alt="Issue/Support">
+                            <span>Issue/Support</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="general-section">
+                <span class="section-title">General</span>
+                <ul>
+                    <li>
+                        <a href="sales_inventory.html">
+                            <img src="/Assets/img_admin/inventory.svg" alt="Inventory">
+                            <span>Inventory</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="sales_products.html">
+                            <img src="/Assets/img_admin/products.svg" alt="Products">
+                            <span>Products</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="sales_payments.html">
+                            <img src="/Assets/img_admin/payments.svg" alt="Payments">
+                            <span>Payments</span>
+                        </a>
+                    </li>
+
+                </ul>
+            </div>
+        </aside>
+
+    <main class="main-content">
+      <header class="header">
+        <div class="header-menu" id="menu-toggle"><i class="fas fa-bars"></i></div>
+        <div class="header-right">
+            <a href="sales_notif.html" class="nav-link" id="notification-link"> 
+                <i class="fas fa-bell"></i>
+            </a>
+            <a href="sales_account.html" class="nav-link" id="user-profile-link">
+                <i class="fas fa-user-circle user-icon"></i>
+            </a>
+        </div>
+      </header>  
+<!-- Accounts -->
+<section class="account-section">
+        <div class="section-header">
+            <h1 class="page-title">Account</h1>
+            <i class="fas fa-user-circle"></i>
+        </div>
+
+  <div class="account-card">
+    <!-- Profile Header -->
+    <div class="profile-header">
+      <div class="profile-icon">
+        <img src="/Assets/img_admin/female-user.svg" alt="Profile Icon">
+      </div>
+      <div class="profile-info">
+        <h3>Irish Queen Vasquez</h3>
+        <p>Sales Representative</p>
+      </div>
+    </div>
+
+    <hr />
+
+    <!-- Account Details -->
+    <div class="account-details">
+      <div class="form-group">
+        <label>Email</label>
+        <div class="input-box">
+          <input type="text" value="queen@gmail.com" readonly>
+          <i class="fas fa-pen"></i>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>Password</label>
+        <div class="input-box">
+          <input type="password" value="************" readonly>
+          <i class="fas fa-pen"></i>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>First Name</label>
+        <div class="input-box">
+          <input type="text" value="Irish Queen" readonly>
+          <i class="fas fa-pen"></i>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>Middle Initial</label>
+        <div class="input-box">
+          <input type="text" placeholder="(optional)" readonly>
+          <i class="fas fa-pen"></i>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>Surname</label>
+        <div class="input-box">
+          <input type="text" value="Vasquez" readonly>
+          <i class="fas fa-pen"></i>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>Title</label>
+        <div class="input-box">
+          <input type="text" value="Sales Representative" readonly>
+          <i class="fas fa-pen"></i>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>Phone Number</label>
+        <div class="input-box">
+          <input type="text" value="+639*******732" readonly>
+          <i class="fas fa-pen"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="logout">
+    <a href="../html/login.html">Log out?</a>
+  </div>
+
+<!-- Popup Overlay -->
+<div class="popup-overlay" id="editPopup">
+  <div class="popup">
+    <span class="close-btn" id="closePopup">&times;</span>
+    <h3 id="popupTitle">Edit Field</h3>
+
+    <form id="editForm">
+      <div class="form-group">
+        <label id="popupLabel"></label>
+        <input type="text" id="popupInput" class="input-text">
+      </div>
+
+      <div class="popup-actions">
+        <button type="submit" class="save-btn">Save</button>
+        <button type="button" class="cancel-btn" id="cancelPopup">Cancel</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+</section>
+</main>
+    </div>
+    <script src="/Assets/js/admin-sidebar.js"></script>
+    <script src="/Assets/js/account-edit.js"></script>
+    <script src="/Assets/js/account-icon-active.js"></script>
+
+</body>
+</html>
