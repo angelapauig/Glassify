@@ -239,77 +239,31 @@ background-color: #FDC103;
   overflow-y: auto;
   font-family: 'DM Sans', sans-serif;
 }
-
 .user-section-main {
     padding: 30px;
 }
 
-.order-list-section {
-  padding: 20px;
-  border-radius: 10px;
-  margin-bottom: 20px;
+.page-title {
+    color: #02455f;
+    font-weight: 600;
+    font-size: 40px;
+    margin-top: 0;
+    margin-bottom: 20px;
 }
 
-.order-schedule-section {
-  padding: 20px;
-  border-radius: 10px;
-  margin-bottom: 20px;
+.user-section-main p {
+  font-size: 20px;       /* adjust size */
+  font-family: 'Montserrat', sans-serif; /* change font */
+  color: #444;           /* optional softer text color */
+  line-height: 1.5;      /* better readability */
 }
-
-.section-header {
-  margin-bottom: 20px;
-}
-
-.section-header h2 {
-  font-size: 45px;
-  font-weight: 700;
-  color: #02455F;
-  margin: 0;
-}
-
-.inventory-stats {
-  display: flex;
-  gap: 15px;
-  flex-wrap: wrap;
-  padding: 12px 10px;
-  margin-top: 16px;
-}
-
-.stat-card {
-  background-color: #fff;
-  padding: 20px;
-  flex: 1 1 150px;
-  text-align: center;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.121);
-  transition: transform 0.2s;
-}
-
-.stat-card:hover {
-  transform: translateY(-3px);
-}
-
-.stat-title {
-  font-size: 23px;
-  color: #004d66;
-  margin-bottom: 8px;
-  font-weight: 500;
-}
-
-.stat-value {
-  font-size: 23px;
-  font-weight: 600;
-  color: #000;
-}
-
-
 
 .controls-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: 20px;
     margin-bottom: 20px;
+    margin-top: 20px;
 }
 
 .search-bar {
@@ -340,280 +294,326 @@ background-color: #FDC103;
 }
 
 
-
-.order-tabs {
-  border-bottom: 1px solid #00000072;
-
+.add-user-button {
+    background-color: #00B521;
+    color: white;
+    border: 1px solid #828282;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s;
 }
 
-.order-tabs h2 {
-  font-size: 35px;
-  font-weight: 700;
-  margin: 0 0 12px 0;
-  padding-bottom: 6px;
+.filter-tabs {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
 }
 
 .tab-button {
-  background-color: transparent;
-  border: none;
-  padding: 10px 20px;
-  font-size: 20px;
-  font-weight: 500;
-  color: #666;
-  cursor: pointer;
-  transition: all 0.3s;
-  position: relative;
+    background-color: transparent;
+    border: 2px solid #82828272;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 1em;
+    color: #333;
+    transition: background-color 0.3s, color 0.3s;
+    max-width: 200px;
+    width: 100%;
 }
 
 .tab-button.active {
-  color: #006494;
-  border-bottom: 3px solid #006494;
+    color: #02455F;
+    border: 2px solid #02455f;
+    font-weight: bold;
 }
 
-/* Tables */
 .table-container {
-  overflow-x: auto;
-  border-radius: 8px;
-  overflow: hidden;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-}
-
-
-.order-schedule-section table th:nth-child(2) {
-  width: 700px; /* Adjust as needed */
-}
-
-
-.approve-img {
-    width: 45px;
-    height: 45px;
-    margin-bottom: -10px;
+    overflow-x: auto;
+    margin-top: 30px;
 }
 
 table {
-  width: 100%;
-  border-collapse: collapse;
+    width: 100%;
+    border-collapse: collapse;
 }
 
-th, td {
-  padding: 15px;
+thead th {
+    text-align: left;
+    padding: 15px;
+    border-bottom: 2px solid #ddd;
+    color: white;
+    background-color: #02455F;
+    font-weight: 700;
+    font-size: 20px;
+}
+
+tbody td {
+    padding: 15px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.485);
+    color: black;
+    font-size: 16px;
+    background-color: #E9F9FF;
+}
+
+tbody tr:last-child td {
+    border-bottom: none;
+}
+
+tbody td:last-child, thead th:last-child {
+    text-align: center;        /* Horizontally center the icon */
+    vertical-align: middle;    /* Vertically center the icon */
+}
+
+/* Action buttons */
+.edit-btn-main,
+.delete-btn-main {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  border: 2px solid #02455F;
+  border-radius: 6px;
+  background: transparent;            
+  color: #02455F;                    
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease;
+  margin-right: 8px;                  /* space between buttons */
+}
+
+/* icons inside the buttons */
+.edit-btn-main i,
+.delete-btn-main i {
+  font-size: 15px; /* match text size */
+  line-height: 1;
+  color: #02455F;
+}
+
+/* hover effect */
+.edit-btn-main:hover,
+.delete-btn-main:hover {
+  background: #02455F;
+  color: #fff;
+}
+
+.edit-btn-main:hover i,
+.delete-btn-main:hover i {
+  color: #fff;
+}
+
+
+.status {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    margin-right: 8px;
+}
+
+.status.active {
+    background-color: #28a745; /* Green color for active */
+}
+
+.status.inactive {
+    background-color: #9A9A9A; /* Red color for inactive */
+}
+
+    /* Overlay */
+    .overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 999;
+      justify-content: flex-end;
+    }
+
+    /* Popup Container */
+    .popup {
+      background: #f8f9fa;
+      max-width: 480px;
+      width: 100%;
+      height: 100%;
+      overflow-y: auto;
+      position: relative;
+    font-family: 'DM Sans', sans-serif;
+    }
+
+    .popup-content {
+        padding: 0 30px;
+    }
+    /* Header */
+    .popup-header {
+      background: #02455F;
+      color: white;
+      padding: 30px;
+    }
+
+    .popup-header h2 {
+      margin: 0;
+      line-height: 2;
+    }
+
+    .popup-header p {
+      font-size: 14px;
+      margin: 0;
+      color: #cfd8dc;
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 15px;
+      right: 20px;
+      font-size: 24px;
+      color: white;
+      cursor: pointer;
+    }
+
+/* Form */
+.popup h3 {
+  margin: 20px 0 10px;
+  color: #02455F;
+line-height: 2.5; 
+}
+
+label {
+  font-weight: bold;
+  display: block;
+  margin: 10px 0 5px;
+  line-height: 1.5;
+  color: #02455F;
+  font-size: 14px;
+}
+
+.popup form input,
+.popup form select {
+  width: 100%;
+  height: 30px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 2px;
+  font-size: 16px;
+}
+
+/* View Details (Read-Only Popup Content) */
+.view-details {
+  margin-top: 5px;
+}
+
+.detail-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+  padding: 10px 0;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.detail-row label {
+  font-weight: bold;
+  color: #02455F;
+  flex: 0 0 40%; /* Label takes 40% width */
+}
+
+.detail-row span {
+  color: #333;
+  flex: 1; /* Span takes remaining space */
   text-align: left;
 }
 
-th {
-  background-color: #006494;
-  font-weight: 600;
-  color: #fff;
-  border: none;
-  font-size: 20px;
-}
-
-td {
-  border-bottom: 1px solid #eee;
-  color: #333;
-  font-size: 16px;
-  position: relative; /* This is crucial for positioning the absolute menu */
-}
-
-tbody tr {
-  background-color: #fff;
-}
-
-tbody tr:hover {
-  background-color: #f8f9fa;
-}
-
-.status-badge {
-  padding: 5px 12px;
-  border-radius: 20px;
-  font-size: 0.8em;
-  font-weight: 600;
-  display: inline-block;
-  color: white;
-}
-
-.status-badge.completed {
-  background-color: #4CAF50;
-}
-
-.status-badge.pending {
-  background-color: #FF9800;
-}
-
-.status-badge.canceled {
-  background-color: #D70202;
-}
-
-.action-cell {
-  text-align: center;
-  position: relative;
-}
-
-.action-menu-trigger {
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 6px;
-}
-
-.action-menu.global-action-menu {
-  position: fixed;
-  display: none;
-  /* other styles */
-}
-
-.action-menu img {
-  width: 20px;
-  height: 20px;
-}
-
-.action-menu {
-  position: absolute;
-  top: 100%;  /* just below the button */
-  right: 0;
-  display: none;
-  background: white;
-  border: 1px solid #ccc;
-  z-index: 100;
-}
-
-.action-menu ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.action-menu li {
-  border-bottom: 1px solid #eee;
-}
-
-.action-menu li:last-child {
-  border-bottom: none;
-}
-
-.action-menu a {
-  display: block;
-  padding: 10px 16px;
-  text-decoration: none;
-  color: #333;
-}
-
-.action-menu a:hover {
-  background-color: #f0f0f0;
-}
-
-
-
-.btn-review {
-  background-color: #0a7ea4;
-  color: #fff;
-  border: none;
-  padding: 8px 20px;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 0.9em;
+/* View Button Styles */
+.view-btn-main {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  border: 2px solid #02455F;
+  border-radius: 6px;
+  background: transparent;
+  color: #02455F;
+  font-size: 15px;
   font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.view-btn-main i {
+  font-size: 15px;
+  color: #02455F;
+}
+
+.view-btn-main:hover {
+  background: #02455F;
+  color: #fff;
+}
+
+.view-btn-main:hover i {
+  color: #fff;
 }
 
 .pagination {
   display: flex;
   align-items: center;
-  margin-top: 25px;
+  margin-top: 10px;
   font-size: 0.9em;
   color: #666;
-  justify-content: flex-end; /* All elements (text, dropdown, controls) will now align to the right */
-  gap: 15px; /* Add spacing between the elements (text, rows-per-page, controls) */
-  margin-bottom: 100px;
+  justify-content: space-between;
+    position: relative;
 
-}
-
-.pagination-controls {
-  display: flex;
 }
 
 .pagination > span {
-  margin-right: auto;
   flex-shrink: 0;
   text-align: left;
 }
 
-        .rows-per-page {
-            display: flex;
-            background-color: #006494;
-            align-items: center;
-            border: 1px solid #ccc;
-            border-radius: 6px;
-            overflow: hidden;
-            font-family: Arial, sans-serif;
-            font-size: 16px;
-            height: 35px;
-            width: fit-content;
-        }
+.pagination-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  font-family: 'Montserrat', sans-serif;
+  margin: 30px 0;
+}
 
-        /* Blue Left Side: The Label */
-        .rows-per-page label {
-            color: white;
-            padding: 8px 16px;
-            display: flex;
-            align-items: center;
-            height: 100%;
-            margin: 0;
-            white-space: nowrap;
-            font-weight: normal;
-        }
-
-        /* White Right Side: The Select Dropdown */
-        .rows-per-page select {
-            -webkit-appearance: none;
-            -moz-appearance: none;
-            appearance: none;
-            background-color: white;
-            color: black;
-            border: none;
-            height: 100%;
-            cursor: pointer;
-            padding: 8px 30px 8px 16px;
-            font-size: 16px;
-            font-family: Arial, sans-serif;
-            outline: none;
-            background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24'%3E%3Cpath fill='black' d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
-            background-repeat: no-repeat;
-            background-position: right 8px center;
-            min-width: 60px;
-        }
-
-        /* Remove focus outline and add hover effects */
-        .rows-per-page select:focus {
-            outline: none;
-        }
-
-        .rows-per-page select:hover {
-            background-color: #f8f8f8;
-        }
-
-/* Pagination Button Styles - (No changes needed) */
-.pagination-controls button {
-  background-color: #006494;
+.page-btn {
+  background: #046280; /* teal blue */
+  color: white;
   border: none;
-  padding: 8px 12px;
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  font-size: 17px;
+  font-weight: 700;   /* makes arrow bolder */
   cursor: pointer;
-  color: #fff;
-  min-width: 35px;
+  transition: background 0.3s ease;
 }
 
-.pagination-controls button:first-child {
-  border-top-left-radius: 5px;
-  border-bottom-left-radius: 5px;
+.page-btn:hover {
+  background: #02455F;
 }
 
-.pagination-controls button:last-child {
-  border-top-right-radius: 5px;
-  border-bottom-right-radius: 5px;
+.page-number {
+  font-size: 20px;
+  color: #02455F;
+  font-weight: 500;
+  cursor: pointer;
 }
 
-.pagination-controls button.active {
-  background-color: #fff;
-  color: black;
-  border: 1px solid #00000077;
+.page-number.active {
+  font-weight: 700;
+  color: #02455F;
+}
+
+.dots {
+  font-size: 22px;
+  color: #02455F;
 }
 

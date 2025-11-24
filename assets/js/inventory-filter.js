@@ -4,6 +4,12 @@ document.addEventListener("DOMContentLoaded", () => {
   const tableBody = document.querySelector("table tbody");
   const showingInfo = document.querySelector(".pagination span");
 
+  // Stat elements
+  const totalItemsStat = document.querySelector(".stat-card:nth-child(1) .stat-value");
+  const lowStockAlertsStat = document.querySelector(".stat-card:nth-child(2) .stat-value");
+  const newItemsStat = document.querySelector(".stat-card:nth-child(3) .stat-value");
+  const recentRequestsStat = document.querySelector(".stat-card:nth-child(4) .stat-value");
+
   // Categories list with sample product names
   const productCatalog = {
     "Balcony": ["Balcony Glass Railing", "Aluminum Balcony Frame", "Balcony Sliding Window"],
@@ -37,6 +43,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
   let currentPage = 1;
   let rowsPerPage = 5; // default
+
+  // Function to calculate and update stats
+  function updateStats() {
+    const totalItems = products.length;
+    const lowStockAlerts = products.filter(prod => prod.stock < 20).length;
+    const newItems = products.filter(prod => prod.stock > 150).length; // Assuming high stock = new
+    const recentRequests = products.filter(prod => prod.stock < 10).length; // Assuming very low stock = recent requests
+
+    totalItemsStat.textContent = totalItems;
+    lowStockAlertsStat.textContent = lowStockAlerts;
+    newItemsStat.textContent = newItems;
+    recentRequestsStat.textContent = recentRequests;
+  }
 
   function renderTable() {
     tableBody.innerHTML = "";
@@ -111,7 +130,7 @@ document.addEventListener("DOMContentLoaded", () => {
     renderTable();
   });
 
-  // Initial render
+  // Initial render and stats update
+  updateStats(); // Calculate stats on load
   renderTable();
 });
-

@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Inventory</title>
-  <link rel="stylesheet" href="/Glassify/html_inventory/inventory_css/inventory_inventory.css">
+  <link rel="stylesheet" href="/Glassify/assets/inventory_css/inventory_inventory.css">
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
@@ -24,9 +24,9 @@
       <div class="general-section">
         <span class="section-title">General</span>
         <ul>
+          <li class="active"><a href="inventory_inventory.html"><img src="/Glassify/assets/img_admin/inventory.svg" alt="Inventory"> <span>Inventory</span></a></li>
           <li><a href="inventory_products.html"><img src="/Glassify/assets/img_admin/products.svg" alt="Products"> <span>Products</span></a></li>
-          <li class="active"><a href="admin_inventory.html"><img src="/Glassify/assets/img_admin/inventory.svg" alt="Inventory"> <span>Inventory</span></a></li>
-          <li><a href="#"><img src="/Glassify/assets/img_admin/settings.svg" alt="Settings"> <span>Settings</span></a></li>
+          <li><a href="inventory_reports.html"><img src="/Glassify/assets/img_admin/reports.svg" alt="Reports"> <span>Reports</span></a></li>
         </ul>
       </div>
     </aside>
@@ -36,8 +36,12 @@
       <header class="header">
         <div class="header-menu" id="menu-toggle"><i class="fas fa-bars"></i></div>
         <div class="header-right">
-          <i class="fas fa-bell"></i>
-          <i class="fas fa-user-circle user-icon"></i>
+            <a href="inventory_notif.html" class="nav-link" id="notification-link"> 
+                <i class="fas fa-bell"></i>
+            </a>
+            <a href="inventory_account.html" class="nav-link" id="user-profile-link">
+                <i class="fas fa-user-circle user-icon"></i>
+            </a>
         </div>
       </header>
 
@@ -47,28 +51,29 @@
           <h2>Inventory</h2>
 
           <div class="inventory-stats">
-            <div class="stat-card">
-              <p class="stat-title">Total Items</p>
-              <p class="stat-value">6</p>
-            </div>
-            <div class="stat-card">
-              <p class="stat-title">Low Stocks Alerts</p>
-              <p class="stat-value">1</p>
-            </div>
-            <div class="stat-card">
-              <p class="stat-title">New Items</p>
-              <p class="stat-value">1</p>
-            </div>
-            <div class="stat-card">
-              <p class="stat-title">Recent Requests</p>
-              <p class="stat-value">4</p>
-            </div>
+              <div class="stat-card">
+                  <p class="stat-title">Total Items</p>
+                  <p class="stat-value" id="totalItemsCount">6</p> 
+              </div>
+              <div class="stat-card">
+                  <p class="stat-title">Low Stocks Alerts</p>
+                  <p class="stat-value" id="lowStockCount">1</p>
+              </div>
+              <div class="stat-card">
+                  <p class="stat-title">New Items</p>
+                  <p class="stat-value">1</p>
+              </div>
+              <div class="stat-card">
+                  <p class="stat-title">Recent Requests</p>
+                  <p class="stat-value">4</p>
+              </div>
           </div>
         </div>
 
         <div class="order-tabs">
           <h2>List of Items</h2>
         </div>
+
  <div class="controls-container">
   <div class="filters">
     <!-- Search -->
@@ -99,6 +104,56 @@
   <button class="add-btn">+ Add New Item</button>
 </div>
 
+<div id="addItemPopup" class="popup-overlay hidden">
+    <div class="popup">
+        <button class="close-btn">&times;</button>
+        <h3>Add New Inventory Item</h3>
+
+        <div class="form-group">
+            <label>Item Name:</label>
+            <input type="text" class="input-text" placeholder="e.g., Tempered Glass 6mm" required />
+        </div>
+
+        <div class="form-group">
+            <label>Category:</label>
+            <select class="input-text" required>
+                <option value="" disabled selected>Select Category</option>
+                <option value="all">All</option>
+                <option value="door">Door</option>
+                <option value="mirror">Mirror</option>
+                <option value="partition">Partition</option>
+                <option value="railings">Railings</option>
+                <option value="window">Window</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label>Unit of Measure:</label>
+            <select class="input-text" required>
+                <option value="" disabled selected>Select Unit</option>
+                <option value="sqm">sqm</option>
+                <option value="pcs">pcs</option>
+                <option value="sets">sets</option>
+                <option value="meter">meter</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label>Initial Stock:</label>
+            <input type="number" class="input-text" placeholder="Quantity to add initially" value="0" required />
+        </div>
+
+        <div class="form-group">
+            <label>Min. Threshold:</label>
+            <input type="number" class="input-text" placeholder="Minimum stock level for alert" value="10" />
+        </div>
+
+        <div class="popup-actions">
+            <button class="save-btn">Create Item</button>
+            <button class="cancel-btn">Cancel</button>
+        </div>
+    </div>
+</div>
 
         <!-- Table -->
         <div class="table-container">
@@ -194,15 +249,21 @@
 
     <div class="form-group">
       <label>Category:</label>
-      <select class="input-text">
-        <option>Glass</option>
-      </select>
+        <select class="input-text">
+          <option value="door">Door</option>
+          <option value="mirror">Mirror</option>
+          <option value="partition">Partition</option>
+          <option value="railings">Railings</option>
+          <option value="window">Window</option>
+        </select>
     </div>
 
     <div class="form-group">
       <label>Unit of Measure:</label>
       <select class="input-text">
-        <option>Sheets</option>
+        <option>mm</option>
+        <option>cm</option>
+        <option>inches</option>
       </select>
     </div>
 
@@ -210,6 +271,8 @@
       <label>Status:</label>
       <select class="input-text">
         <option>In stock</option>
+        <option>In stock</option>
+
       </select>
     </div>
 
@@ -314,7 +377,7 @@
   <script src="/Glassify/assets/js/admin-sidebar.js"></script>
   <script src="/Glassify/assets/js/order-popup.js"></script>
   <script src="/Glassify/assets/js/inventory-search-inventory.js"></script>
-  <script src="/Glassify/assets/js/inventory-inventory-action.js"></script>
+  <script src="/Glassify/assets/js/inventory-inventory-action1.js"></script>
   <script src="/Glassify/assets/js/inventory-inventory-filter.js"></script>
 </body>
 

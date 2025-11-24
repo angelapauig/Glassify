@@ -216,14 +216,6 @@ background-color: #FDC103;
     text-decoration: none; 
 }
 
-.section-header { margin-bottom: 20px; }
-.section-header h2 {
-  font-size: 45px;
-  font-weight: 700;
-  color: #02455F;
-  margin: 0;
-}
-
 .container {
   display: flex;
   min-height: 100vh;
@@ -240,76 +232,35 @@ background-color: #FDC103;
   font-family: 'DM Sans', sans-serif;
 }
 
-.user-section-main {
-    padding: 30px;
-}
 
-.order-list-section {
-  padding: 20px;
-  border-radius: 10px;
-  margin-bottom: 20px;
-}
-
-.order-schedule-section {
-  padding: 20px;
-  border-radius: 10px;
-  margin-bottom: 20px;
+.page-title {
+    color: #02455f;
+    font-weight: 600;
+    font-size: 40px;
+    margin-top: 0;
+    margin-bottom: 20px;
 }
 
 .section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.products-section-main {
+  padding: 20px;
+  border-radius: 10px;
   margin-bottom: 20px;
 }
 
-.section-header h2 {
-  font-size: 45px;
-  font-weight: 700;
-  color: #02455F;
-  margin: 0;
-}
-
-.inventory-stats {
-  display: flex;
-  gap: 15px;
-  flex-wrap: wrap;
-  padding: 12px 10px;
-  margin-top: 16px;
-}
-
-.stat-card {
-  background-color: #fff;
-  padding: 20px;
-  flex: 1 1 150px;
-  text-align: center;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.121);
-  transition: transform 0.2s;
-}
-
-.stat-card:hover {
-  transform: translateY(-3px);
-}
-
-.stat-title {
-  font-size: 23px;
-  color: #004d66;
-  margin-bottom: 8px;
-  font-weight: 500;
-}
-
-.stat-value {
-  font-size: 23px;
-  font-weight: 600;
-  color: #000;
-}
-
-
-
+/* Controls (search + filters + buttons) */
 .controls-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 20px;
-    margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+  gap: 12px;
 }
 
 .search-bar {
@@ -340,258 +291,93 @@ background-color: #FDC103;
 }
 
 
-
-.order-tabs {
-  border-bottom: 1px solid #00000072;
-
+.controls-right {
+  display: flex;
+  gap: 10px;
 }
 
-.order-tabs h2 {
-  font-size: 35px;
-  font-weight: 700;
-  margin: 0 0 12px 0;
-  padding-bottom: 6px;
+.filter-category {
+    padding: 10px 20px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
 }
 
-.tab-button {
-  background-color: transparent;
-  border: none;
-  padding: 10px 20px;
-  font-size: 20px;
-  font-weight: 500;
-  color: #666;
-  cursor: pointer;
-  transition: all 0.3s;
-  position: relative;
-}
-
-.tab-button.active {
-  color: #006494;
-  border-bottom: 3px solid #006494;
-}
-
-/* Tables */
+/* Product grid */
 .table-container {
-  overflow-x: auto;
+  margin-top: 10px;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.product-card {
+  border: 1px solid #ddd;
   border-radius: 8px;
-  overflow: hidden;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-}
-
-
-.order-schedule-section table th:nth-child(2) {
-  width: 700px; /* Adjust as needed */
-}
-
-
-.approve-img {
-    width: 45px;
-    height: 45px;
-    margin-bottom: -10px;
-}
-
-table {
-  width: 100%;
-  border-collapse: collapse;
-}
-
-th, td {
   padding: 15px;
+  background: #fff;
+  text-align: center;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.product-image {
+  background: #f6f6f6;
+  border-radius: 6px;
+  height: 270px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+  font-size: 28px;
+  color: #aaa;
+}
+
+.product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* ensures the image fills the box without distortion */
+}
+
+.product-name {
+  font-weight: 500;
+  font-size: 15px;
+  margin: 12px 0;
   text-align: left;
 }
 
-th {
-  background-color: #006494;
-  font-weight: 600;
-  color: #fff;
-  border: none;
-  font-size: 20px;
+.product-price {
+  font-size: 14px;
+  color: #666;
+  margin: 12px 0;
+  text-align: left;
 }
 
-td {
-  border-bottom: 1px solid #eee;
-  color: #333;
-  font-size: 16px;
-  position: relative; /* This is crucial for positioning the absolute menu */
-}
-
-tbody tr {
-  background-color: #fff;
-}
-
-tbody tr:hover {
-  background-color: #f8f9fa;
-}
-
-.status-badge {
-  padding: 5px 12px;
-  border-radius: 20px;
-  font-size: 0.8em;
-  font-weight: 600;
-  display: inline-block;
-  color: white;
-}
-
-.status-badge.completed {
-  background-color: #4CAF50;
-}
-
-.status-badge.pending {
-  background-color: #FF9800;
-}
-
-.status-badge.canceled {
-  background-color: #D70202;
-}
-
-.action-cell {
-  text-align: center;
-  position: relative;
-}
-
-.action-menu-trigger {
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 6px;
-}
-
-.action-menu.global-action-menu {
-  position: fixed;
-  display: none;
-  /* other styles */
-}
-
-.action-menu img {
-  width: 20px;
-  height: 20px;
-}
-
-.action-menu {
-  position: absolute;
-  top: 100%;  /* just below the button */
-  right: 0;
-  display: none;
-  background: white;
-  border: 1px solid #ccc;
-  z-index: 100;
-}
-
-.action-menu ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.action-menu li {
-  border-bottom: 1px solid #eee;
-}
-
-.action-menu li:last-child {
-  border-bottom: none;
-}
-
-.action-menu a {
-  display: block;
-  padding: 10px 16px;
-  text-decoration: none;
-  color: #333;
-}
-
-.action-menu a:hover {
-  background-color: #f0f0f0;
-}
-
-
-
-.btn-review {
-  background-color: #0a7ea4;
-  color: #fff;
-  border: none;
-  padding: 8px 20px;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 0.9em;
-  font-weight: 500;
-}
-
+/* Pagination */
 .pagination {
   display: flex;
-  align-items: center;
+  align-items: lef;
   margin-top: 25px;
   font-size: 0.9em;
   color: #666;
-  justify-content: flex-end; /* All elements (text, dropdown, controls) will now align to the right */
-  gap: 15px; /* Add spacing between the elements (text, rows-per-page, controls) */
+  justify-content: space-between;
+    position: relative;
   margin-bottom: 100px;
 
 }
 
 .pagination-controls {
+  position: absolute;
+  right: 0;
   display: flex;
 }
 
 .pagination > span {
-  margin-right: auto;
   flex-shrink: 0;
   text-align: left;
 }
 
-        .rows-per-page {
-            display: flex;
-            background-color: #006494;
-            align-items: center;
-            border: 1px solid #ccc;
-            border-radius: 6px;
-            overflow: hidden;
-            font-family: Arial, sans-serif;
-            font-size: 16px;
-            height: 35px;
-            width: fit-content;
-        }
-
-        /* Blue Left Side: The Label */
-        .rows-per-page label {
-            color: white;
-            padding: 8px 16px;
-            display: flex;
-            align-items: center;
-            height: 100%;
-            margin: 0;
-            white-space: nowrap;
-            font-weight: normal;
-        }
-
-        /* White Right Side: The Select Dropdown */
-        .rows-per-page select {
-            -webkit-appearance: none;
-            -moz-appearance: none;
-            appearance: none;
-            background-color: white;
-            color: black;
-            border: none;
-            height: 100%;
-            cursor: pointer;
-            padding: 8px 30px 8px 16px;
-            font-size: 16px;
-            font-family: Arial, sans-serif;
-            outline: none;
-            background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24'%3E%3Cpath fill='black' d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
-            background-repeat: no-repeat;
-            background-position: right 8px center;
-            min-width: 60px;
-        }
-
-        /* Remove focus outline and add hover effects */
-        .rows-per-page select:focus {
-            outline: none;
-        }
-
-        .rows-per-page select:hover {
-            background-color: #f8f8f8;
-        }
-
-/* Pagination Button Styles - (No changes needed) */
 .pagination-controls button {
   background-color: #006494;
   border: none;
@@ -616,4 +402,5 @@ tbody tr:hover {
   color: black;
   border: 1px solid #00000077;
 }
+
 

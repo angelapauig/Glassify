@@ -53,6 +53,13 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
+    // Listen for input changes to auto-restore when cleared
+    searchInput.addEventListener("input", () => {
+        if (searchInput.value.trim() === "") {
+            filterRows(); // Show all when input is cleared
+        }
+    });
+
     // Initialize with current row count
     filterRows();
 
